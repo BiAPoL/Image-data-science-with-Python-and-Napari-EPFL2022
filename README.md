@@ -1,4 +1,4 @@
-# BioImage-Analysis-With-Python-and-Napari-EPFL
+# Image data science with Python and Napari @EPFL
 
 This repository will contain teaching materials for the course at EPFL in December 2022.
 
