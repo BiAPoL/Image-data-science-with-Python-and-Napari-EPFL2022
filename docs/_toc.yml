@@ -147,9 +147,4 @@ chapters:
           - file: day4b_writing_readable_code/12_keep_it_short_and_simple
           - file: day4b_writing_readable_code/14_stackview
 
-      - file: day4c_crafting_napari_plugins/readme
-        sections:
-          - file: day4c_crafting_napari_plugins/01_creating_widgets_from_functions
-          - file: day4c_crafting_napari_plugins/04_napari_cookiecutter
-
   - file: day5/Readme
