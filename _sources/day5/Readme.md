@@ -1,5 +1,3 @@
-# Day 5: Surfaces and bring your own data
+# Day 5: Best practices in scientific programming and licensing/sharing of code
 
-On this (last) day, we start with a recap of the previous day (theory on clustering & dimensionality reduction) as well as licensing, rights and permissions ([Slides](https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/blob/main/docs/day5/Recap_day_4.pdf)).
-
-The rest of the day will focus around working with points, surfaces and your own data. Enjoy!
+In today's sessions, we start with a recap session ([slides](https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/raw/main/docs/day5/recap.pdf)). Then, we will dive into good scientific practice when writing, documenting and publishing code. We will learn about licensing materials such as code and data. In an extended exercise we will share code via a github repository with our neighbors.

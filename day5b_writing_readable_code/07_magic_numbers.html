@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Keep it short and simple &#8212; Image data science with Python and Napari @EPFL</title>
+    <title>Prevent magic numbers &#8212; Image data science with Python and Napari @EPFL</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Interactive functions in Jupyter Lab" href="14_stackview.html" />
-    <link rel="prev" title="Exercise modularization" href="11_exercise_modules.html" />
+    <link rel="next" title="Divide and rule" href="08_divide_and_rule.html" />
+    <link rel="prev" title="Writing good code" href="05_readable_code.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -683,8 +683,8 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../day4/Readme.html">
-   Day 4: Best practices in scientific programming and developing Napari plugins
+  <a class="reference internal" href="../day5/Readme.html">
+   Day 5: Best practices in scientific programming and licensing/sharing of code
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
   <label for="toctree-checkbox-20">
@@ -693,7 +693,7 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="../day4a_Best_practices_scientific_programming/readme.html">
+    <a class="reference internal" href="../day5a_Best_practices_scientific_programming/readme.html">
      Best practices in scientific programming
     </a>
    </li>
@@ -712,8 +712,8 @@ const thebe_selector_output = ".output, .cell_output"
        Writing good code
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="07_magic_numbers.html">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
        Prevent magic numbers
       </a>
      </li>
@@ -737,8 +737,8 @@ const thebe_selector_output = ".output, .cell_output"
        Exercise modularization
       </a>
      </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
+     <li class="toctree-l3">
+      <a class="reference internal" href="12_keep_it_short_and_simple.html">
        Keep it short and simple
       </a>
      </li>
@@ -750,11 +750,6 @@ const thebe_selector_output = ".output, .cell_output"
     </ul>
    </li>
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../day5/Readme.html">
-   Day 5: Surfaces and bring your own data
-  </a>
  </li>
 </ul>
 
@@ -815,7 +810,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/main?urlpath=tree/day4b_writing_readable_code/12_keep_it_short_and_simple.ipynb"
+        <a href="https://mybinder.org/v2/gh/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/main?urlpath=tree/day5b_writing_readable_code/07_magic_numbers.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -875,7 +870,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/issues/new?title=Issue%20on%20page%20%2Fday4b_writing_readable_code/12_keep_it_short_and_simple.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/issues/new?title=Issue%20on%20page%20%2Fday5b_writing_readable_code/07_magic_numbers.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -903,7 +898,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/day4b_writing_readable_code/12_keep_it_short_and_simple.ipynb"
+        <a href="../_sources/day5b_writing_readable_code/07_magic_numbers.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -963,8 +958,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise">
-   Exercise
+  <a class="reference internal nav-link" href="#a-configuration-section-at-the-beginning">
+   A configuration section at the beginning
   </a>
  </li>
 </ul>
@@ -976,7 +971,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Keep it short and simple</h1>
+                <h1>Prevent magic numbers</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -987,8 +982,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise">
-   Exercise
+  <a class="reference internal nav-link" href="#a-configuration-section-at-the-beginning">
+   A configuration section at the beginning
   </a>
  </li>
 </ul>
@@ -1001,59 +996,102 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="keep-it-short-and-simple">
-<h1>Keep it short and simple<a class="headerlink" href="#keep-it-short-and-simple" title="Permalink to this headline">#</a></h1>
-<p>Python has amazing functionalities which allow us to write 21st century code. For example, we can collect functions and parameters in lists and the call them from a loop. While this is super cool from a programming point of view, it might not be easy to read code. The recommendation is: <a class="reference external" href="https://en.wikipedia.org/wiki/KISS_principle">Keep it short and simple (KISS)</a>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="prevent-magic-numbers">
+<h1>Prevent magic numbers<a class="headerlink" href="#prevent-magic-numbers" title="Permalink to this headline">#</a></h1>
+<p>When reading code, we sometimes find numbers in the code where it is not ovious what they do. However, when we change them, suddenly our program does not work anymore. We call these numbers <a class="reference external" href="https://en.wikipedia.org/wiki/Magic_number_(programming)">magic numbers</a>. For example, do you know what the <code class="docutils literal notranslate"><span class="pre">3</span></code> and <code class="docutils literal notranslate"><span class="pre">7</span></code> in the code below do?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">skimage.io</span> <span class="kn">import</span> <span class="n">imread</span><span class="p">,</span> <span class="n">imshow</span>
-<span class="kn">from</span> <span class="nn">napari_segment_blobs_and_things_with_membranes</span> <span class="kn">import</span> <span class="n">threshold_otsu</span><span class="p">,</span> <span class="n">gaussian_blur</span><span class="p">,</span> <span class="n">label</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="exercise">
-<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h2>
-<p>As an example, there are two code sections below. Without running the code - do you think both do the same?## Exercise: Without running the code - do you think both do the same?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="n">imread</span><span class="p">(</span><span class="s2">&quot;../../data/blobs.tif&quot;</span><span class="p">)</span>
-
-<span class="c1"># define a list of functions and a corresponding list of arguments</span>
-<span class="n">functions</span> <span class="o">=</span> <span class="p">[</span><span class="n">gaussian_blur</span><span class="p">,</span> <span class="n">threshold_otsu</span><span class="p">,</span> <span class="n">label</span><span class="p">]</span>
-<span class="n">argument_lists</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">.5</span><span class="p">],</span> <span class="p">[],</span> <span class="p">[]]</span>
-
-<span class="c1"># go through functions and argument lists pair-wise</span>
-<span class="k">for</span> <span class="n">function</span><span class="p">,</span> <span class="n">argument_list</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">functions</span><span class="p">,</span> <span class="n">argument_lists</span><span class="p">):</span>
-    <span class="c1"># execute function with given arguments</span>
-    <span class="n">image</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="o">*</span><span class="n">argument_list</span><span class="p">)</span>
-
-<span class="n">result1</span> <span class="o">=</span> <span class="n">image</span>
-<span class="n">imshow</span><span class="p">(</span><span class="n">result1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">skimage.io</span> <span class="kn">import</span> <span class="n">imread</span>
+<span class="kn">from</span> <span class="nn">skimage.filters</span> <span class="kn">import</span> <span class="n">gaussian</span><span class="p">,</span> <span class="n">threshold_otsu</span>
+<span class="kn">from</span> <span class="nn">skimage.measure</span> <span class="kn">import</span> <span class="n">label</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="n">imread</span><span class="p">(</span><span class="s2">&quot;../../data/blobs.tif&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="n">imread</span><span class="p">(</span><span class="s2">&quot;../../data/BBBC007_batch/17P1_POS0013_D_1UL.tif&quot;</span><span class="p">)</span>
 
-<span class="n">blurred</span> <span class="o">=</span> <span class="n">gaussian_blur</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">binary</span> <span class="o">=</span> <span class="n">threshold_otsu</span><span class="p">(</span><span class="n">blurred</span><span class="p">)</span>
+<span class="c1"># noise removal</span>
+<span class="n">blurred</span> <span class="o">=</span> <span class="n">gaussian</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># instance segmentation</span>
+<span class="n">binary</span> <span class="o">=</span> <span class="n">blurred</span> <span class="o">&gt;</span> <span class="n">threshold_otsu</span><span class="p">(</span><span class="n">blurred</span><span class="p">)</span>
 <span class="n">labels</span> <span class="o">=</span> <span class="n">label</span><span class="p">(</span><span class="n">binary</span><span class="p">)</span>
 
-<span class="n">result2</span> <span class="o">=</span> <span class="n">labels</span>
-
-<span class="n">imshow</span><span class="p">(</span><span class="n">result2</span><span class="p">)</span>
+<span class="c1"># quantitative measurement</span>
+<span class="n">labels</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>37
 </pre></div>
 </div>
 </div>
 </div>
-<p>If you are not sure, you can also directly check if the results are equal:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">result1</span> <span class="o">==</span> <span class="n">result2</span><span class="p">)</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="n">imread</span><span class="p">(</span><span class="s2">&quot;../../data/BBBC007_batch/17P1_POS0013_D_1UL.tif&quot;</span><span class="p">)</span>
+
+<span class="c1"># noise removal</span>
+<span class="n">blurred</span> <span class="o">=</span> <span class="n">gaussian</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+
+<span class="c1"># instance segmentation</span>
+<span class="n">binary</span> <span class="o">=</span> <span class="n">blurred</span> <span class="o">&gt;</span> <span class="n">threshold_otsu</span><span class="p">(</span><span class="n">blurred</span><span class="p">)</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">label</span><span class="p">(</span><span class="n">binary</span><span class="p">)</span>
+
+<span class="c1"># quantitative measurement</span>
+<span class="n">labels</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19
+</pre></div>
+</div>
+</div>
+</div>
+<section id="a-configuration-section-at-the-beginning">
+<h2>A configuration section at the beginning<a class="headerlink" href="#a-configuration-section-at-the-beginning" title="Permalink to this headline">#</a></h2>
+<p>To prevent magic numbers and to make code better readable, it is recommended to have a configuration code section at the beginning of every script / notebook. There you can also use comments to explain what variables mean. Btw. giving those variables good names is key.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># enter the image filename to be processed here</span>
+<span class="n">file_to_process</span> <span class="o">=</span> <span class="s2">&quot;../../data/BBBC007_batch/17P1_POS0013_D_1UL.tif&quot;</span>
+
+<span class="c1"># enter the expected radius of nuclei here, in pixel units</span>
+<span class="n">approximate_nuclei_radius</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="n">imread</span><span class="p">(</span><span class="n">file_to_process</span><span class="p">)</span>
+
+<span class="c1"># noise removal</span>
+<span class="n">blurred</span> <span class="o">=</span> <span class="n">gaussian</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">approximate_nuclei_radius</span><span class="p">)</span>
+
+<span class="c1"># instance segmentation</span>
+<span class="n">binary</span> <span class="o">=</span> <span class="n">blurred</span> <span class="o">&gt;</span> <span class="n">threshold_otsu</span><span class="p">(</span><span class="n">blurred</span><span class="p">)</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">label</span><span class="p">(</span><span class="n">binary</span><span class="p">)</span>
+
+<span class="c1"># quantitative measurement</span>
+<span class="n">labels</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>37
+</pre></div>
+</div>
+</div>
+</div>
+<p>One more hint: Python allows specifying <a class="reference external" href="https://treyhunner.com/2018/04/keyword-arguments-in-python/">keyword arguments</a> when calling functions. When using them, code becomes easier to read and understand:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blurred</span> <span class="o">=</span> <span class="n">gaussian</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="n">approximate_nuclei_radius</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1074,7 +1112,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./day4b_writing_readable_code"
+            path: "./day5b_writing_readable_code"
         },
         predefinedOutput: true
     }
@@ -1088,17 +1126,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="11_exercise_modules.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="05_readable_code.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Exercise modularization</p>
+            <p class="prev-next-title">Writing good code</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="14_stackview.html" title="next page">
+    <a class='right-next' id="next-link" href="08_divide_and_rule.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Interactive functions in Jupyter Lab</p>
+        <p class="prev-next-title">Divide and rule</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

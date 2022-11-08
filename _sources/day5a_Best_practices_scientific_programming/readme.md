@@ -2,7 +2,7 @@
 
 In this section we will learn more about how to write, document and share code.
 
-Download [Slides](https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/raw/main/docs/day4a_Best_practices_scientific_programming/Good_Scientific_Practice.pdf)
+Download [Slides](https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/raw/main/docs/day5a_Best_practices_scientific_programming/Good_Scientific_Practice.pdf)
 
 ## Exercise: Software quality indicators
 
@@ -19,7 +19,7 @@ Would you use them for your science project?
 
 This includes topics such as version control, licensing and copyright.
 
-Download [Slides](https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/raw/main/docs/day4a_Best_practices_scientific_programming/Sharing_Licensing.pdf)
+Download [Slides](https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/raw/main/docs/day5a_Best_practices_scientific_programming/Sharing_Licensing.pdf)
 
 ## Exercise: Collaborative script editing
 
