@@ -50,8 +50,6 @@ chapters:
 
   - file: day2/Readme
     sections:
-      # Day2 Morning Part
-      #- file: day2a_image_filtering/readme
       - file: day2a_background_subtraction/readme
         sections:
           - file: day2a_background_subtraction/01_Background_subtraction
@@ -76,6 +74,10 @@ chapters:
           - file: day2c_instance_segmentation/19_the_segmentation_game.md
           - file: day2c_instance_segmentation/20_Segmentation_quality_estimation
 
+      - file: day2f_feature_extraction/readme
+        sections:
+          - file: day2f_feature_extraction/01_Feature_extraction
+
   - file: day3/Readme
     sections:
       - file: day3a_machine_learning_apoc/readme
@@ -91,10 +93,6 @@ chapters:
           - file: day3b_deep_learning_segmentation/01_Stardist2d_in_python_getting_data
           - file: day3b_deep_learning_segmentation/02_Stardist2d_in_python_training
           - file: day3b_deep_learning_segmentation/02_2D_unet_training
-
-      - file: day2f_feature_extraction/readme
-        sections:
-          - file: day2f_feature_extraction/01_Feature_extraction
 
   - file: day4/Readme
     sections:
