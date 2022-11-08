@@ -75,20 +75,22 @@ chapters:
           - file: day2c_instance_segmentation/16_open_close_labels
           - file: day2c_instance_segmentation/19_the_segmentation_game.md
           - file: day2c_instance_segmentation/20_Segmentation_quality_estimation
-      # Day2 Afternoon Part
-      - file: day2d_machine_learning_apoc/readme
-        sections:
-          - file: day2d_machine_learning_apoc/01_supervised_machine_learning
-          - file: day2d_machine_learning_apoc/02_exercise_apoc.md
-          - file: day2d_machine_learning_apoc/02_scikit_learn_random_forest_pixel_classifier.
-          - file: day2d_machine_learning_apoc/04_demo_object_segmenter
-          - file: day2d_machine_learning_apoc/05_train_on_folders
 
-      - file: day2e_deep_learning_segmentation/readme
+  - file: day3/Readme
+    sections:
+      - file: day3a_machine_learning_apoc/readme
         sections:
-          - file: day2e_deep_learning_segmentation/01_Stardist2d_in_python_getting_data
-          - file: day2e_deep_learning_segmentation/02_Stardist2d_in_python_training
-          - file: day2e_deep_learning_segmentation/02_2D_unet_training
+          - file: day3a_machine_learning_apoc/01_supervised_machine_learning
+          - file: day3a_machine_learning_apoc/02_exercise_apoc.md
+          - file: day3a_machine_learning_apoc/02_scikit_learn_random_forest_pixel_classifier.
+          - file: day3a_machine_learning_apoc/04_demo_object_segmenter
+          - file: day3a_machine_learning_apoc/05_train_on_folders
+
+      - file: day3b_deep_learning_segmentation/readme
+        sections:
+          - file: day3b_deep_learning_segmentation/01_Stardist2d_in_python_getting_data
+          - file: day3b_deep_learning_segmentation/02_Stardist2d_in_python_training
+          - file: day3b_deep_learning_segmentation/02_2D_unet_training
 
       - file: day2f_feature_extraction/readme
         sections:
