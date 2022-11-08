@@ -43,13 +43,13 @@ chapters:
         sections:
           - file: day1y_Napari_Introduction/07_Napari_from_Jupyter_introduction
           - file: day1y_Napari_Introduction/08_my_segmentation_workflow_trailer
-      - file: day1z_Image_Filters/readme
-        sections:
-          - file: day1z_Image_Filters/09_Image_Filters
-          - file: day1z_Image_Filters/10_Filters_in_3D_Isotropic_Data
 
   - file: day2/Readme
     sections:
+      - file: day2_aa_Image_Filters/readme
+        sections:
+          - file: day2_aa_Image_Filters/09_Image_Filters
+          - file: day2_aa_Image_Filters/10_Filters_in_3D_Isotropic_Data
       - file: day2a_background_subtraction/readme
         sections:
           - file: day2a_background_subtraction/01_Background_subtraction
