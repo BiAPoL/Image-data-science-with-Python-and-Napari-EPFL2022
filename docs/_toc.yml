@@ -146,5 +146,3 @@ chapters:
           - file: day5b_writing_readable_code/11_exercise_modules
           - file: day5b_writing_readable_code/12_keep_it_short_and_simple
           - file: day5b_writing_readable_code/14_stackview
-
-  - file: day5/Readme
