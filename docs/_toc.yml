@@ -94,26 +94,26 @@ chapters:
         sections:
           - file: day2f_feature_extraction/01_Feature_extraction
 
-  - file: day3/Readme
+  - file: day4/Readme
     sections:
       # Day 3 Morning Part
-      - file: day3a_Tabular_Data_and_Descriptive_Statistics/readme
+      - file: day4a_Tabular_Data_and_Descriptive_Statistics/readme
         sections:
-          - file: day3a_Tabular_Data_and_Descriptive_Statistics/01_introduction_dataframes
-          - file: day3a_Tabular_Data_and_Descriptive_Statistics/02_basic_descriptive_statistics
-          - file: day3a_Tabular_Data_and_Descriptive_Statistics/03_descriptive_statistics_label_images
-          - file: day3a_Tabular_Data_and_Descriptive_Statistics/04_append_tables
-          - file: day3a_Tabular_Data_and_Descriptive_Statistics/05_handling_NaNs
-          - file: day3a_Tabular_Data_and_Descriptive_Statistics/06_tidy_data
-          - file: day3a_Tabular_Data_and_Descriptive_Statistics/07_split_apply_combine
-      - file: day3b_Plotting/readme
+          - file: day4a_Tabular_Data_and_Descriptive_Statistics/01_introduction_dataframes
+          - file: day4a_Tabular_Data_and_Descriptive_Statistics/02_basic_descriptive_statistics
+          - file: day4a_Tabular_Data_and_Descriptive_Statistics/03_descriptive_statistics_label_images
+          - file: day4a_Tabular_Data_and_Descriptive_Statistics/04_append_tables
+          - file: day4a_Tabular_Data_and_Descriptive_Statistics/05_handling_NaNs
+          - file: day4a_Tabular_Data_and_Descriptive_Statistics/06_tidy_data
+          - file: day4a_Tabular_Data_and_Descriptive_Statistics/07_split_apply_combine
+      - file: day4b_Plotting/readme
         sections:
-          - file: day3b_Plotting/01_Plotting_Data_with_Python
-          - file: day3b_Plotting/02_Introduction_to_Seaborn
-          - file: day3b_Plotting/03_Plotting_distributions
-          - file: day3b_Plotting/04_Multivariate_views
+          - file: day4b_Plotting/01_Plotting_Data_with_Python
+          - file: day4b_Plotting/02_Introduction_to_Seaborn
+          - file: day4b_Plotting/03_Plotting_distributions
+          - file: day4b_Plotting/04_Multivariate_views
 
-      - file: day3/04_Data_exploration
+      - file: day4/04_Data_exploration
 
   - file: day5/Readme
     sections:
