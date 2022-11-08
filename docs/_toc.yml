@@ -96,7 +96,6 @@ chapters:
 
   - file: day4/Readme
     sections:
-      # Day 3 Morning Part
       - file: day4a_Tabular_Data_and_Descriptive_Statistics/readme
         sections:
           - file: day4a_Tabular_Data_and_Descriptive_Statistics/01_introduction_dataframes
