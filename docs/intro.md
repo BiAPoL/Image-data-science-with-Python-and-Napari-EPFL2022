@@ -3,11 +3,12 @@
 This [Jupyter book](https://jupyterbook.org/) contains training resources for scientists who want to dive into image processing with Python. 
 It specifically aims for students and scientists working with microscopy images in the life sciences.
 We presume the attendees have some basic programming and image analysis knowledge. 
-To get everyone on the same level, we start with Python programming basics, and image analysis basics,
-we then dive into descriptive statistics for working with measurements and [matplotlib](https://matplotlib.org/) and [seaborn](https://seaborn.pydata.org/) for plotting results.
+To get everyone on the same level, we start with Python programming basics.
 We will process images using [numpy](https://numpy.org), [scipy](https://www.scipy.org/), [scikit-image](https://scikit-image.org/) and [clEsperanto](https://github.com/clEsperanto/pyclesperanto_prototype).
 We will explore [Napari](https://napari.org) for interactive image data analysis. 
 Finally, we will use [scikit-learn](https://scikit-learn.org/stable/) and [StarDist](https://github.com/stardist/stardist) to process images using machine learning and deep learning techniques.
+We then dive into working with tables and [matplotlib](https://matplotlib.org/) and [seaborn](https://seaborn.pydata.org/) for plotting results.
+
 
 ## Timetable
 
