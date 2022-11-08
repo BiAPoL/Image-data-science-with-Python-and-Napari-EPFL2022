@@ -1,10 +1,22 @@
 # Image data science with Python and Napari @EPFL
 
-This repository will contain teaching materials for the course at EPFL in December 2022.
+[![CC BY 4.0][cc-by-shield]][cc-by]
 
-### Former lecture materials of similar courses
-* [Bio-image Analysis, programming, bio-statistics and machine learning 2022](https://github.com/BiAPoL/Bio-image_Analysis_with_Python/tree/035bb75d90444f14ef21876bf3fdf9e53417f87b)
-* [Bio-image Analysis, programming, bio-statistics and machine learning 2021](https://github.com/BiAPoL/Bio-image_Analysis_with_Python/tree/a62070dee408814cee4258758f5187f135774519)
-* [Bio-image Analysis, programming, bio-statistics and machine learning 2020](https://git.mpi-cbg.de/rhaase/lecture_applied_bioimage_analysis_2020) ([lecture recodings](https://www.youtube.com/playlist?list=PL5ESQNfM5lc7SAMstEu082ivW4BDMvd0U))
-* [Bio-image Analysis, ImageJ Macro programming 2019](https://git.mpi-cbg.de/rhaase/lecture_applied_bioimage_analysis)
-* [Bio-image Analysis Notebooks](https://haesleinhuepf.github.io/BioImageAnalysisNotebooks/)
+This work is licensed by Marcelo Leomil Zoccoler, Johannes Richard Müller, Till Korten and Robert Haase, [PoL Dresden](http://physics-of-life.tu-dresden.de/bia) under a
+[Creative Commons Attribution 4.0 International License][cc-by].
+
+[cc-by]: http://creativecommons.org/licenses/by/4.0/
+[cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
+[cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
+
+This repository hosts notebooks, information and data for the Image data science with Python and Napari course @EPFL 2022.
+
+https://biapol.github.io/Image-data-science-with-Python-and-Napari-EPFL2022/
+
+It is maintained using [Jupyter lab](https://jupyterlab.readthedocs.io/en/stable/) and build using [Jupyter book](https://jupyterbook.org/intro.html).
+
+## Acknowledgements
+
+We would like to thank all the people who shared teaching materials we are reusing here, in particular Anna Poetsch, [Biotec Dresden](https://tu-dresden.de/cmcb/biotec/forschungsgruppen/poetsch) and Benoit Lombardot, MPI-CBG Dresden.
+We acknowledge support by the Deutsche Forschungsgemeinschaft under Germany’s Excellence Strategy—EXC2068–Cluster of Excellence Physics of Life of TU Dresden.
+
