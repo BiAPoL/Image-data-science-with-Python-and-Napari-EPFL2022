@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Handling NaN values &#8212; Image data science with Python and Napari @EPFL</title>
+    <title>Plotting Distributions with Seaborn &#8212; Image data science with Python and Napari @EPFL</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Tidy-Data" href="06_tidy_data.html" />
-    <link rel="prev" title="Appending tables" href="04_append_tables.html" />
+    <link rel="next" title="Multivariate views" href="04_Multivariate_views.html" />
+    <link rel="prev" title="Introduction to Seaborn" href="02_Introduction_to_Seaborn.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -501,8 +501,8 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../day3/Readme.html">
-   Day 3: Biostatistics and data science
+  <a class="reference internal" href="../day4/Readme.html">
+   Day 4: Biostatistics and data science
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
   <label for="toctree-checkbox-14">
@@ -510,80 +510,80 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul class="current">
-   <li class="toctree-l2 current active has-children">
-    <a class="reference internal" href="readme.html">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day4a_Tabular_Data_and_Descriptive_Statistics/readme.html">
      Working with tabular data
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+    <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
     <label for="toctree-checkbox-15">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul class="current">
-     <li class="toctree-l3">
-      <a class="reference internal" href="01_introduction_dataframes.html">
-       Introduction to working with DataFrames
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="02_basic_descriptive_statistics.html">
-       Basic descriptive statistics
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="03_descriptive_statistics_label_images.html">
-       Descriptive statistics of labeled images
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="04_append_tables.html">
-       Appending tables
-      </a>
-     </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
-       Handling NaN values
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="06_tidy_data.html">
-       Tidy-Data
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="07_split_apply_combine.html">
-       Split-Apply-Combine
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../day3b_Plotting/readme.html">
-     Plotting Data with Seaborn
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-    <label for="toctree-checkbox-16">
      <i class="fas fa-chevron-down">
      </i>
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../day3b_Plotting/01_Plotting_Data_with_Python.html">
+      <a class="reference internal" href="../day4a_Tabular_Data_and_Descriptive_Statistics/01_introduction_dataframes.html">
+       Introduction to working with DataFrames
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day4a_Tabular_Data_and_Descriptive_Statistics/02_basic_descriptive_statistics.html">
+       Basic descriptive statistics
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day4a_Tabular_Data_and_Descriptive_Statistics/03_descriptive_statistics_label_images.html">
+       Descriptive statistics of labeled images
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day4a_Tabular_Data_and_Descriptive_Statistics/04_append_tables.html">
+       Appending tables
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day4a_Tabular_Data_and_Descriptive_Statistics/05_handling_NaNs.html">
+       Handling NaN values
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day4a_Tabular_Data_and_Descriptive_Statistics/06_tidy_data.html">
+       Tidy-Data
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day4a_Tabular_Data_and_Descriptive_Statistics/07_split_apply_combine.html">
+       Split-Apply-Combine
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="readme.html">
+     Plotting Data with Seaborn
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+    <label for="toctree-checkbox-16">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="01_Plotting_Data_with_Python.html">
        Plotting Data with Python
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../day3b_Plotting/02_Introduction_to_Seaborn.html">
+      <a class="reference internal" href="02_Introduction_to_Seaborn.html">
        Introduction to Seaborn
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../day3b_Plotting/03_Plotting_distributions.html">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
        Plotting Distributions with Seaborn
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../day3b_Plotting/04_Multivariate_views.html">
+      <a class="reference internal" href="04_Multivariate_views.html">
        Multivariate views
       </a>
      </li>
@@ -719,7 +719,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/main?urlpath=tree/day3a_Tabular_Data_and_Descriptive_Statistics/05_handling_NaNs.ipynb"
+        <a href="https://mybinder.org/v2/gh/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/main?urlpath=tree/day4b_Plotting/03_Plotting_distributions.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -779,7 +779,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/issues/new?title=Issue%20on%20page%20%2Fday3a_Tabular_Data_and_Descriptive_Statistics/05_handling_NaNs.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/issues/new?title=Issue%20on%20page%20%2Fday4b_Plotting/03_Plotting_distributions.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -807,7 +807,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/day3a_Tabular_Data_and_Descriptive_Statistics/05_handling_NaNs.ipynb"
+        <a href="../_sources/day4b_Plotting/03_Plotting_distributions.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -866,27 +866,20 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Handling NaN values
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boxplots">
+   Boxplots
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dropping-rows-that-contain-nans">
-   Dropping rows that contain NaNs
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#histograms-and-distribution-plots">
+   Histograms and Distribution Plots
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#determining-rows-that-contain-nans">
-     Determining rows that contain NaNs
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise">
-     Exercise
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   Exercise
+  </a>
  </li>
 </ul>
 
@@ -897,7 +890,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Handling NaN values</h1>
+                <h1>Plotting Distributions with Seaborn</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -907,27 +900,20 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Handling NaN values
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boxplots">
+   Boxplots
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dropping-rows-that-contain-nans">
-   Dropping rows that contain NaNs
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#histograms-and-distribution-plots">
+   Histograms and Distribution Plots
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#determining-rows-that-contain-nans">
-     Determining rows that contain NaNs
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise">
-     Exercise
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   Exercise
+  </a>
  </li>
 </ul>
 
@@ -939,22 +925,25 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="handling-nan-values">
-<h1>Handling NaN values<a class="headerlink" href="#handling-nan-values" title="Permalink to this headline">#</a></h1>
-<p>When analysing tabular data, sometimes table cells are present that does not contain data. In Python this typically means the value is <em>Not a Number</em> (<a class="reference external" href="https://en.wikipedia.org/wiki/NaN">NaN</a>). We cannot assume these values are <code class="docutils literal notranslate"><span class="pre">0</span></code> or <code class="docutils literal notranslate"><span class="pre">-1</span></code> or any other value because that would distort descriptive statistics, for example. We need to deal with these NaN entries differently and this notebook will introduce how.</p>
-<p>To get a first view where NaNs play a role, we load again an example table and sort it.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="plotting-distributions-with-seaborn">
+<h1>Plotting Distributions with Seaborn<a class="headerlink" href="#plotting-distributions-with-seaborn" title="Permalink to this headline">#</a></h1>
+<p>With Seaborn, it is also very practical to plot data distributions. We start with simple boxplots and bar graphs. Then, we show how to plot histograms and kde.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Let’s load the same dataframe.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../data/Results.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
-<span class="n">data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s2">&quot;Area&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../../data/BBBC007_analysis.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -977,669 +966,160 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Area</th>
-      <th>Mean</th>
-      <th>StdDev</th>
-      <th>Min</th>
-      <th>Max</th>
-      <th>X</th>
-      <th>Y</th>
-      <th>XM</th>
-      <th>YM</th>
-      <th>Major</th>
-      <th>Minor</th>
-      <th>Angle</th>
-      <th>%Area</th>
-      <th>Type</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>190</th>
-      <td>2755.0</td>
-      <td>859.928</td>
-      <td>235.458</td>
-      <td>539.0</td>
-      <td>3880.0</td>
-      <td>108.710</td>
-      <td>302.158</td>
-      <td>110.999</td>
-      <td>300.247</td>
-      <td>144.475</td>
-      <td>24.280</td>
-      <td>39.318</td>
-      <td>100</td>
-      <td>C</td>
-    </tr>
-    <tr>
-      <th>81</th>
-      <td>2295.0</td>
-      <td>765.239</td>
-      <td>96.545</td>
-      <td>558.0</td>
-      <td>1431.0</td>
-      <td>375.003</td>
-      <td>134.888</td>
-      <td>374.982</td>
-      <td>135.359</td>
-      <td>65.769</td>
-      <td>44.429</td>
-      <td>127.247</td>
-      <td>100</td>
-      <td>B</td>
-    </tr>
-    <tr>
-      <th>209</th>
-      <td>1821.0</td>
-      <td>847.761</td>
-      <td>122.074</td>
-      <td>600.0</td>
-      <td>1510.0</td>
-      <td>287.795</td>
-      <td>321.115</td>
-      <td>288.074</td>
-      <td>321.824</td>
-      <td>55.879</td>
-      <td>41.492</td>
-      <td>112.124</td>
-      <td>100</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>252</th>
-      <td>1528.0</td>
-      <td>763.777</td>
-      <td>83.183</td>
-      <td>572.0</td>
-      <td>1172.0</td>
-      <td>191.969</td>
-      <td>385.944</td>
-      <td>192.487</td>
-      <td>385.697</td>
-      <td>63.150</td>
-      <td>30.808</td>
-      <td>34.424</td>
-      <td>100</td>
-      <td>B</td>
-    </tr>
-    <tr>
-      <th>265</th>
-      <td>1252.0</td>
-      <td>793.371</td>
-      <td>117.139</td>
-      <td>579.0</td>
-      <td>1668.0</td>
-      <td>262.071</td>
-      <td>394.497</td>
-      <td>262.268</td>
-      <td>394.326</td>
-      <td>60.154</td>
-      <td>26.500</td>
-      <td>50.147</td>
-      <td>100</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>113</th>
-      <td>1.0</td>
-      <td>587.000</td>
-      <td>0.000</td>
-      <td>587.0</td>
-      <td>587.0</td>
-      <td>399.500</td>
-      <td>117.500</td>
-      <td>399.500</td>
-      <td>117.500</td>
-      <td>1.128</td>
-      <td>1.128</td>
-      <td>0.000</td>
-      <td>100</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>310</th>
-      <td>1.0</td>
-      <td>866.000</td>
-      <td>0.000</td>
-      <td>866.0</td>
-      <td>866.0</td>
-      <td>343.500</td>
-      <td>408.500</td>
-      <td>343.500</td>
-      <td>408.500</td>
-      <td>1.128</td>
-      <td>1.128</td>
-      <td>0.000</td>
-      <td>100</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>219</th>
-      <td>1.0</td>
-      <td>763.000</td>
-      <td>0.000</td>
-      <td>763.0</td>
-      <td>763.0</td>
-      <td>411.500</td>
-      <td>296.500</td>
-      <td>411.500</td>
-      <td>296.500</td>
-      <td>1.128</td>
-      <td>1.128</td>
-      <td>0.000</td>
-      <td>100</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>608.0</td>
-      <td>964.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>7.665</td>
-      <td>7.359</td>
-      <td>NaN</td>
-      <td>101.121</td>
-      <td>100</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>69.438</td>
-      <td>566.0</td>
-      <td>792.0</td>
-      <td>348.500</td>
-      <td>7.500</td>
-      <td>NaN</td>
-      <td>7.508</td>
-      <td>NaN</td>
-      <td>3.088</td>
-      <td>NaN</td>
-      <td>100</td>
-      <td>A</td>
-    </tr>
-  </tbody>
-</table>
-<p>391 rows × 14 columns</p>
-</div></div></div>
-</div>
-<p>As you can see, there are rows at the bottom containing NaNs. These are at the bottom of the table because pandas cannot sort them.</p>
-<p>A quick check if there are NaNs anywhere in a DataFrame is an important quality check and good scientific practice.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-<p>We can also get some deeper insights in which columns these NaN values are located.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Area      2
-Mean      5
-StdDev    3
-Min       3
-Max       3
-X         2
-Y         3
-XM        3
-YM        5
-Major     8
-Minor     3
-Angle     1
-%Area     0
-Type      0
-dtype: int64
-</pre></div>
-</div>
-</div>
-</div>
-<p>For getting a glimpse about if we can further process that tabel, we may want to know the percentage of NaNs for each column?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">*</span><span class="mi">100</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Major     2.046036
-Mean      1.278772
-YM        1.278772
-StdDev    0.767263
-Min       0.767263
-Max       0.767263
-Y         0.767263
-XM        0.767263
-Minor     0.767263
-Area      0.511509
-X         0.511509
-Angle     0.255754
-%Area     0.000000
-Type      0.000000
-dtype: float64
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="dropping-rows-that-contain-nans">
-<h1>Dropping rows that contain NaNs<a class="headerlink" href="#dropping-rows-that-contain-nans" title="Permalink to this headline">#</a></h1>
-<p>Depending on what kind of data analysis should be performed, it might make sense to just ignore columns that contain NaN values. Alternatively, it is possible to delete rows that contain NaNs.</p>
-<p>It depends on your project and what is important or not for the analysis. Its not an easy answer.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_no_nan</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s2">&quot;any&quot;</span><span class="p">)</span>
-<span class="n">data_no_nan</span> 
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Area</th>
-      <th>Mean</th>
-      <th>StdDev</th>
-      <th>Min</th>
-      <th>Max</th>
-      <th>X</th>
-      <th>Y</th>
-      <th>XM</th>
-      <th>YM</th>
-      <th>Major</th>
-      <th>Minor</th>
-      <th>Angle</th>
-      <th>%Area</th>
-      <th>Type</th>
-    </tr>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>18.0</td>
-      <td>730.389</td>
-      <td>103.354</td>
-      <td>592.0</td>
-      <td>948.0</td>
-      <td>435.000</td>
-      <td>4.722</td>
-      <td>434.962</td>
-      <td>4.697</td>
-      <td>5.987</td>
-      <td>3.828</td>
-      <td>168.425</td>
-      <td>100</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>126.0</td>
-      <td>718.333</td>
-      <td>90.367</td>
-      <td>556.0</td>
-      <td>1046.0</td>
-      <td>388.087</td>
-      <td>8.683</td>
-      <td>388.183</td>
-      <td>8.687</td>
-      <td>16.559</td>
-      <td>9.688</td>
-      <td>175.471</td>
-      <td>100</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>68.0</td>
-      <td>686.985</td>
-      <td>61.169</td>
-      <td>571.0</td>
-      <td>880.0</td>
-      <td>126.147</td>
-      <td>8.809</td>
-      <td>126.192</td>
-      <td>8.811</td>
-      <td>15.136</td>
-      <td>5.720</td>
-      <td>168.133</td>
-      <td>100</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>669.0</td>
-      <td>697.164</td>
-      <td>72.863</td>
-      <td>539.0</td>
-      <td>957.0</td>
-      <td>471.696</td>
-      <td>26.253</td>
-      <td>471.694</td>
-      <td>26.197</td>
-      <td>36.656</td>
-      <td>23.237</td>
-      <td>124.340</td>
-      <td>100</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>5.0</td>
-      <td>658.600</td>
-      <td>49.161</td>
-      <td>607.0</td>
-      <td>710.0</td>
-      <td>28.300</td>
-      <td>8.100</td>
-      <td>28.284</td>
-      <td>8.103</td>
-      <td>3.144</td>
-      <td>2.025</td>
-      <td>161.565</td>
-      <td>100</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>383</th>
-      <td>94.0</td>
-      <td>746.617</td>
-      <td>85.198</td>
-      <td>550.0</td>
-      <td>1021.0</td>
-      <td>194.032</td>
-      <td>498.223</td>
-      <td>194.014</td>
-      <td>498.239</td>
-      <td>17.295</td>
-      <td>6.920</td>
-      <td>52.720</td>
-      <td>100</td>
-      <td>B</td>
-    </tr>
-    <tr>
-      <th>387</th>
-      <td>152.0</td>
-      <td>801.599</td>
-      <td>111.328</td>
-      <td>582.0</td>
-      <td>1263.0</td>
-      <td>348.487</td>
-      <td>497.632</td>
-      <td>348.451</td>
-      <td>497.675</td>
-      <td>17.773</td>
-      <td>10.889</td>
-      <td>11.829</td>
-      <td>100</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>389</th>
-      <td>60.0</td>
-      <td>758.033</td>
-      <td>77.309</td>
-      <td>601.0</td>
-      <td>947.0</td>
-      <td>259.000</td>
-      <td>499.300</td>
-      <td>258.990</td>
-      <td>499.289</td>
-      <td>9.476</td>
-      <td>8.062</td>
-      <td>90.000</td>
-      <td>100</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>390</th>
-      <td>12.0</td>
-      <td>714.833</td>
-      <td>67.294</td>
-      <td>551.0</td>
-      <td>785.0</td>
-      <td>240.167</td>
-      <td>498.167</td>
-      <td>240.179</td>
-      <td>498.148</td>
-      <td>4.606</td>
-      <td>3.317</td>
-      <td>168.690</td>
-      <td>100</td>
-      <td>A</td>
-    </tr>
-    <tr>
-      <th>391</th>
-      <td>23.0</td>
-      <td>695.043</td>
-      <td>67.356</td>
-      <td>611.0</td>
-      <td>846.0</td>
-      <td>49.891</td>
-      <td>503.022</td>
-      <td>49.882</td>
-      <td>502.979</td>
-      <td>6.454</td>
-      <td>4.537</td>
-      <td>73.243</td>
-      <td>100</td>
-      <td>A</td>
-    </tr>
-  </tbody>
-</table>
-<p>374 rows × 14 columns</p>
-</div></div></div>
-</div>
-<p>On the bottom of that table, you can see that it still contains 374 of the original 391 columns. If you remove rows, you should document in your later scientific publication, how many out of the total number of datasets were analysed.</p>
-<p>We can now also check again if NaNs are present.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_no_nan</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
-</pre></div>
-</div>
-</div>
-</div>
-<section id="determining-rows-that-contain-nans">
-<h2>Determining rows that contain NaNs<a class="headerlink" href="#determining-rows-that-contain-nans" title="Permalink to this headline">#</a></h2>
-<p>In some use-cases it might be useful to have a list of row-indices where there are NaN values.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data2</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">23</span><span class="p">],</span>
-    <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">12</span><span class="p">,</span> <span class="mi">22</span><span class="p">],</span>
-    <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">52</span><span class="p">],</span>
-<span class="p">}</span>
-
-<span class="n">table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data2</span><span class="p">)</span>
-<span class="n">table</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>A</th>
-      <th>B</th>
-      <th>C</th>
+      <th>area</th>
+      <th>intensity_mean</th>
+      <th>major_axis_length</th>
+      <th>minor_axis_length</th>
+      <th>aspect_ratio</th>
+      <th>file_name</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>0</td>
-      <td>2.0</td>
-      <td>2.0</td>
+      <td>139</td>
+      <td>96.546763</td>
+      <td>17.504104</td>
+      <td>10.292770</td>
+      <td>1.700621</td>
+      <td>20P1_POS0010_D_1UL</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>1</td>
-      <td>3.0</td>
-      <td>3.0</td>
+      <td>360</td>
+      <td>86.613889</td>
+      <td>35.746808</td>
+      <td>14.983124</td>
+      <td>2.385805</td>
+      <td>20P1_POS0010_D_1UL</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>22</td>
-      <td>NaN</td>
-      <td>44.0</td>
+      <td>43</td>
+      <td>91.488372</td>
+      <td>12.967884</td>
+      <td>4.351573</td>
+      <td>2.980045</td>
+      <td>20P1_POS0010_D_1UL</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>21</td>
-      <td>2.0</td>
-      <td>2.0</td>
+      <td>140</td>
+      <td>73.742857</td>
+      <td>18.940508</td>
+      <td>10.314404</td>
+      <td>1.836316</td>
+      <td>20P1_POS0010_D_1UL</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>12</td>
-      <td>12.0</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>23</td>
-      <td>22.0</td>
-      <td>52.0</td>
+      <td>144</td>
+      <td>89.375000</td>
+      <td>13.639308</td>
+      <td>13.458532</td>
+      <td>1.013432</td>
+      <td>20P1_POS0010_D_1UL</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
+<section id="boxplots">
+<h2>Boxplots<a class="headerlink" href="#boxplots" title="Permalink to this headline">#</a></h2>
+<p>The axes function for plotting boxplots is <code class="docutils literal notranslate"><span class="pre">boxplot</span></code>.</p>
+<p>Seaborn already identified <code class="docutils literal notranslate"><span class="pre">file_name</span></code> as a categorical value and <code class="docutils literal notranslate"><span class="pre">ìntensity_mean</span></code> as a numerical value. Thus, it plots boxplots for the intensity variable. If we invert x and y, we still get the same graph, but as vertical bosplots.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;intensity_mean&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;file_name&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([False, False,  True, False,  True, False])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: xlabel=&#39;intensity_mean&#39;, ylabel=&#39;file_name&#39;&gt;
 </pre></div>
 </div>
+<img alt="../_images/03_Plotting_distributions_7_1.png" src="../_images/03_Plotting_distributions_7_1.png" />
+</div>
+</div>
+<p>The figure-level, and more general, version of this kind of plot is <code class="docutils literal notranslate"><span class="pre">catplot</span></code>. We just have to provide <code class="docutils literal notranslate"><span class="pre">kind</span></code> as <code class="docutils literal notranslate"><span class="pre">box</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;intensity_mean&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;file_name&quot;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;box&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x2bcf85fa070&gt;
+</pre></div>
+</div>
+<img alt="../_images/03_Plotting_distributions_9_1.png" src="../_images/03_Plotting_distributions_9_1.png" />
+</div>
+</div>
+<p>There are other kinds available, like a <code class="docutils literal notranslate"><span class="pre">bar</span></code> graph.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;file_name&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;intensity_mean&quot;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x2bcf82144c0&gt;
+</pre></div>
+</div>
+<img alt="../_images/03_Plotting_distributions_11_1.png" src="../_images/03_Plotting_distributions_11_1.png" />
+</div>
+</div>
+</section>
+<section id="histograms-and-distribution-plots">
+<h2>Histograms and Distribution Plots<a class="headerlink" href="#histograms-and-distribution-plots" title="Permalink to this headline">#</a></h2>
+<p>The axes-level function for plotting histograms is <code class="docutils literal notranslate"><span class="pre">histplot</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;intensity_mean&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;file_name&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: xlabel=&#39;intensity_mean&#39;, ylabel=&#39;Count&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/03_Plotting_distributions_14_1.png" src="../_images/03_Plotting_distributions_14_1.png" />
+</div>
+</div>
+<p>We can instead plot the kernel density estimation (kde) with <code class="docutils literal notranslate"><span class="pre">kdeplot</span></code> function. Just be careful while interpreting these plots (check some pitfalls <a class="reference external" href="https://seaborn.pydata.org/tutorial/distributions.html#kernel-density-estimation-pitfalls">here</a>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;intensity_mean&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;file_name&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: xlabel=&#39;intensity_mean&#39;, ylabel=&#39;Density&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/03_Plotting_distributions_16_1.png" src="../_images/03_Plotting_distributions_16_1.png" />
+</div>
+</div>
+<p>The figure-level function for distributions is <code class="docutils literal notranslate"><span class="pre">distplot</span></code>. With it, you can have histograms and kde in the same plot, or other kinds of plots, like the empirical cumulative distribution function (ecdf).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;intensity_mean&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;file_name&quot;</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x2bcf852f610&gt;
+</pre></div>
+</div>
+<img alt="../_images/03_Plotting_distributions_18_1.png" src="../_images/03_Plotting_distributions_18_1.png" />
 </div>
 </div>
 </section>
 <section id="exercise">
 <h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h2>
-<p>Take the original <code class="docutils literal notranslate"><span class="pre">data</span></code> table and select the columns <code class="docutils literal notranslate"><span class="pre">Area</span></code> and <code class="docutils literal notranslate"><span class="pre">Mean</span></code>. Remove all rows that contain NaNs and count the remaining rows.
-Afterwards, take the original <code class="docutils literal notranslate"><span class="pre">data</span></code> table again and select the columns <code class="docutils literal notranslate"><span class="pre">Major</span></code> and <code class="docutils literal notranslate"><span class="pre">Minor</span></code>. Remove NaNs and count the remaining rows again. What do you conclude?</p>
+<p>Plot two empirical cumulative distribution functions for ‘area’ from different files on a same graph with different colors.</p>
+<p>Repeat this for the property ‘intensity_mean’ on a second figure. Infer whether you would expect these properties to be different or not.</p>
+<p>*Hint: look for the <code class="docutils literal notranslate"><span class="pre">kind</span></code> parameter of <code class="docutils literal notranslate"><span class="pre">displot</span></code></p>
 </section>
 </section>
 
@@ -1656,7 +1136,7 @@ Afterwards, take the original <code class="docutils literal notranslate"><span c
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./day3a_Tabular_Data_and_Descriptive_Statistics"
+            path: "./day4b_Plotting"
         },
         predefinedOutput: true
     }
@@ -1670,17 +1150,17 @@ Afterwards, take the original <code class="docutils literal notranslate"><span c
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="04_append_tables.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="02_Introduction_to_Seaborn.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Appending tables</p>
+            <p class="prev-next-title">Introduction to Seaborn</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="06_tidy_data.html" title="next page">
+    <a class='right-next' id="next-link" href="04_Multivariate_views.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tidy-Data</p>
+        <p class="prev-next-title">Multivariate views</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
