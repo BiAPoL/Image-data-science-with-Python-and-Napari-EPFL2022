@@ -9,7 +9,7 @@ This work is licensed by Marcelo Leomil Zoccoler, Johannes Richard Müller, Till
 [cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
 [cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
 
-This repository hosts notebooks, information and data for the Image data science with Python and Napari course @EPFL 2022.
+This repository hosts notebooks, information and data for the "Image data science with Python and Napari" course @EPFL 2022.
 
 https://biapol.github.io/Image-data-science-with-Python-and-Napari-EPFL2022/
 
