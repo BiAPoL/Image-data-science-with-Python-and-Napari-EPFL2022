@@ -954,6 +954,24 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>pathlib also provides the method <code class="docutils literal notranslate"><span class="pre">glob</span></code> that allows you to filter files based on their filename:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image_path_list</span> <span class="o">=</span> <span class="n">data_path</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*.png&#39;</span><span class="p">)</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">image_path_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[WindowsPath(&#39;../../data/Folder_Structures/Project1_Car_Trunk/00ae65c1c6631ae6f2be1a449902976e6eb8483bf6b0740d00530220832c6d3e.png&#39;),
+ WindowsPath(&#39;../../data/Folder_Structures/Project1_Car_Trunk/0a7d30b252359a10fd298b638b90cb9ada3acced4e0c0e5a3692013f432ee4e9.png&#39;),
+ WindowsPath(&#39;../../data/Folder_Structures/Project1_Car_Trunk/0acd2c223d300ea55d0546797713851e818e5c697d073b7f4091b96ce0f3d2fe.png&#39;),
+ WindowsPath(&#39;../../data/Folder_Structures/Project1_Car_Trunk/0b0d577159f0d6c266f360f7b8dfde46e16fa665138bf577ec3c6f9c70c0cd1e.png&#39;),
+ WindowsPath(&#39;../../data/Folder_Structures/Project1_Car_Trunk/0bf33d3db4282d918ec3da7112d0bf0427d4eafe74b3ee0bb419770eefe8d7d6.png&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
 <p>Finally, to demonstrate that we can access these images, let’s open and display them. The python <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> function yields pairs containing a count and the item in the list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -968,7 +986,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/05_Folder_structures_19_0.png" src="../_images/05_Folder_structures_19_0.png" />
+<img alt="../_images/05_Folder_structures_21_0.png" src="../_images/05_Folder_structures_21_0.png" />
 </div>
 </div>
 </section>
