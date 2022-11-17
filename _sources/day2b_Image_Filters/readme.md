@@ -4,7 +4,6 @@ In this section, you will learn some basic image processing operations using fil
 
 The slides for this section are online:
 * [Image Filtering](https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/raw/main/docs/day2b_Image_Filters/Filters.pdf).
-* [Background subraction](https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/raw/main/docs/day2b_Image_Filters/01_background_subtraction.pdf)
 
 ## See also
 
