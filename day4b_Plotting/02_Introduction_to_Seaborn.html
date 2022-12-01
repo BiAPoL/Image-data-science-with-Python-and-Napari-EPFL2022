@@ -875,7 +875,7 @@ title="Print to PDF"
 <p>We will apply the seaborn default theme, but you can choose others <a class="reference external" href="https://seaborn.pydata.org/tutorial/aesthetics.html#seaborn-figure-styles">here</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;ticks&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -970,7 +970,9 @@ title="Print to PDF"
 <p>And make a scatter plot of aspect_ratio vs intensity mean.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;aspect_ratio&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;intensity_mean&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> 
+                <span class="n">x</span><span class="o">=</span><span class="s2">&quot;aspect_ratio&quot;</span><span class="p">,</span> 
+                <span class="n">y</span><span class="o">=</span><span class="s2">&quot;intensity_mean&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1014,12 +1016,14 @@ title="Print to PDF"
             <span class="n">size</span> <span class="o">=</span> <span class="s2">&quot;area&quot;</span><span class="p">,</span>
             <span class="n">hue</span> <span class="o">=</span> <span class="s2">&quot;major_axis_length&quot;</span><span class="p">,</span>
             <span class="n">col</span> <span class="o">=</span> <span class="s2">&quot;file_name&quot;</span><span class="p">,</span>
-            <span class="n">palette</span> <span class="o">=</span> <span class="s1">&#39;magma&#39;</span><span class="p">)</span>
+            <span class="n">palette</span> <span class="o">=</span> <span class="s1">&#39;magma&#39;</span><span class="p">,</span>
+            <span class="n">height</span><span class="o">=</span><span class="mf">3.5</span><span class="p">,</span>
+            <span class="n">aspect</span><span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x24aa593d820&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x14f309fa0&gt;
 </pre></div>
 </div>
 <img alt="../_images/02_Introduction_to_Seaborn_14_1.png" src="../_images/02_Introduction_to_Seaborn_14_1.png" />
@@ -1032,7 +1036,9 @@ title="Print to PDF"
 <p>Let’s plot an example of each of them</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;aspect_ratio&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;intensity_mean&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">,</span> 
+            <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;aspect_ratio&quot;</span><span class="p">,</span> 
+            <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;intensity_mean&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1050,12 +1056,13 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">,</span>
            <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;aspect_ratio&quot;</span><span class="p">,</span>
            <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;intensity_mean&quot;</span><span class="p">,</span>
-           <span class="n">col</span> <span class="o">=</span> <span class="s2">&quot;file_name&quot;</span><span class="p">)</span>
+           <span class="n">col</span> <span class="o">=</span> <span class="s2">&quot;file_name&quot;</span><span class="p">,</span>
+           <span class="n">height</span> <span class="o">=</span> <span class="mf">3.5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x24aa5a4aa00&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x14f501910&gt;
 </pre></div>
 </div>
 <img alt="../_images/02_Introduction_to_Seaborn_19_1.png" src="../_images/02_Introduction_to_Seaborn_19_1.png" />
