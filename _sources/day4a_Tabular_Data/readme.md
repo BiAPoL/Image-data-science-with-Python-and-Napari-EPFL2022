@@ -3,4 +3,4 @@ In this chapter we will explore working with tabular data using the [pandas libr
 
 Some notebooks here are inspired from [material from Justin Bois](https://justinbois.github.io/dd-pol/2022/index.html).
 
-The slides for this section can be found [here](https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/raw/main/docs/day4a_Tabular_Data_and_Descriptive_Statistics/Tabular_Data_and_Descriptive_Statistics.pdf).
+The slides for this section can be found [here](https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/raw/main/docs/day4a_Tabular_Data/Tabular_Data.pdf).
