@@ -845,14 +845,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="basic-descriptive-statistics">
 <h1>Basic descriptive statistics<a class="headerlink" href="#basic-descriptive-statistics" title="Permalink to this headline">#</a></h1>
-<p>The term <a class="reference external" href="https://en.wikipedia.org/wiki/Descriptive_statistics">descriptive statistics</a> refers to methods that allow summarizing collections of data. To demonstrate the most important methods, we start by defining a dataset first.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">measurements</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>The term <a class="reference external" href="https://en.wikipedia.org/wiki/Descriptive_statistics">descriptive statistics</a> refers to methods that allow summarizing collections of data.</p>
 <section id="measurements-of-central-tendency">
 <h2>Measurements of central tendency<a class="headerlink" href="#measurements-of-central-tendency" title="Permalink to this headline">#</a></h2>
 <p>We can measure the <em>location</em> of our <code class="docutils literal notranslate"><span class="pre">measurement</span></code> in space using <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.statistics.html">numpy’s statistics functions</a> and Python’s <a class="reference external" href="https://docs.python.org/3/library/statistics.html">statistics module</a>.</p>
@@ -866,6 +859,20 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>To demonstrate the most important methods, we start by defining a dataset first.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">measurements</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">measurements</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[7, 5, 5, 6, 6, 7, 8, 7, 2, 4, 6, 4, 1, 6, 4, 5, 2, 7, 6, 5, 9, 5, 6, 3, 4, 8, 6, 2, 4, 6, 5, 4, 1, 5, 6, 7, 8, 3, 4, 5, 8, 6, 3, 7, 6, 9]
+</pre></div>
+</div>
+</div>
+</div>
 <p>Let’s plot a histogram of our data to get a feel for the distribution.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -874,7 +881,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/02_basic_descriptive_statistics_5_0.png" src="../_images/02_basic_descriptive_statistics_5_0.png" />
+<img alt="../_images/02_basic_descriptive_statistics_6_0.png" src="../_images/02_basic_descriptive_statistics_6_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1020,7 +1027,7 @@ title="Print to PDF"
  &lt;BarContainer object of 10 artists&gt;)
 </pre></div>
 </div>
-<img alt="../_images/02_basic_descriptive_statistics_20_1.png" src="../_images/02_basic_descriptive_statistics_20_1.png" />
+<img alt="../_images/02_basic_descriptive_statistics_21_1.png" src="../_images/02_basic_descriptive_statistics_21_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1051,7 +1058,7 @@ title="Print to PDF"
  &lt;BarContainer object of 10 artists&gt;)
 </pre></div>
 </div>
-<img alt="../_images/02_basic_descriptive_statistics_23_1.png" src="../_images/02_basic_descriptive_statistics_23_1.png" />
+<img alt="../_images/02_basic_descriptive_statistics_24_1.png" src="../_images/02_basic_descriptive_statistics_24_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
