@@ -42,12 +42,12 @@ chapters:
       # Day2 Morning part
       - file: day2a_Working_with_Images/readme
         sections:
+          - file: day2a_Working_with_Images/napari-assistant.md
+          - file: day2a_Working_with_Images/export_notebooks.md
           - file: day2a_Working_with_Images/01_Working_with_images
           - file: day2a_Working_with_Images/02_Matplotlib_subplots_introduction
-          - file: day2a_Working_with_Images/03_Multi_channel_image_data
           - file: day2a_Working_with_Images/04_Image_file_formats
           - file: day1c_Napari_Introduction/07_Napari_from_Jupyter_introduction
-          - file: day1c_Napari_Introduction/08_my_segmentation_workflow_trailer
       - file: day2b_Image_Filters/readme
         sections:
           - file: day2b_Image_Filters/09_Image_Filters
