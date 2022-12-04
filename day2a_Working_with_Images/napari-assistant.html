@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Multi-channel image data &#8212; Image data science with Python and Napari @EPFL</title>
+    <title>The Napari Assistant &#8212; Image data science with Python and Napari @EPFL</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Image file formats" href="04_Image_file_formats.html" />
-    <link rel="prev" title="Subplots with matplotlib" href="02_Matplotlib_subplots_introduction.html" />
+    <link rel="next" title="Generating Jupyter Notebooks from the Napari Assistant" href="export_notebooks.html" />
+    <link rel="prev" title="Opening and Displaying with Images in Python" href="readme.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -267,6 +267,16 @@ const thebe_selector_output = ".output, .cell_output"
      </i>
     </label>
     <ul class="current">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       The Napari Assistant
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="export_notebooks.html">
+       Generating Jupyter Notebooks from the Napari Assistant
+      </a>
+     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="01_Working_with_images.html">
        Working with images
@@ -275,11 +285,6 @@ const thebe_selector_output = ".output, .cell_output"
      <li class="toctree-l3">
       <a class="reference internal" href="02_Matplotlib_subplots_introduction.html">
        Subplots with matplotlib
-      </a>
-     </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
-       Multi-channel image data
       </a>
      </li>
      <li class="toctree-l3">
@@ -572,35 +577,6 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/main?urlpath=tree/day2a_Working_with_Images/03_Multi_channel_image_data.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -640,7 +616,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/issues/new?title=Issue%20on%20page%20%2Fday2a_Working_with_Images/03_Multi_channel_image_data.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/issues/new?title=Issue%20on%20page%20%2Fday2a_Working_with_Images/napari-assistant.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -668,7 +644,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/day2a_Working_with_Images/03_Multi_channel_image_data.ipynb"
+        <a href="../_sources/day2a_Working_with_Images/napari-assistant.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -679,7 +655,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.ipynb</span>
+<span class="headerbtn__text-container">.md</span>
 </a>
 
       </li>
@@ -705,60 +681,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise">
-   Exercise
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Multi-channel image data</h1>
+                <h1>The Napari Assistant</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise">
-   Exercise
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -766,95 +705,47 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="multi-channel-image-data">
-<h1>Multi-channel image data<a class="headerlink" href="#multi-channel-image-data" title="Permalink to this headline">#</a></h1>
-<p>Beyond two dimensional images which can be expressed as 2-D matrix, also higher dimensional, multi-channel images are quite common.</p>
-<p>Let’s open the hela-cells image from Fiji. Here is a thumbnail image for us to compare later:</p>
-<p><img alt="" src="../_images/hela_cells_screenshot.png" /></p>
-<p>We open the image with imread and display it with imshow:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">skimage.io</span> <span class="kn">import</span> <span class="n">imread</span><span class="p">,</span> <span class="n">imshow</span>
-<span class="n">image</span> <span class="o">=</span> <span class="n">imread</span><span class="p">(</span><span class="s1">&#39;../../data/hela-cells.tif&#39;</span><span class="p">)</span>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-napari-assistant">
+<h1>The Napari Assistant<a class="headerlink" href="#the-napari-assistant" title="Permalink to this headline">#</a></h1>
+<p>The Napari Assistant is a plugin for napari that allows you setting up an image processing workflow.</p>
+<p>This tutorial is also available as video <span class="xref myst">napari-assistant.mp4</span>.</p>
+<p>Start napari from the command line like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate devbio-napari-env
 
-<span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+napari
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Miniconda\envs\devbio-napari-env2\lib\site-packages\skimage\io\_plugins\matplotlib_plugin.py:150: UserWarning: Low image data range; displaying image with stretched contrast.
-  lo, hi, cmap = _get_display_range(image)
-Clipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers).
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x199c35ba9d0&gt;
-</pre></div>
-</div>
-<img alt="../_images/03_Multi_channel_image_data_3_2.png" src="../_images/03_Multi_channel_image_data_3_2.png" />
-</div>
-</div>
-<p>This visualization is not perfect as discussed <a class="reference external" href="https://forum.image.sc/t/display-multi-channel-images-with-scikit-image/51009">here</a>.</p>
-<p>To understand what we see, we should take a look at the image’s shape. The image is obviously 672 pixels wide, 512 pixels high and has 3 channels:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(512, 672, 3)
-</pre></div>
-</div>
-</div>
-</div>
-<p>Because it has 3 channels, many functions may interpret these images as being RGB and try to display multi-channel images as such.</p>
-<p>However, with image processing, we usually want to have the channels separated.</p>
-<p>We can visualize these three channels independently by cropping them out. Furthermore, we can arrange multiple images side-by-side using <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html">matplotlib subplots</a>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">channel1</span> <span class="o">=</span> <span class="n">image</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">channel2</span> <span class="o">=</span> <span class="n">image</span><span class="p">[:,:,</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">channel3</span> <span class="o">=</span> <span class="n">image</span><span class="p">[:,:,</span><span class="mi">2</span><span class="p">]</span>
-
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">))</span>
-
-<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">channel1</span><span class="p">)</span>
-<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">channel2</span><span class="p">)</span>
-<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">channel3</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x199c36dcb80&gt;
-</pre></div>
-</div>
-<img alt="../_images/03_Multi_channel_image_data_7_1.png" src="../_images/03_Multi_channel_image_data_7_1.png" />
-</div>
-</div>
-<p>Furthermore, <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html">imshow from matplotlib</a> also takes lookup tables / color maps as parameter. See <a class="reference external" href="https://matplotlib.org/stable/tutorials/colors/colormaps.html">all color maps</a> supported by matplotlib.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">))</span>
-
-<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">channel1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;plasma&#39;</span><span class="p">)</span>
-<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">channel2</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;hsv&#39;</span><span class="p">)</span>
-<span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">channel3</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;cool&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x199c3a03e20&gt;
-</pre></div>
-</div>
-<img alt="../_images/03_Multi_channel_image_data_9_1.png" src="../_images/03_Multi_channel_image_data_9_1.png" />
-</div>
-</div>
-<section id="exercise">
-<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h2>
-<p>Explore look-up tables, a.k.a. <a class="reference external" href="https://matplotlib.org/stable/tutorials/colors/colormaps.html">colormaps in matplotlib</a> and visualize the three channels above as similar as possible to how the image is visualized in ImageJ.</p>
-</section>
+<p><img alt="" src="../_images/napari-assistant01.jpg" /></p>
+<p>The napari window will open. Click on the menu <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Open</span> <span class="pre">Samples</span> <span class="pre">Cells(3D+2Ch)</span></code> to open an example image.</p>
+<p><img alt="" src="../_images/napari-assistant02.jpg" /></p>
+<p><img alt="" src="../_images/napari-assistant03.jpg" /></p>
+<p>You can explore this dataset by clicking on the <code class="docutils literal notranslate"><span class="pre">2D/3D</span></code> view button.</p>
+<p><img alt="" src="../_images/napari-assistant04.jpg" /></p>
+<p>Start the Napari Assistant from the <code class="docutils literal notranslate"><span class="pre">Tools</span> <span class="pre">&gt;</span> <span class="pre">Utilities</span> <span class="pre">&gt;</span> <span class="pre">Assistant</span> <span class="pre">(na)</span></code> menu.</p>
+<p><img alt="" src="../_images/napari-assistant05.jpg" /></p>
+<p>Within the <code class="docutils literal notranslate"><span class="pre">Assistant</span></code> panel, click on the <code class="docutils literal notranslate"><span class="pre">Remove</span> <span class="pre">noise</span></code> button.</p>
+<p><img alt="" src="../_images/napari-assistant06.jpg" /></p>
+<p>Click on the <code class="docutils literal notranslate"><span class="pre">Eye</span></code> buttons in the layer list to hide the original image and show the result of the <code class="docutils literal notranslate"><span class="pre">Remove</span> <span class="pre">noise</span></code> step only.</p>
+<p><img alt="" src="../_images/napari-assistant07.jpg" /></p>
+<p>Click on the <code class="docutils literal notranslate"><span class="pre">Binarize</span></code> button in the Assistant panel to add a new step to the workflow that generates a binary image from the current layer.</p>
+<p><img alt="" src="../_images/napari-assistant08.jpg" /></p>
+<p>Toggle 2D/3D view and layer visibility to explore the result of the <code class="docutils literal notranslate"><span class="pre">Binarize</span></code> step.</p>
+<p><img alt="" src="../_images/napari-assistant09.jpg" /></p>
+<p>After switching back to 2D view, click the <code class="docutils literal notranslate"><span class="pre">Label</span></code> button in the Assistant and choose the operation <code class="docutils literal notranslate"><span class="pre">Connected</span> <span class="pre">component</span> <span class="pre">labeling</span> <span class="pre">(clEsperanto)</span></code>.</p>
+<p><img alt="" src="../_images/napari-assistant11.jpg" /></p>
+<p>Select the <code class="docutils literal notranslate"><span class="pre">Result</span> <span class="pre">of</span> <span class="pre">gaussian_blur</span></code> layer in the layer list and modify its <code class="docutils literal notranslate"><span class="pre">sigma</span></code> parameters. You will note that the subsequent steps (Threshold Otsu and Connected Component Labeling) are also updated.</p>
+<p><img alt="" src="../_images/napari-assistant12.jpg" /></p>
+<p>Switch to grid view, show all layers using their <code class="docutils literal notranslate"><span class="pre">Eye</span></code> buttons and continue modifying the parameters.</p>
+<p><img alt="" src="../_images/napari-assistant13.jpg" /></p>
+<p><img alt="" src="../_images/napari-assistant14.jpg" /></p>
+<p>Close all layers except <code class="docutils literal notranslate"><span class="pre">nuclei</span></code> and <code class="docutils literal notranslate"><span class="pre">membrane</span></code>.</p>
+<p><img alt="" src="../_images/napari-assistant15.jpg" /></p>
+<p>Turn of Gridview and click again on the <code class="docutils literal notranslate"><span class="pre">Label</span></code> button in the Assistant.</p>
+<p><img alt="" src="../_images/napari-assistant16.jpg" /></p>
+<p>This time, do not change the operation but the <code class="docutils literal notranslate"><span class="pre">spot_sigma</span></code> parameter instead.</p>
+<p><img alt="" src="../_images/napari-assistant17.jpg" /></p>
+<p>Toggle again to 3D view and inspect the result of this single step.</p>
+<p><img alt="" src="../_images/napari-assistant18.jpg" /></p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -884,17 +775,17 @@ Clipping input data to the valid range for imshow with RGB data ([0..1] for floa
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="02_Matplotlib_subplots_introduction.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="readme.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Subplots with matplotlib</p>
+            <p class="prev-next-title">Opening and Displaying with Images in Python</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="04_Image_file_formats.html" title="next page">
+    <a class='right-next' id="next-link" href="export_notebooks.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Image file formats</p>
+        <p class="prev-next-title">Generating Jupyter Notebooks from the Napari Assistant</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
