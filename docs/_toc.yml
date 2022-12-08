@@ -84,9 +84,9 @@ chapters:
       - file: day3a_machine_learning_apoc/readme
         sections:
           - file: day3a_machine_learning_apoc/01_supervised_machine_learning
-          - file: day3a_machine_learning_apoc/02_exercise_apoc.md
-          - file: day3a_machine_learning_apoc/02_scikit_learn_random_forest_pixel_classifier.
-          - file: day3a_machine_learning_apoc/04_demo_object_segmenter
+          - file: day3a_machine_learning_apoc/02_EXERCISE_apoc_feature_importance
+          - file: day3a_machine_learning_apoc/02_scikit_learn_random_forest_pixel_classifier
+          - file: day3a_machine_learning_apoc/04_EXERCISE_demo_object_segmenter
           - file: day3a_machine_learning_apoc/05_train_on_folders
 
       - file: day3b_deep_learning_segmentation/readme
