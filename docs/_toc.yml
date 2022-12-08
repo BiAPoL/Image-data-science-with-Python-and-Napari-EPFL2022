@@ -120,6 +120,8 @@ chapters:
   - file: day5/Readme
     sections:
       - file: day5a_Best_practices_scientific_programming/readme
+        sections:
+        - file: day5a_Best_practices_scientific_programming/readme
       - file: day5b_writing_readable_code/readme
         sections:
           - file: day5b_writing_readable_code/05_readable_code
@@ -127,6 +129,6 @@ chapters:
           - file: day5b_writing_readable_code/08_divide_and_rule
           - file: day5b_writing_readable_code/09_custom_modules
           - file: day5b_writing_readable_code/10_reading_exercise
-          - file: day5b_writing_readable_code/11_exercise_modules
           - file: day5b_writing_readable_code/12_keep_it_short_and_simple
-          - file: day5b_writing_readable_code/14_stackview
+          - file: day5b_writing_readable_code/14_EXERCISE_modular_programming
+          - file: day5b_writing_readable_code/16_EXERCISE_stackview
