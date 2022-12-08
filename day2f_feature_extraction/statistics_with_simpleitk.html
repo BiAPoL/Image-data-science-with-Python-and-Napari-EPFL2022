@@ -1,0 +1,2759 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Statistics using SimpleITK &#8212; Image data science with Python and Napari @EPFL</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Basic statistics with pyclesperanto" href="statistics_with_pyclesperanto.html" />
+    <link rel="prev" title="Quantitative image analysis" href="quantitative_measurements.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/biapol_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Image data science with Python and Napari @EPFL</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Image data science with Python and Napari @EPFL
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../day0/Readme.html">
+   Course preparation
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../day1/readme.html">
+   Day 1: Introduction to Python and Bio-image Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../day1a_Introduction_Bio-image_Analysis/readme.html">
+     Introduction to Bio-image Analysis
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day1b_Python_Introduction/readme.html">
+     Introduction to Python part I
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day1b_Python_Introduction/01_our_first_juptyer_notebook.html">
+       Python code in Jupyter notebooks
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day1b_Python_Introduction/02_Math_in_python.html">
+       Basic math in python
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day1b_Python_Introduction/03_Dont_try_this_at_home.html">
+       Pitfalls when working with Jupyter notebooks
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day1b_Python_Introduction/04_Basic_types.html">
+       Basic types in python
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day1b_Python_Introduction/05_lists_tuples.html">
+       Lists and tuples
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day1b_Python_Introduction/05a_cropping_lists.html">
+       Cropping lists
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day1b_Python_Introduction/05b_cropping_images.html">
+       Cropping images
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day1b_Python_Introduction/05c_sorting_lists.html">
+       Sorting lists
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day1b_Python_Introduction/05d_masking.html">
+       Masking numpy arrays
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day1b_Python_Introduction/06_Dictionaries_and_tables.html">
+       Dictionaries
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day1c_Python_loops_conditions_functions/readme.html">
+     Introduction to Python part II
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day1c_Python_loops_conditions_functions/07_Conditions.html">
+       Conditions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day1c_Python_loops_conditions_functions/08_loops.html">
+       Loops
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day1c_Python_loops_conditions_functions/09_custom_functions.html">
+       Functions
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day1x_Folder_Structures/readme.html">
+     Folder Structures
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day1x_Folder_Structures/05_Folder_structures.html">
+       Simple Folder Structures
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day1x_Folder_Structures/06_Folder_structures2.html">
+       Advanced Folder Structures
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../day2/Readme.html">
+   Day 2: Image Filtering, Segmentation and Feature Extraction
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day2a_Working_with_Images/readme.html">
+     Opening and Displaying with Images in Python
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day2a_Working_with_Images/napari-assistant.html">
+       The Napari Assistant
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day2a_Working_with_Images/export_notebooks.html">
+       Generating Jupyter Notebooks from the Napari Assistant
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day2a_Working_with_Images/01_Working_with_images.html">
+       Working with images
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day2a_Working_with_Images/04_Image_file_formats.html">
+       Image file formats
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day2b_Image_Filters/readme.html">
+     Image Filters
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day2b_Image_Filters/10_Filters_in_3D_Isotropic_Data.html">
+       3D Image Filters
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day2c_image_segmentation/readme.html">
+     Image segmentation
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day2c_image_segmentation/01_Thresholding.html">
+       Thresholding
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day2c_image_segmentation/03_Morphological_operations.html">
+       Morphological Image Processing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day2c_image_segmentation/04_Otsu_threshold.html">
+       Otsu’s threshold method (optional)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="readme.html">
+     Feature extraction
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="quantitative_measurements.html">
+       Quantitative image analysis
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Statistics using SimpleITK
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="statistics_with_pyclesperanto.html">
+       Basic statistics with pyclesperanto
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../day3/Readme.html">
+   Day 3: Machine learning and introduction to deep learning
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day3a_machine_learning_apoc/readme.html">
+     Machine learning for object segmentation
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day3a_machine_learning_apoc/01_supervised_machine_learning.html">
+       Supervised machine learning
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day3a_machine_learning_apoc/02_EXERCISE_apoc_feature_importance.html">
+       Exercise: Interactive pixel and object classification
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day3a_machine_learning_apoc/02_scikit_learn_random_forest_pixel_classifier.html">
+       Pixel classification using Scikit-learn
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day3a_machine_learning_apoc/04_EXERCISE_demo_object_segmenter.html">
+       Object segmentation on OpenCL-compatible GPUs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day3a_machine_learning_apoc/05_train_on_folders.html">
+       Training classifiers from folders of images
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day3b_deep_learning_segmentation/readme.html">
+     Deep Learning for image segmentation
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="simple">
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../day4/Readme.html">
+   Day 4: Biostatistics and data science
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day4b_Plotting/readme.html">
+     Plotting Data with Seaborn
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+    <label for="toctree-checkbox-14">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day4b_Plotting/01_Plotting_Data_with_Python.html">
+       Plotting Data with Python
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day4b_Plotting/02_Introduction_to_Seaborn.html">
+       Introduction to Seaborn
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day4b_Plotting/03_Plotting_distributions.html">
+       Plotting Distributions with Seaborn
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day4b_Plotting/04_Multivariate_views.html">
+       Multivariate views
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../day5/Readme.html">
+   Day 5: Best practices in scientific programming and licensing/sharing of code
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../day5a_Best_practices_scientific_programming/readme.html">
+     Best practices in scientific programming
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day5b_writing_readable_code/readme.html">
+     Writing readable code
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+    <label for="toctree-checkbox-16">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day5b_writing_readable_code/05_readable_code.html">
+       Writing good code
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day5b_writing_readable_code/07_magic_numbers.html">
+       Prevent magic numbers
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day5b_writing_readable_code/08_divide_and_rule.html">
+       Divide and rule
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day5b_writing_readable_code/09_custom_modules.html">
+       Custom modules
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day5b_writing_readable_code/10_reading_exercise.html">
+       Reading exercise
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day5b_writing_readable_code/11_exercise_modules.html">
+       Exercise modularization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day5b_writing_readable_code/12_keep_it_short_and_simple.html">
+       Keep it short and simple
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day5b_writing_readable_code/14_stackview.html">
+       Interactive functions in Jupyter Lab
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/main?urlpath=tree/day2f_feature_extraction/statistics_with_simpleitk.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/issues/new?title=Issue%20on%20page%20%2Fday2f_feature_extraction/statistics_with_simpleitk.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/day2f_feature_extraction/statistics_with_simpleitk.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#starting-point-a-segmented-label-image">
+   Starting point: a segmented label image
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#label-statistics">
+   Label statistics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#specific-measures">
+   Specific measures
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#perimeter-on-border-ratio">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       perimeter_on_border_ratio
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Statistics using SimpleITK</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#starting-point-a-segmented-label-image">
+   Starting point: a segmented label image
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#label-statistics">
+   Label statistics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#specific-measures">
+   Specific measures
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#perimeter-on-border-ratio">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       perimeter_on_border_ratio
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="statistics-using-simpleitk">
+<h1>Statistics using SimpleITK<a class="headerlink" href="#statistics-using-simpleitk" title="Permalink to this headline">#</a></h1>
+<p>We can use <a class="reference external" href="https://simpleitk.readthedocs.io/">Simple</a> for extracting features from label images. For convenience reasons we use the <a class="reference external" href="https://github.com/haesleinhuepf/napari-simpleitk-image-processing">napari-simpleitk-image-processing</a> library.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">skimage.io</span> <span class="kn">import</span> <span class="n">imread</span>
+<span class="kn">import</span> <span class="nn">pyclesperanto_prototype</span> <span class="k">as</span> <span class="nn">cle</span>
+<span class="kn">from</span> <span class="nn">napari_simpleitk_image_processing</span> <span class="kn">import</span> <span class="n">watershed_otsu_labeling</span>
+<span class="kn">from</span> <span class="nn">napari_simpleitk_image_processing</span> <span class="kn">import</span> <span class="n">label_statistics</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blobs</span> <span class="o">=</span> <span class="n">imread</span><span class="p">(</span><span class="s1">&#39;../../data/blobs.tif&#39;</span><span class="p">)</span>
+<span class="n">cle</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">blobs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/statistics_with_simpleitk_2_0.png" src="../_images/statistics_with_simpleitk_2_0.png" />
+</div>
+</div>
+<section id="starting-point-a-segmented-label-image">
+<h2>Starting point: a segmented label image<a class="headerlink" href="#starting-point-a-segmented-label-image" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labels</span> <span class="o">=</span> <span class="n">watershed_otsu_labeling</span><span class="p">(</span><span class="n">blobs</span><span class="p">)</span>
+<span class="n">cle</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/statistics_with_simpleitk_4_0.png" src="../_images/statistics_with_simpleitk_4_0.png" />
+</div>
+</div>
+</section>
+<section id="label-statistics">
+<h2>Label statistics<a class="headerlink" href="#label-statistics" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">statistics</span> <span class="o">=</span> <span class="n">label_statistics</span><span class="p">(</span><span class="n">blobs</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> 
+                              <span class="n">intensity</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+                              <span class="n">size</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+                              <span class="n">shape</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+                              <span class="n">perimeter</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+                              <span class="n">position</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                              <span class="n">moments</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">statistics</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>label</th>
+      <th>maximum</th>
+      <th>mean</th>
+      <th>median</th>
+      <th>minimum</th>
+      <th>sigma</th>
+      <th>sum</th>
+      <th>variance</th>
+      <th>bbox_0</th>
+      <th>bbox_1</th>
+      <th>...</th>
+      <th>number_of_pixels_on_border</th>
+      <th>perimeter</th>
+      <th>perimeter_on_border</th>
+      <th>perimeter_on_border_ratio</th>
+      <th>principal_axes0</th>
+      <th>principal_axes1</th>
+      <th>principal_axes2</th>
+      <th>principal_axes3</th>
+      <th>principal_moments0</th>
+      <th>principal_moments1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>224.0</td>
+      <td>137.526132</td>
+      <td>136.0</td>
+      <td>112.0</td>
+      <td>13.360739</td>
+      <td>157880.0</td>
+      <td>178.509343</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>36</td>
+      <td>2461.579651</td>
+      <td>36.0</td>
+      <td>0.014625</td>
+      <td>-0.574118</td>
+      <td>-0.818773</td>
+      <td>0.818773</td>
+      <td>-0.574118</td>
+      <td>5063.911496</td>
+      <td>5560.184284</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>232.0</td>
+      <td>193.014354</td>
+      <td>200.0</td>
+      <td>128.0</td>
+      <td>28.559077</td>
+      <td>80680.0</td>
+      <td>815.620897</td>
+      <td>11</td>
+      <td>0</td>
+      <td>...</td>
+      <td>16</td>
+      <td>85.499572</td>
+      <td>16.0</td>
+      <td>0.187135</td>
+      <td>0.902494</td>
+      <td>0.430703</td>
+      <td>-0.430703</td>
+      <td>0.902494</td>
+      <td>17.056706</td>
+      <td>72.884853</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>224.0</td>
+      <td>179.846995</td>
+      <td>184.0</td>
+      <td>128.0</td>
+      <td>21.328889</td>
+      <td>32912.0</td>
+      <td>454.921516</td>
+      <td>53</td>
+      <td>0</td>
+      <td>...</td>
+      <td>21</td>
+      <td>53.456120</td>
+      <td>21.0</td>
+      <td>0.392846</td>
+      <td>-0.042759</td>
+      <td>-0.999085</td>
+      <td>0.999085</td>
+      <td>-0.042759</td>
+      <td>8.637199</td>
+      <td>27.432794</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>248.0</td>
+      <td>207.082171</td>
+      <td>216.0</td>
+      <td>120.0</td>
+      <td>27.772832</td>
+      <td>133568.0</td>
+      <td>771.330194</td>
+      <td>95</td>
+      <td>0</td>
+      <td>...</td>
+      <td>23</td>
+      <td>93.409370</td>
+      <td>23.0</td>
+      <td>0.246228</td>
+      <td>0.991601</td>
+      <td>0.129334</td>
+      <td>-0.129334</td>
+      <td>0.991601</td>
+      <td>48.975064</td>
+      <td>55.851742</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>248.0</td>
+      <td>223.146402</td>
+      <td>232.0</td>
+      <td>128.0</td>
+      <td>30.246515</td>
+      <td>89928.0</td>
+      <td>914.851647</td>
+      <td>144</td>
+      <td>0</td>
+      <td>...</td>
+      <td>19</td>
+      <td>74.218143</td>
+      <td>19.0</td>
+      <td>0.256002</td>
+      <td>0.974707</td>
+      <td>0.223487</td>
+      <td>-0.223487</td>
+      <td>0.974707</td>
+      <td>32.059800</td>
+      <td>33.765222</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>248.0</td>
+      <td>214.906725</td>
+      <td>224.0</td>
+      <td>128.0</td>
+      <td>26.386796</td>
+      <td>99072.0</td>
+      <td>696.263020</td>
+      <td>238</td>
+      <td>0</td>
+      <td>...</td>
+      <td>39</td>
+      <td>80.787183</td>
+      <td>40.0</td>
+      <td>0.495128</td>
+      <td>0.999408</td>
+      <td>0.034407</td>
+      <td>-0.034407</td>
+      <td>0.999408</td>
+      <td>23.320204</td>
+      <td>59.820502</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>248.0</td>
+      <td>211.565891</td>
+      <td>224.0</td>
+      <td>136.0</td>
+      <td>30.197236</td>
+      <td>54584.0</td>
+      <td>911.873073</td>
+      <td>189</td>
+      <td>7</td>
+      <td>...</td>
+      <td>0</td>
+      <td>57.938471</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.932037</td>
+      <td>0.362364</td>
+      <td>-0.362364</td>
+      <td>0.932037</td>
+      <td>18.705896</td>
+      <td>22.720115</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>200.0</td>
+      <td>166.171429</td>
+      <td>168.0</td>
+      <td>136.0</td>
+      <td>16.466894</td>
+      <td>11632.0</td>
+      <td>271.158592</td>
+      <td>133</td>
+      <td>17</td>
+      <td>...</td>
+      <td>0</td>
+      <td>29.917295</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.960385</td>
+      <td>0.278678</td>
+      <td>-0.278678</td>
+      <td>0.960385</td>
+      <td>4.741825</td>
+      <td>6.584094</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>224.0</td>
+      <td>176.932331</td>
+      <td>176.0</td>
+      <td>128.0</td>
+      <td>24.022064</td>
+      <td>47064.0</td>
+      <td>577.059555</td>
+      <td>211</td>
+      <td>17</td>
+      <td>...</td>
+      <td>0</td>
+      <td>59.834590</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.997651</td>
+      <td>0.068495</td>
+      <td>-0.068495</td>
+      <td>0.997651</td>
+      <td>14.969363</td>
+      <td>30.395186</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
+      <td>240.0</td>
+      <td>191.598174</td>
+      <td>200.0</td>
+      <td>128.0</td>
+      <td>28.239851</td>
+      <td>41960.0</td>
+      <td>797.489171</td>
+      <td>37</td>
+      <td>18</td>
+      <td>...</td>
+      <td>0</td>
+      <td>53.360835</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.992904</td>
+      <td>0.118917</td>
+      <td>-0.118917</td>
+      <td>0.992904</td>
+      <td>15.331341</td>
+      <td>19.871929</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>11</td>
+      <td>232.0</td>
+      <td>190.962963</td>
+      <td>200.0</td>
+      <td>128.0</td>
+      <td>23.617106</td>
+      <td>92808.0</td>
+      <td>557.767698</td>
+      <td>162</td>
+      <td>21</td>
+      <td>...</td>
+      <td>0</td>
+      <td>79.485892</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.950824</td>
+      <td>0.309732</td>
+      <td>-0.309732</td>
+      <td>0.950824</td>
+      <td>35.879673</td>
+      <td>42.001599</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>12</td>
+      <td>232.0</td>
+      <td>173.000000</td>
+      <td>176.0</td>
+      <td>128.0</td>
+      <td>19.441981</td>
+      <td>110720.0</td>
+      <td>377.990610</td>
+      <td>59</td>
+      <td>26</td>
+      <td>...</td>
+      <td>0</td>
+      <td>93.218800</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.848443</td>
+      <td>0.529287</td>
+      <td>-0.529287</td>
+      <td>0.848443</td>
+      <td>38.069371</td>
+      <td>69.135089</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>13</td>
+      <td>200.0</td>
+      <td>168.351648</td>
+      <td>168.0</td>
+      <td>128.0</td>
+      <td>19.226356</td>
+      <td>15320.0</td>
+      <td>369.652747</td>
+      <td>3</td>
+      <td>39</td>
+      <td>...</td>
+      <td>0</td>
+      <td>35.050291</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.945102</td>
+      <td>0.326774</td>
+      <td>-0.326774</td>
+      <td>0.945102</td>
+      <td>5.568379</td>
+      <td>9.510959</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>14</td>
+      <td>248.0</td>
+      <td>203.019608</td>
+      <td>208.0</td>
+      <td>128.0</td>
+      <td>32.682072</td>
+      <td>41416.0</td>
+      <td>1068.117840</td>
+      <td>226</td>
+      <td>39</td>
+      <td>...</td>
+      <td>0</td>
+      <td>51.464716</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.999604</td>
+      <td>-0.028149</td>
+      <td>0.028149</td>
+      <td>0.999604</td>
+      <td>13.550254</td>
+      <td>19.604062</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>15</td>
+      <td>248.0</td>
+      <td>216.156863</td>
+      <td>224.0</td>
+      <td>136.0</td>
+      <td>28.644305</td>
+      <td>88192.0</td>
+      <td>820.496218</td>
+      <td>129</td>
+      <td>42</td>
+      <td>...</td>
+      <td>0</td>
+      <td>72.226739</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.985169</td>
+      <td>-0.171585</td>
+      <td>0.171585</td>
+      <td>0.985169</td>
+      <td>26.472262</td>
+      <td>39.901074</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>16</td>
+      <td>232.0</td>
+      <td>181.963255</td>
+      <td>184.0</td>
+      <td>120.0</td>
+      <td>24.411574</td>
+      <td>69328.0</td>
+      <td>595.924962</td>
+      <td>185</td>
+      <td>43</td>
+      <td>...</td>
+      <td>0</td>
+      <td>81.382011</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.925427</td>
+      <td>0.378925</td>
+      <td>-0.378925</td>
+      <td>0.925427</td>
+      <td>12.588614</td>
+      <td>76.471615</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>17</td>
+      <td>248.0</td>
+      <td>197.333333</td>
+      <td>200.0</td>
+      <td>120.0</td>
+      <td>26.311828</td>
+      <td>97088.0</td>
+      <td>692.312288</td>
+      <td>17</td>
+      <td>44</td>
+      <td>...</td>
+      <td>0</td>
+      <td>79.485892</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.949997</td>
+      <td>0.312260</td>
+      <td>-0.312260</td>
+      <td>0.949997</td>
+      <td>33.707850</td>
+      <td>45.675040</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>18</td>
+      <td>248.0</td>
+      <td>200.160401</td>
+      <td>208.0</td>
+      <td>128.0</td>
+      <td>27.596051</td>
+      <td>79864.0</td>
+      <td>761.542046</td>
+      <td>90</td>
+      <td>60</td>
+      <td>...</td>
+      <td>0</td>
+      <td>72.782100</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.959680</td>
+      <td>0.281094</td>
+      <td>-0.281094</td>
+      <td>0.959680</td>
+      <td>21.950618</td>
+      <td>46.037485</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>19</td>
+      <td>248.0</td>
+      <td>205.943775</td>
+      <td>216.0</td>
+      <td>136.0</td>
+      <td>30.086114</td>
+      <td>51280.0</td>
+      <td>905.174245</td>
+      <td>207</td>
+      <td>61</td>
+      <td>...</td>
+      <td>0</td>
+      <td>57.153073</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.954815</td>
+      <td>0.297199</td>
+      <td>-0.297199</td>
+      <td>0.954815</td>
+      <td>14.780837</td>
+      <td>26.562206</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>20</td>
+      <td>232.0</td>
+      <td>192.235988</td>
+      <td>200.0</td>
+      <td>120.0</td>
+      <td>25.416595</td>
+      <td>65168.0</td>
+      <td>646.003316</td>
+      <td>235</td>
+      <td>63</td>
+      <td>...</td>
+      <td>11</td>
+      <td>66.863705</td>
+      <td>11.0</td>
+      <td>0.164514</td>
+      <td>-0.593398</td>
+      <td>-0.804909</td>
+      <td>0.804909</td>
+      <td>-0.593398</td>
+      <td>22.740379</td>
+      <td>32.242766</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>21</td>
+      <td>224.0</td>
+      <td>189.577465</td>
+      <td>200.0</td>
+      <td>136.0</td>
+      <td>24.291178</td>
+      <td>26920.0</td>
+      <td>590.061333</td>
+      <td>162</td>
+      <td>66</td>
+      <td>...</td>
+      <td>0</td>
+      <td>42.864805</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.946821</td>
+      <td>0.321762</td>
+      <td>-0.321762</td>
+      <td>0.946821</td>
+      <td>9.729421</td>
+      <td>13.167326</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>22</td>
+      <td>224.0</td>
+      <td>187.870324</td>
+      <td>192.0</td>
+      <td>128.0</td>
+      <td>24.658125</td>
+      <td>75336.0</td>
+      <td>608.023142</td>
+      <td>53</td>
+      <td>73</td>
+      <td>...</td>
+      <td>0</td>
+      <td>71.996702</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.993149</td>
+      <td>-0.116857</td>
+      <td>0.116857</td>
+      <td>0.993149</td>
+      <td>28.718371</td>
+      <td>35.697584</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>23</td>
+      <td>248.0</td>
+      <td>208.960836</td>
+      <td>216.0</td>
+      <td>128.0</td>
+      <td>30.936449</td>
+      <td>80032.0</td>
+      <td>957.063907</td>
+      <td>117</td>
+      <td>76</td>
+      <td>...</td>
+      <td>0</td>
+      <td>79.485892</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>-0.249601</td>
+      <td>-0.968349</td>
+      <td>0.968349</td>
+      <td>-0.249601</td>
+      <td>17.353521</td>
+      <td>61.813901</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>24</td>
+      <td>240.0</td>
+      <td>182.081301</td>
+      <td>184.0</td>
+      <td>128.0</td>
+      <td>26.433619</td>
+      <td>44792.0</td>
+      <td>698.736220</td>
+      <td>26</td>
+      <td>77</td>
+      <td>...</td>
+      <td>0</td>
+      <td>56.597713</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.999988</td>
+      <td>-0.004899</td>
+      <td>0.004899</td>
+      <td>0.999988</td>
+      <td>16.419754</td>
+      <td>23.402458</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>25</td>
+      <td>248.0</td>
+      <td>199.629032</td>
+      <td>200.0</td>
+      <td>128.0</td>
+      <td>27.426587</td>
+      <td>99016.0</td>
+      <td>752.217660</td>
+      <td>0</td>
+      <td>82</td>
+      <td>...</td>
+      <td>29</td>
+      <td>84.484136</td>
+      <td>29.0</td>
+      <td>0.343260</td>
+      <td>0.998757</td>
+      <td>-0.049841</td>
+      <td>0.049841</td>
+      <td>0.998757</td>
+      <td>24.491079</td>
+      <td>67.691848</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>26</td>
+      <td>240.0</td>
+      <td>192.449438</td>
+      <td>192.0</td>
+      <td>120.0</td>
+      <td>26.732458</td>
+      <td>51384.0</td>
+      <td>714.624314</td>
+      <td>214</td>
+      <td>86</td>
+      <td>...</td>
+      <td>0</td>
+      <td>58.493832</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.929427</td>
+      <td>0.369006</td>
+      <td>-0.369006</td>
+      <td>0.929427</td>
+      <td>18.770857</td>
+      <td>24.067028</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>27</td>
+      <td>240.0</td>
+      <td>202.691706</td>
+      <td>208.0</td>
+      <td>128.0</td>
+      <td>24.550960</td>
+      <td>129520.0</td>
+      <td>602.749633</td>
+      <td>158</td>
+      <td>88</td>
+      <td>...</td>
+      <td>0</td>
+      <td>97.891721</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.252109</td>
+      <td>-0.967699</td>
+      <td>0.967699</td>
+      <td>0.252109</td>
+      <td>34.790068</td>
+      <td>80.474893</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>28</td>
+      <td>232.0</td>
+      <td>200.641975</td>
+      <td>208.0</td>
+      <td>136.0</td>
+      <td>22.958406</td>
+      <td>32504.0</td>
+      <td>527.088413</td>
+      <td>245</td>
+      <td>95</td>
+      <td>...</td>
+      <td>20</td>
+      <td>51.004641</td>
+      <td>20.0</td>
+      <td>0.392121</td>
+      <td>0.999016</td>
+      <td>0.044348</td>
+      <td>-0.044348</td>
+      <td>0.999016</td>
+      <td>7.500566</td>
+      <td>24.475429</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>29</td>
+      <td>232.0</td>
+      <td>201.661721</td>
+      <td>208.0</td>
+      <td>136.0</td>
+      <td>24.593688</td>
+      <td>67960.0</td>
+      <td>604.849513</td>
+      <td>92</td>
+      <td>102</td>
+      <td>...</td>
+      <td>0</td>
+      <td>66.308345</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.159256</td>
+      <td>-0.987237</td>
+      <td>0.987237</td>
+      <td>0.159256</td>
+      <td>22.243114</td>
+      <td>32.490995</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>30</td>
+      <td>240.0</td>
+      <td>202.541910</td>
+      <td>208.0</td>
+      <td>136.0</td>
+      <td>26.036533</td>
+      <td>103904.0</td>
+      <td>677.901072</td>
+      <td>26</td>
+      <td>108</td>
+      <td>...</td>
+      <td>0</td>
+      <td>82.167409</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.989629</td>
+      <td>0.143647</td>
+      <td>-0.143647</td>
+      <td>0.989629</td>
+      <td>32.933086</td>
+      <td>51.101812</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>31</td>
+      <td>232.0</td>
+      <td>192.649396</td>
+      <td>200.0</td>
+      <td>120.0</td>
+      <td>25.700290</td>
+      <td>111544.0</td>
+      <td>660.504892</td>
+      <td>113</td>
+      <td>109</td>
+      <td>...</td>
+      <td>0</td>
+      <td>105.610950</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.903873</td>
+      <td>0.427801</td>
+      <td>-0.427801</td>
+      <td>0.903873</td>
+      <td>18.013291</td>
+      <td>134.834719</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>32</td>
+      <td>248.0</td>
+      <td>195.953871</td>
+      <td>200.0</td>
+      <td>120.0</td>
+      <td>30.668210</td>
+      <td>118944.0</td>
+      <td>940.539123</td>
+      <td>151</td>
+      <td>114</td>
+      <td>...</td>
+      <td>0</td>
+      <td>99.692555</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.830015</td>
+      <td>-0.557742</td>
+      <td>0.557742</td>
+      <td>0.830015</td>
+      <td>25.231170</td>
+      <td>101.168109</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>33</td>
+      <td>232.0</td>
+      <td>184.131148</td>
+      <td>192.0</td>
+      <td>128.0</td>
+      <td>26.165665</td>
+      <td>33696.0</td>
+      <td>684.642046</td>
+      <td>56</td>
+      <td>115</td>
+      <td>...</td>
+      <td>0</td>
+      <td>49.568597</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.991750</td>
+      <td>-0.128190</td>
+      <td>0.128190</td>
+      <td>0.991750</td>
+      <td>12.926033</td>
+      <td>16.531401</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>34</td>
+      <td>248.0</td>
+      <td>215.125448</td>
+      <td>224.0</td>
+      <td>128.0</td>
+      <td>30.288772</td>
+      <td>120040.0</td>
+      <td>917.409728</td>
+      <td>211</td>
+      <td>115</td>
+      <td>...</td>
+      <td>0</td>
+      <td>85.174249</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.220924</td>
+      <td>-0.975291</td>
+      <td>0.975291</td>
+      <td>0.220924</td>
+      <td>40.823045</td>
+      <td>48.505271</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>35</td>
+      <td>176.0</td>
+      <td>151.529412</td>
+      <td>152.0</td>
+      <td>136.0</td>
+      <td>15.091875</td>
+      <td>2576.0</td>
+      <td>227.764706</td>
+      <td>251</td>
+      <td>124</td>
+      <td>...</td>
+      <td>2</td>
+      <td>14.843629</td>
+      <td>2.0</td>
+      <td>0.134738</td>
+      <td>-0.163228</td>
+      <td>-0.986588</td>
+      <td>0.986588</td>
+      <td>-0.163228</td>
+      <td>1.046852</td>
+      <td>1.755916</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>36</td>
+      <td>232.0</td>
+      <td>191.224806</td>
+      <td>200.0</td>
+      <td>120.0</td>
+      <td>25.409101</td>
+      <td>49336.0</td>
+      <td>645.622417</td>
+      <td>0</td>
+      <td>130</td>
+      <td>...</td>
+      <td>13</td>
+      <td>57.153073</td>
+      <td>13.0</td>
+      <td>0.227459</td>
+      <td>0.970628</td>
+      <td>0.240586</td>
+      <td>-0.240586</td>
+      <td>0.970628</td>
+      <td>16.246640</td>
+      <td>26.130982</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>37</td>
+      <td>248.0</td>
+      <td>201.665497</td>
+      <td>200.0</td>
+      <td>128.0</td>
+      <td>28.167372</td>
+      <td>172424.0</td>
+      <td>793.400857</td>
+      <td>76</td>
+      <td>137</td>
+      <td>...</td>
+      <td>0</td>
+      <td>121.660584</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.975948</td>
+      <td>0.218005</td>
+      <td>-0.218005</td>
+      <td>0.975948</td>
+      <td>27.394927</td>
+      <td>179.878327</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>38</td>
+      <td>248.0</td>
+      <td>208.017467</td>
+      <td>208.0</td>
+      <td>128.0</td>
+      <td>29.009010</td>
+      <td>95272.0</td>
+      <td>841.522670</td>
+      <td>233</td>
+      <td>137</td>
+      <td>...</td>
+      <td>23</td>
+      <td>83.278130</td>
+      <td>23.0</td>
+      <td>0.276183</td>
+      <td>0.844799</td>
+      <td>0.535083</td>
+      <td>-0.535083</td>
+      <td>0.844799</td>
+      <td>21.736051</td>
+      <td>65.950501</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>39</td>
+      <td>232.0</td>
+      <td>197.419355</td>
+      <td>208.0</td>
+      <td>128.0</td>
+      <td>28.666250</td>
+      <td>42840.0</td>
+      <td>821.753883</td>
+      <td>60</td>
+      <td>138</td>
+      <td>...</td>
+      <td>0</td>
+      <td>52.805475</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.986995</td>
+      <td>0.160753</td>
+      <td>-0.160753</td>
+      <td>0.986995</td>
+      <td>14.052349</td>
+      <td>21.247148</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>40</td>
+      <td>232.0</td>
+      <td>191.774648</td>
+      <td>200.0</td>
+      <td>136.0</td>
+      <td>24.532044</td>
+      <td>27232.0</td>
+      <td>601.821197</td>
+      <td>183</td>
+      <td>149</td>
+      <td>...</td>
+      <td>0</td>
+      <td>42.309444</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.965804</td>
+      <td>0.259275</td>
+      <td>-0.259275</td>
+      <td>0.965804</td>
+      <td>9.197500</td>
+      <td>13.952669</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>41</td>
+      <td>232.0</td>
+      <td>180.952381</td>
+      <td>184.0</td>
+      <td>128.0</td>
+      <td>24.471401</td>
+      <td>72200.0</td>
+      <td>598.849486</td>
+      <td>125</td>
+      <td>152</td>
+      <td>...</td>
+      <td>0</td>
+      <td>72.226739</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>-0.653319</td>
+      <td>-0.757082</td>
+      <td>0.757082</td>
+      <td>-0.653319</td>
+      <td>22.888892</td>
+      <td>44.383172</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>42</td>
+      <td>248.0</td>
+      <td>204.708333</td>
+      <td>216.0</td>
+      <td>120.0</td>
+      <td>28.500531</td>
+      <td>78608.0</td>
+      <td>812.280244</td>
+      <td>6</td>
+      <td>157</td>
+      <td>...</td>
+      <td>0</td>
+      <td>70.100583</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.904586</td>
+      <td>0.426291</td>
+      <td>-0.426291</td>
+      <td>0.904586</td>
+      <td>25.066435</td>
+      <td>37.439939</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>43</td>
+      <td>248.0</td>
+      <td>191.221239</td>
+      <td>192.0</td>
+      <td>128.0</td>
+      <td>26.451712</td>
+      <td>43216.0</td>
+      <td>699.693058</td>
+      <td>206</td>
+      <td>158</td>
+      <td>...</td>
+      <td>0</td>
+      <td>53.916196</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.977778</td>
+      <td>0.209643</td>
+      <td>-0.209643</td>
+      <td>0.977778</td>
+      <td>15.830580</td>
+      <td>20.544723</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>44</td>
+      <td>240.0</td>
+      <td>200.091691</td>
+      <td>208.0</td>
+      <td>136.0</td>
+      <td>27.115603</td>
+      <td>69832.0</td>
+      <td>735.255937</td>
+      <td>36</td>
+      <td>160</td>
+      <td>...</td>
+      <td>0</td>
+      <td>66.863705</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.999560</td>
+      <td>-0.029663</td>
+      <td>0.029663</td>
+      <td>0.999560</td>
+      <td>21.238298</td>
+      <td>36.355055</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>45</td>
+      <td>240.0</td>
+      <td>204.294599</td>
+      <td>216.0</td>
+      <td>128.0</td>
+      <td>28.702058</td>
+      <td>124824.0</td>
+      <td>823.808151</td>
+      <td>167</td>
+      <td>167</td>
+      <td>...</td>
+      <td>0</td>
+      <td>88.736449</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.984212</td>
+      <td>-0.176992</td>
+      <td>0.176992</td>
+      <td>0.984212</td>
+      <td>44.044878</td>
+      <td>54.215343</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>46</td>
+      <td>248.0</td>
+      <td>215.719298</td>
+      <td>224.0</td>
+      <td>136.0</td>
+      <td>32.074924</td>
+      <td>73776.0</td>
+      <td>1028.800741</td>
+      <td>223</td>
+      <td>174</td>
+      <td>...</td>
+      <td>0</td>
+      <td>65.752985</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.756607</td>
+      <td>0.653870</td>
+      <td>-0.653870</td>
+      <td>0.756607</td>
+      <td>24.162673</td>
+      <td>30.794348</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>47</td>
+      <td>240.0</td>
+      <td>205.387454</td>
+      <td>216.0</td>
+      <td>136.0</td>
+      <td>24.250565</td>
+      <td>111320.0</td>
+      <td>588.089898</td>
+      <td>117</td>
+      <td>185</td>
+      <td>...</td>
+      <td>0</td>
+      <td>83.833491</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.116985</td>
+      <td>-0.993134</td>
+      <td>0.993134</td>
+      <td>0.116985</td>
+      <td>41.327753</td>
+      <td>45.322011</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>48</td>
+      <td>232.0</td>
+      <td>194.711864</td>
+      <td>200.0</td>
+      <td>136.0</td>
+      <td>29.510402</td>
+      <td>11488.0</td>
+      <td>870.863822</td>
+      <td>251</td>
+      <td>193</td>
+      <td>...</td>
+      <td>15</td>
+      <td>33.479495</td>
+      <td>15.0</td>
+      <td>0.448035</td>
+      <td>0.999821</td>
+      <td>0.018944</td>
+      <td>-0.018944</td>
+      <td>0.999821</td>
+      <td>1.690956</td>
+      <td>14.325132</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>49</td>
+      <td>232.0</td>
+      <td>186.684211</td>
+      <td>192.0</td>
+      <td>128.0</td>
+      <td>25.196557</td>
+      <td>28376.0</td>
+      <td>634.866504</td>
+      <td>200</td>
+      <td>195</td>
+      <td>...</td>
+      <td>0</td>
+      <td>44.435601</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.980620</td>
+      <td>0.195921</td>
+      <td>-0.195921</td>
+      <td>0.980620</td>
+      <td>9.610562</td>
+      <td>15.277380</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>50</td>
+      <td>232.0</td>
+      <td>168.875000</td>
+      <td>168.0</td>
+      <td>120.0</td>
+      <td>25.410148</td>
+      <td>75656.0</td>
+      <td>645.675615</td>
+      <td>18</td>
+      <td>200</td>
+      <td>...</td>
+      <td>0</td>
+      <td>82.262694</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.958423</td>
+      <td>-0.285352</td>
+      <td>0.285352</td>
+      <td>0.958423</td>
+      <td>17.922660</td>
+      <td>72.404250</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>51</td>
+      <td>248.0</td>
+      <td>229.430657</td>
+      <td>248.0</td>
+      <td>144.0</td>
+      <td>26.958373</td>
+      <td>125728.0</td>
+      <td>726.753866</td>
+      <td>90</td>
+      <td>200</td>
+      <td>...</td>
+      <td>0</td>
+      <td>85.078964</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.774700</td>
+      <td>-0.632329</td>
+      <td>0.632329</td>
+      <td>0.774700</td>
+      <td>31.162401</td>
+      <td>61.364008</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>52</td>
+      <td>216.0</td>
+      <td>191.100952</td>
+      <td>200.0</td>
+      <td>128.0</td>
+      <td>22.709233</td>
+      <td>100328.0</td>
+      <td>515.709255</td>
+      <td>51</td>
+      <td>203</td>
+      <td>...</td>
+      <td>0</td>
+      <td>83.278130</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.957483</td>
+      <td>-0.288491</td>
+      <td>0.288491</td>
+      <td>0.957483</td>
+      <td>31.380235</td>
+      <td>55.869804</td>
+    </tr>
+    <tr>
+      <th>52</th>
+      <td>53</td>
+      <td>240.0</td>
+      <td>206.313514</td>
+      <td>216.0</td>
+      <td>144.0</td>
+      <td>26.433038</td>
+      <td>38168.0</td>
+      <td>698.705523</td>
+      <td>0</td>
+      <td>214</td>
+      <td>...</td>
+      <td>24</td>
+      <td>56.137637</td>
+      <td>24.0</td>
+      <td>0.427521</td>
+      <td>0.999497</td>
+      <td>-0.031726</td>
+      <td>0.031726</td>
+      <td>0.999497</td>
+      <td>6.941190</td>
+      <td>35.497670</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>54</td>
+      <td>248.0</td>
+      <td>224.251473</td>
+      <td>240.0</td>
+      <td>144.0</td>
+      <td>29.542436</td>
+      <td>114144.0</td>
+      <td>872.755534</td>
+      <td>221</td>
+      <td>215</td>
+      <td>...</td>
+      <td>0</td>
+      <td>80.826651</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.327038</td>
+      <td>-0.945011</td>
+      <td>0.945011</td>
+      <td>0.327038</td>
+      <td>37.923490</td>
+      <td>43.556039</td>
+    </tr>
+    <tr>
+      <th>54</th>
+      <td>55</td>
+      <td>248.0</td>
+      <td>200.145985</td>
+      <td>208.0</td>
+      <td>128.0</td>
+      <td>27.374216</td>
+      <td>164520.0</td>
+      <td>749.347724</td>
+      <td>161</td>
+      <td>217</td>
+      <td>...</td>
+      <td>0</td>
+      <td>108.157714</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.119267</td>
+      <td>-0.992862</td>
+      <td>0.992862</td>
+      <td>0.119267</td>
+      <td>41.764270</td>
+      <td>104.664511</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>56</td>
+      <td>232.0</td>
+      <td>195.920949</td>
+      <td>200.0</td>
+      <td>128.0</td>
+      <td>25.860310</td>
+      <td>49568.0</td>
+      <td>668.755631</td>
+      <td>131</td>
+      <td>224</td>
+      <td>...</td>
+      <td>0</td>
+      <td>56.597713</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.998990</td>
+      <td>-0.044926</td>
+      <td>0.044926</td>
+      <td>0.998990</td>
+      <td>15.823917</td>
+      <td>25.661186</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>57</td>
+      <td>224.0</td>
+      <td>188.994924</td>
+      <td>192.0</td>
+      <td>136.0</td>
+      <td>24.472912</td>
+      <td>37232.0</td>
+      <td>598.923443</td>
+      <td>40</td>
+      <td>232</td>
+      <td>...</td>
+      <td>0</td>
+      <td>50.123958</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>0.989524</td>
+      <td>0.144369</td>
+      <td>-0.144369</td>
+      <td>0.989524</td>
+      <td>11.684511</td>
+      <td>21.090000</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>58</td>
+      <td>216.0</td>
+      <td>184.761905</td>
+      <td>192.0</td>
+      <td>136.0</td>
+      <td>23.153557</td>
+      <td>15520.0</td>
+      <td>536.087206</td>
+      <td>118</td>
+      <td>249</td>
+      <td>...</td>
+      <td>21</td>
+      <td>44.856208</td>
+      <td>21.0</td>
+      <td>0.468163</td>
+      <td>0.006588</td>
+      <td>-0.999978</td>
+      <td>0.999978</td>
+      <td>0.006588</td>
+      <td>1.724907</td>
+      <td>28.033313</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>59</td>
+      <td>248.0</td>
+      <td>191.314286</td>
+      <td>184.0</td>
+      <td>144.0</td>
+      <td>30.233652</td>
+      <td>13392.0</td>
+      <td>914.073706</td>
+      <td>171</td>
+      <td>249</td>
+      <td>...</td>
+      <td>17</td>
+      <td>37.271733</td>
+      <td>17.0</td>
+      <td>0.456110</td>
+      <td>-0.007722</td>
+      <td>-0.999970</td>
+      <td>0.999970</td>
+      <td>-0.007722</td>
+      <td>1.757346</td>
+      <td>18.883470</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>60</td>
+      <td>248.0</td>
+      <td>204.600000</td>
+      <td>208.0</td>
+      <td>152.0</td>
+      <td>29.429446</td>
+      <td>8184.0</td>
+      <td>866.092308</td>
+      <td>228</td>
+      <td>250</td>
+      <td>...</td>
+      <td>12</td>
+      <td>27.005740</td>
+      <td>12.0</td>
+      <td>0.444350</td>
+      <td>-0.034966</td>
+      <td>-0.999388</td>
+      <td>0.999388</td>
+      <td>-0.034966</td>
+      <td>1.150116</td>
+      <td>9.234259</td>
+    </tr>
+  </tbody>
+</table>
+<p>60 rows × 33 columns</p>
+</div></div></div>
+</div>
+<p>These are all columns that are available:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">statistics</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;label&#39;, &#39;maximum&#39;, &#39;mean&#39;, &#39;median&#39;, &#39;minimum&#39;, &#39;sigma&#39;, &#39;sum&#39;,
+       &#39;variance&#39;, &#39;bbox_0&#39;, &#39;bbox_1&#39;, &#39;bbox_2&#39;, &#39;bbox_3&#39;, &#39;centroid_0&#39;,
+       &#39;centroid_1&#39;, &#39;elongation&#39;, &#39;feret_diameter&#39;, &#39;flatness&#39;, &#39;roundness&#39;,
+       &#39;equivalent_ellipsoid_diameter_0&#39;, &#39;equivalent_ellipsoid_diameter_1&#39;,
+       &#39;equivalent_spherical_perimeter&#39;, &#39;equivalent_spherical_radius&#39;,
+       &#39;number_of_pixels&#39;, &#39;number_of_pixels_on_border&#39;, &#39;perimeter&#39;,
+       &#39;perimeter_on_border&#39;, &#39;perimeter_on_border_ratio&#39;, &#39;principal_axes0&#39;,
+       &#39;principal_axes1&#39;, &#39;principal_axes2&#39;, &#39;principal_axes3&#39;,
+       &#39;principal_moments0&#39;, &#39;principal_moments1&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>label</th>
+      <th>maximum</th>
+      <th>mean</th>
+      <th>median</th>
+      <th>minimum</th>
+      <th>sigma</th>
+      <th>sum</th>
+      <th>variance</th>
+      <th>bbox_0</th>
+      <th>bbox_1</th>
+      <th>...</th>
+      <th>number_of_pixels_on_border</th>
+      <th>perimeter</th>
+      <th>perimeter_on_border</th>
+      <th>perimeter_on_border_ratio</th>
+      <th>principal_axes0</th>
+      <th>principal_axes1</th>
+      <th>principal_axes2</th>
+      <th>principal_axes3</th>
+      <th>principal_moments0</th>
+      <th>principal_moments1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>60.000000</td>
+      <td>60.000000</td>
+      <td>60.000000</td>
+      <td>60.000000</td>
+      <td>60.000000</td>
+      <td>60.000000</td>
+      <td>60.000000</td>
+      <td>60.000000</td>
+      <td>60.000000</td>
+      <td>60.000000</td>
+      <td>...</td>
+      <td>60.000000</td>
+      <td>60.000000</td>
+      <td>60.000000</td>
+      <td>60.000000</td>
+      <td>60.000000</td>
+      <td>60.000000</td>
+      <td>60.000000</td>
+      <td>60.000000</td>
+      <td>60.000000</td>
+      <td>60.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>30.500000</td>
+      <td>236.000000</td>
+      <td>194.966598</td>
+      <td>200.800000</td>
+      <td>130.000000</td>
+      <td>26.069709</td>
+      <td>71696.933333</td>
+      <td>693.962389</td>
+      <td>123.516667</td>
+      <td>110.200000</td>
+      <td>...</td>
+      <td>5.683333</td>
+      <td>107.224145</td>
+      <td>5.700000</td>
+      <td>0.089574</td>
+      <td>0.696028</td>
+      <td>-0.138186</td>
+      <td>0.138186</td>
+      <td>0.696028</td>
+      <td>104.628848</td>
+      <td>134.931776</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>17.464249</td>
+      <td>14.012101</td>
+      <td>16.394414</td>
+      <td>19.579304</td>
+      <td>7.456086</td>
+      <td>3.817798</td>
+      <td>41465.329504</td>
+      <td>183.657670</td>
+      <td>81.460709</td>
+      <td>76.672493</td>
+      <td>...</td>
+      <td>10.255204</td>
+      <td>309.846236</td>
+      <td>10.310929</td>
+      <td>0.161164</td>
+      <td>0.476871</td>
+      <td>0.526743</td>
+      <td>0.526743</td>
+      <td>0.476871</td>
+      <td>651.200133</td>
+      <td>712.958883</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.000000</td>
+      <td>176.000000</td>
+      <td>137.526132</td>
+      <td>136.000000</td>
+      <td>112.000000</td>
+      <td>13.360739</td>
+      <td>2576.000000</td>
+      <td>178.509343</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>14.843629</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>-0.653319</td>
+      <td>-0.999978</td>
+      <td>-0.653870</td>
+      <td>-0.653319</td>
+      <td>1.046852</td>
+      <td>1.755916</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>15.750000</td>
+      <td>232.000000</td>
+      <td>188.713774</td>
+      <td>192.000000</td>
+      <td>128.000000</td>
+      <td>24.472535</td>
+      <td>40604.000000</td>
+      <td>598.904954</td>
+      <td>52.500000</td>
+      <td>42.750000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>53.221995</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.649215</td>
+      <td>-0.663517</td>
+      <td>-0.279282</td>
+      <td>0.649215</td>
+      <td>12.841678</td>
+      <td>22.351873</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>30.500000</td>
+      <td>240.000000</td>
+      <td>195.937410</td>
+      <td>200.000000</td>
+      <td>128.000000</td>
+      <td>26.409917</td>
+      <td>71016.000000</td>
+      <td>697.484271</td>
+      <td>127.000000</td>
+      <td>108.500000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>68.482144</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.952820</td>
+      <td>0.026675</td>
+      <td>-0.026675</td>
+      <td>0.952820</td>
+      <td>18.738377</td>
+      <td>35.597627</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>45.250000</td>
+      <td>248.000000</td>
+      <td>204.627083</td>
+      <td>210.000000</td>
+      <td>136.000000</td>
+      <td>28.649791</td>
+      <td>99386.000000</td>
+      <td>820.810634</td>
+      <td>201.500000</td>
+      <td>168.750000</td>
+      <td>...</td>
+      <td>11.250000</td>
+      <td>83.278130</td>
+      <td>11.250000</td>
+      <td>0.142182</td>
+      <td>0.989550</td>
+      <td>0.279282</td>
+      <td>0.663517</td>
+      <td>0.989550</td>
+      <td>29.329379</td>
+      <td>56.857478</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>60.000000</td>
+      <td>248.000000</td>
+      <td>229.430657</td>
+      <td>248.000000</td>
+      <td>152.000000</td>
+      <td>32.682072</td>
+      <td>172424.000000</td>
+      <td>1068.117840</td>
+      <td>251.000000</td>
+      <td>250.000000</td>
+      <td>...</td>
+      <td>39.000000</td>
+      <td>2461.579651</td>
+      <td>40.000000</td>
+      <td>0.495128</td>
+      <td>0.999988</td>
+      <td>0.653870</td>
+      <td>0.999978</td>
+      <td>0.999988</td>
+      <td>5063.911496</td>
+      <td>5560.184284</td>
+    </tr>
+  </tbody>
+</table>
+<p>8 rows × 33 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="specific-measures">
+<h2>Specific measures<a class="headerlink" href="#specific-measures" title="Permalink to this headline">#</a></h2>
+<p>SimpleITK offers some non-standard measurements which deserve additional documentation</p>
+<section id="perimeter-on-border-ratio">
+<h3><code class="docutils literal notranslate"><span class="pre">perimeter_on_border_ratio</span></code><a class="headerlink" href="#perimeter-on-border-ratio" title="Permalink to this headline">#</a></h3>
+<p>In this context, the <span class="xref myst">SimpleITK documentation</span> points to a <a class="reference external" href="https://www.insight-journal.org/browse/publication/176">publication</a> which mentiones “‘SizeOnBorder’ is the number of pixels in the objects which are on the border of the image.” While the documentation is wage, the <code class="docutils literal notranslate"><span class="pre">perimeter_on_border_ratio</span></code> may be related.</p>
+<p>First, we check its range on the above example image.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">perimeter_on_border_ratio</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;perimeter_on_border_ratio&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">perimeter_on_border_ratio</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">perimeter_on_border_ratio</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 0.4951280471249033)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, we visualize the measurement in space.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">perimeter_on_border_ratio_map</span> <span class="o">=</span> <span class="n">cle</span><span class="o">.</span><span class="n">replace_intensities</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">perimeter_on_border_ratio</span><span class="p">)</span>
+<span class="n">perimeter_on_border_ratio_map</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<tr>
+<td>
+<img src="data:image/png;base64,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"></img>
+</td>
+<td style="text-align: center; vertical-align: top;">
+<b><a href="https://github.com/clEsperanto/pyclesperanto_prototype" target="_blank">cle._</a> image</b><br/>
+<table>
+<tr><td>shape</td><td>(254,&nbsp;256)</td></tr>
+<tr><td>dtype</td><td>float32</td></tr>
+<tr><td>size</td><td>254.0 kB</td></tr>
+<tr><td>min</td><td>0.0</td></tr><tr><td>max</td><td>0.49512804</td></tr>
+</table>
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIEAAABWCAYAAADom/XHAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjUuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8qNh9FAAAACXBIWXMAAAsTAAALEwEAmpwYAAABG0lEQVR4nO3dwW3CQBBA0b9RSoBztkwaowsognPSw9ICkU1IlPfOo9EcvmzfPNZa8b+9vfoAXk8EiAARkAhIBCQCEgGJgOp964LD4bDmnDucwl6u1+vXWuv46PzmCOacXS6XrWvY0Rjj9p15rwOeE8E8nZun8zNW8wSeBIgAEZAISAQkAhIBiYBEQCIgEZAISAQkAhIBiYBEQCIgEZAISAQkAhIBiYBEQCIgEZAISAQkAhIBiYBEQCIgEZAISAQkAhIBiYBEQCIgEZAISAQkAhIBiYBEQCIgEZAISAQkAhIBiYBEQCIgEZAI6Aci8PPs32+stbYtGOOzuu1zDjv5WGsdHx3eHAF/n28CRIAISAQkAhIBiYBEQCKgugP9JR+BQlNLMgAAAABJRU5ErkJggg=="></img>
+</td>
+</tr>
+</table></div></div>
+</div>
+<p>The visualization substantiates our presumption that the <code class="docutils literal notranslate"><span class="pre">perimeter_on_border_ratio</span></code> indeed is related to the amount the object touches the image border.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./day2f_feature_extraction"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="quantitative_measurements.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Quantitative image analysis</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="statistics_with_pyclesperanto.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Basic statistics with pyclesperanto</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Marcelo Zoccoler, Johannes Müller, Till Korten, Robert Haase, DFG Cluster of Excellence "Physics of Life", TU Dresden<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

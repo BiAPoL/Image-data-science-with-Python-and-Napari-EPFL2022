@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Generating Jupyter Notebooks from the Napari Assistant &#8212; Image data science with Python and Napari @EPFL</title>
+    <title>Basic statistics with pyclesperanto &#8212; Image data science with Python and Napari @EPFL</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Working with images" href="01_Working_with_images.html" />
-    <link rel="prev" title="The Napari Assistant" href="napari-assistant.html" />
+    <link rel="next" title="Day 3: Machine learning and introduction to deep learning" href="../day3/Readme.html" />
+    <link rel="prev" title="Statistics using SimpleITK" href="statistics_with_simpleitk.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -257,33 +257,33 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul class="current">
-   <li class="toctree-l2 current active has-children">
-    <a class="reference internal" href="readme.html">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day2a_Working_with_Images/readme.html">
      Opening and Displaying with Images in Python
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
     <label for="toctree-checkbox-6">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul class="current">
+    <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="napari-assistant.html">
+      <a class="reference internal" href="../day2a_Working_with_Images/napari-assistant.html">
        The Napari Assistant
       </a>
      </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day2a_Working_with_Images/export_notebooks.html">
        Generating Jupyter Notebooks from the Napari Assistant
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="01_Working_with_images.html">
+      <a class="reference internal" href="../day2a_Working_with_Images/01_Working_with_images.html">
        Working with images
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="04_Image_file_formats.html">
+      <a class="reference internal" href="../day2a_Working_with_Images/04_Image_file_formats.html">
        Image file formats
       </a>
      </li>
@@ -333,28 +333,28 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
     </ul>
    </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../day2f_feature_extraction/readme.html">
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="readme.html">
      Feature extraction
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
     <label for="toctree-checkbox-9">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul>
+    <ul class="current">
      <li class="toctree-l3">
-      <a class="reference internal" href="../day2f_feature_extraction/quantitative_measurements.html">
+      <a class="reference internal" href="quantitative_measurements.html">
        Quantitative image analysis
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../day2f_feature_extraction/statistics_with_simpleitk.html">
+      <a class="reference internal" href="statistics_with_simpleitk.html">
        Statistics using SimpleITK
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../day2f_feature_extraction/statistics_with_pyclesperanto.html">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
        Basic statistics with pyclesperanto
       </a>
      </li>
@@ -587,6 +587,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/main?urlpath=tree/day2f_feature_extraction/statistics_with_pyclesperanto.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -626,7 +655,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/issues/new?title=Issue%20on%20page%20%2Fday2a_Working_with_Images/export_notebooks.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/issues/new?title=Issue%20on%20page%20%2Fday2f_feature_extraction/statistics_with_pyclesperanto.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -654,7 +683,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/day2a_Working_with_Images/export_notebooks.md"
+        <a href="../_sources/day2f_feature_extraction/statistics_with_pyclesperanto.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -665,7 +694,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -691,23 +720,60 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deriving-basic-statistics-of-labelled-objects">
+   Deriving basic statistics of labelled objects
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Generating Jupyter Notebooks from the Napari Assistant</h1>
+                <h1>Basic statistics with pyclesperanto</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deriving-basic-statistics-of-labelled-objects">
+   Deriving basic statistics of labelled objects
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -715,33 +781,626 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="generating-jupyter-notebooks-from-the-napari-assistant">
-<h1>Generating Jupyter Notebooks from the Napari Assistant<a class="headerlink" href="#generating-jupyter-notebooks-from-the-napari-assistant" title="Permalink to this headline">#</a></h1>
-<p>After setting  up a workflow using the Napari Assistant, we can export Python code, e.g. as Jupyter Notebook.</p>
-<p>This tutorial is also available as video <span class="xref myst">export_notebooks.mp4</span></p>
-<p>In the Assistant panel, click on the <code class="docutils literal notranslate"><span class="pre">Generate</span> <span class="pre">Code...</span></code> button and the <code class="docutils literal notranslate"><span class="pre">Export</span> <span class="pre">Jupyter</span> <span class="pre">Notebook</span> <span class="pre">using</span> <span class="pre">Napari</span></code> menu.</p>
-<p><img alt="" src="../_images/export_notebooks01.jpg" /></p>
-<p>Jupyter lab will open and ask you to select a Kernel. Keep the default option and click on <code class="docutils literal notranslate"><span class="pre">Select</span></code>.</p>
-<p><img alt="" src="../_images/export_notebooks02.jpg" /></p>
-<p>When executing the notebook, errors may appear, e.g. when loading the data.</p>
-<p><img alt="" src="../_images/export_notebooks03.jpg" /></p>
-<p>Scroll down to the end of the error message to read what didn’t work.</p>
-<p><img alt="" src="../_images/export_notebooks04.jpg" /></p>
-<p>Scoll up again to the notebook cell that didn’t work and modify the code so that it uses the <code class="docutils literal notranslate"><span class="pre">imread</span></code> function to load the image from disc.</p>
-<p><img alt="" src="../_images/export_notebooks05.jpg" /></p>
-<p>In case you don’t have the <code class="docutils literal notranslate"><span class="pre">nuclei</span></code> image saved on disc already, use the menu <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Save</span> <span class="pre">current</span> <span class="pre">Layer(s)</span></code> to save the <code class="docutils literal notranslate"><span class="pre">nuclei</span></code> layer as <code class="docutils literal notranslate"><span class="pre">.tif</span></code> file.</p>
-<p><img alt="" src="../_images/export_notebooks06.jpg" /></p>
-<p>Afterwards, rerun the notebook and inspect the result. The Napari viewer that opened in the background will also be shown within the notebook.</p>
-<p><img alt="" src="../_images/export_notebooks07.jpg" /></p>
-<p>If you also want to view the raw image data together with the segmentation result, add these lines to your code:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">viewer</span><span class="o">.</span><span class="n">add_image</span><span class="p">(</span><span class="n">image0_n</span><span class="p">)</span>
-<span class="n">napari</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">nbscreenshot</span><span class="p">(</span><span class="n">viewer</span><span class="p">)</span>
+  <section class="tex2jax_ignore mathjax_ignore" id="basic-statistics-with-pyclesperanto">
+<h1>Basic statistics with pyclesperanto<a class="headerlink" href="#basic-statistics-with-pyclesperanto" title="Permalink to this headline">#</a></h1>
+<p>A common use case for image processing in the biology context is deriving statistics of segmented objects. clEsperanto offers a function for that: <a class="reference external" href="https://clij.github.io/clij2-docs/reference_statisticsOfLabelledPixels">statistics_of_labelled_pixels</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyclesperanto_prototype</span> <span class="k">as</span> <span class="nn">cle</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">skimage.io</span> <span class="kn">import</span> <span class="n">imread</span><span class="p">,</span> <span class="n">imsave</span><span class="p">,</span> <span class="n">imshow</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># initialize GPU</span>
+<span class="n">cle</span><span class="o">.</span><span class="n">select_device</span><span class="p">(</span><span class="s2">&quot;RTX&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><img alt="" src="../_images/export_notebooks08.jpg" /></p>
-<p>Rerun the notebook, or modify the order of layers manually in the Napari viewer. At the end it should look like this.</p>
-<p><img alt="" src="../_images/export_notebooks09.jpg" /></p>
-<p>Voila! You have now generated a Jupyter Notebook from a Napari Assistant workflow. This notebook documents your work reproducibly and can be shared with others.</p>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Apple M1 Max on Platform: Apple (2 refs)&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load data</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">imread</span><span class="p">(</span><span class="s1">&#39;../../data/blobs.tif&#39;</span><span class="p">)</span>
+
+<span class="c1"># segment the image</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">cle</span><span class="o">.</span><span class="n">voronoi_otsu_labeling</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">spot_sigma</span><span class="o">=</span><span class="mf">3.5</span><span class="p">)</span>
+<span class="n">cle</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/statistics_with_pyclesperanto_2_0.png" src="../_images/statistics_with_pyclesperanto_2_0.png" />
+</div>
+</div>
+<section id="deriving-basic-statistics-of-labelled-objects">
+<h2>Deriving basic statistics of labelled objects<a class="headerlink" href="#deriving-basic-statistics-of-labelled-objects" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">statistics</span> <span class="o">=</span> <span class="n">cle</span><span class="o">.</span><span class="n">statistics_of_labelled_pixels</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+<span class="n">statistics</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;label&#39;, &#39;original_label&#39;, &#39;bbox_min_x&#39;, &#39;bbox_min_y&#39;, &#39;bbox_min_z&#39;, &#39;bbox_max_x&#39;, &#39;bbox_max_y&#39;, &#39;bbox_max_z&#39;, &#39;bbox_width&#39;, &#39;bbox_height&#39;, &#39;bbox_depth&#39;, &#39;min_intensity&#39;, &#39;max_intensity&#39;, &#39;sum_intensity&#39;, &#39;area&#39;, &#39;mean_intensity&#39;, &#39;sum_intensity_times_x&#39;, &#39;mass_center_x&#39;, &#39;sum_intensity_times_y&#39;, &#39;mass_center_y&#39;, &#39;sum_intensity_times_z&#39;, &#39;mass_center_z&#39;, &#39;sum_x&#39;, &#39;centroid_x&#39;, &#39;sum_y&#39;, &#39;centroid_y&#39;, &#39;sum_z&#39;, &#39;centroid_z&#39;, &#39;sum_distance_to_centroid&#39;, &#39;mean_distance_to_centroid&#39;, &#39;sum_distance_to_mass_center&#39;, &#39;mean_distance_to_mass_center&#39;, &#39;standard_deviation_intensity&#39;, &#39;max_distance_to_centroid&#39;, &#39;max_distance_to_mass_center&#39;, &#39;mean_max_distance_to_centroid_ratio&#39;, &#39;mean_max_distance_to_mass_center_ratio&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use <a class="reference external" href="https://pandas.pydata.org/">pandas</a> to process that kind of tabular data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">statistics</span><span class="p">)</span>
+<span class="n">table</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>label</th>
+      <th>original_label</th>
+      <th>bbox_min_x</th>
+      <th>bbox_min_y</th>
+      <th>bbox_min_z</th>
+      <th>bbox_max_x</th>
+      <th>bbox_max_y</th>
+      <th>bbox_max_z</th>
+      <th>bbox_width</th>
+      <th>bbox_height</th>
+      <th>...</th>
+      <th>centroid_z</th>
+      <th>sum_distance_to_centroid</th>
+      <th>mean_distance_to_centroid</th>
+      <th>sum_distance_to_mass_center</th>
+      <th>mean_distance_to_mass_center</th>
+      <th>standard_deviation_intensity</th>
+      <th>max_distance_to_centroid</th>
+      <th>max_distance_to_mass_center</th>
+      <th>mean_max_distance_to_centroid_ratio</th>
+      <th>mean_max_distance_to_mass_center_ratio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>81.0</td>
+      <td>0.0</td>
+      <td>19.0</td>
+      <td>114.0</td>
+      <td>0.0</td>
+      <td>20.0</td>
+      <td>34.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>5287.089844</td>
+      <td>9.475071</td>
+      <td>5299.439941</td>
+      <td>9.497204</td>
+      <td>37.766109</td>
+      <td>17.577013</td>
+      <td>17.626616</td>
+      <td>1.855080</td>
+      <td>1.855979</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>2</td>
+      <td>0.0</td>
+      <td>129.0</td>
+      <td>0.0</td>
+      <td>16.0</td>
+      <td>150.0</td>
+      <td>0.0</td>
+      <td>17.0</td>
+      <td>22.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>2064.469482</td>
+      <td>6.702823</td>
+      <td>2064.989746</td>
+      <td>6.704512</td>
+      <td>37.528027</td>
+      <td>11.395502</td>
+      <td>11.287270</td>
+      <td>1.700105</td>
+      <td>1.683533</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>3</td>
+      <td>3.0</td>
+      <td>39.0</td>
+      <td>0.0</td>
+      <td>13.0</td>
+      <td>51.0</td>
+      <td>0.0</td>
+      <td>11.0</td>
+      <td>13.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>463.362244</td>
+      <td>4.064581</td>
+      <td>463.446014</td>
+      <td>4.065316</td>
+      <td>26.381859</td>
+      <td>6.690430</td>
+      <td>6.719399</td>
+      <td>1.646032</td>
+      <td>1.652860</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>4</td>
+      <td>5.0</td>
+      <td>156.0</td>
+      <td>0.0</td>
+      <td>27.0</td>
+      <td>181.0</td>
+      <td>0.0</td>
+      <td>23.0</td>
+      <td>26.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>3969.405273</td>
+      <td>8.304195</td>
+      <td>3969.532715</td>
+      <td>8.304461</td>
+      <td>43.438278</td>
+      <td>13.714880</td>
+      <td>13.820534</td>
+      <td>1.651560</td>
+      <td>1.664230</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>5</td>
+      <td>10.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>35.0</td>
+      <td>29.0</td>
+      <td>0.0</td>
+      <td>26.0</td>
+      <td>30.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>4421.953613</td>
+      <td>9.136268</td>
+      <td>4421.724121</td>
+      <td>9.135794</td>
+      <td>37.722134</td>
+      <td>20.016039</td>
+      <td>19.977444</td>
+      <td>2.190833</td>
+      <td>2.186722</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>57</td>
+      <td>57</td>
+      <td>236.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>255.0</td>
+      <td>29.0</td>
+      <td>0.0</td>
+      <td>20.0</td>
+      <td>30.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>4585.168457</td>
+      <td>8.903239</td>
+      <td>4598.605957</td>
+      <td>8.929332</td>
+      <td>40.097881</td>
+      <td>16.315195</td>
+      <td>15.981338</td>
+      <td>1.832501</td>
+      <td>1.789757</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>58</td>
+      <td>58</td>
+      <td>244.0</td>
+      <td>94.0</td>
+      <td>0.0</td>
+      <td>255.0</td>
+      <td>115.0</td>
+      <td>0.0</td>
+      <td>12.0</td>
+      <td>22.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>1184.635986</td>
+      <td>5.807039</td>
+      <td>1188.550781</td>
+      <td>5.826229</td>
+      <td>40.151653</td>
+      <td>12.327801</td>
+      <td>12.012736</td>
+      <td>2.122906</td>
+      <td>2.061837</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>59</td>
+      <td>59</td>
+      <td>250.0</td>
+      <td>123.0</td>
+      <td>0.0</td>
+      <td>255.0</td>
+      <td>127.0</td>
+      <td>0.0</td>
+      <td>6.0</td>
+      <td>5.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>53.630829</td>
+      <td>1.986327</td>
+      <td>53.704212</td>
+      <td>1.989045</td>
+      <td>18.981472</td>
+      <td>3.287124</td>
+      <td>3.216963</td>
+      <td>1.654876</td>
+      <td>1.617341</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>60</td>
+      <td>60</td>
+      <td>233.0</td>
+      <td>136.0</td>
+      <td>0.0</td>
+      <td>255.0</td>
+      <td>167.0</td>
+      <td>0.0</td>
+      <td>23.0</td>
+      <td>32.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>4798.240234</td>
+      <td>9.174456</td>
+      <td>4810.059082</td>
+      <td>9.197054</td>
+      <td>41.817959</td>
+      <td>19.726730</td>
+      <td>19.146832</td>
+      <td>2.150180</td>
+      <td>2.081844</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>61</td>
+      <td>61</td>
+      <td>250.0</td>
+      <td>192.0</td>
+      <td>0.0</td>
+      <td>255.0</td>
+      <td>209.0</td>
+      <td>0.0</td>
+      <td>6.0</td>
+      <td>18.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>359.631714</td>
+      <td>4.230961</td>
+      <td>360.904083</td>
+      <td>4.245930</td>
+      <td>43.186157</td>
+      <td>8.888371</td>
+      <td>8.803941</td>
+      <td>2.100792</td>
+      <td>2.073501</td>
+    </tr>
+  </tbody>
+</table>
+<p>61 rows × 37 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">table</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>label</th>
+      <th>original_label</th>
+      <th>bbox_min_x</th>
+      <th>bbox_min_y</th>
+      <th>bbox_min_z</th>
+      <th>bbox_max_x</th>
+      <th>bbox_max_y</th>
+      <th>bbox_max_z</th>
+      <th>bbox_width</th>
+      <th>bbox_height</th>
+      <th>...</th>
+      <th>centroid_z</th>
+      <th>sum_distance_to_centroid</th>
+      <th>mean_distance_to_centroid</th>
+      <th>sum_distance_to_mass_center</th>
+      <th>mean_distance_to_mass_center</th>
+      <th>standard_deviation_intensity</th>
+      <th>max_distance_to_centroid</th>
+      <th>max_distance_to_mass_center</th>
+      <th>mean_max_distance_to_centroid_ratio</th>
+      <th>mean_max_distance_to_mass_center_ratio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>61.000000</td>
+      <td>61.000000</td>
+      <td>61.000000</td>
+      <td>61.000000</td>
+      <td>61.0</td>
+      <td>61.000000</td>
+      <td>61.000000</td>
+      <td>61.0</td>
+      <td>61.000000</td>
+      <td>61.000000</td>
+      <td>...</td>
+      <td>61.0</td>
+      <td>61.000000</td>
+      <td>61.000000</td>
+      <td>61.000000</td>
+      <td>61.000000</td>
+      <td>61.000000</td>
+      <td>61.000000</td>
+      <td>61.000000</td>
+      <td>61.000000</td>
+      <td>61.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>31.000000</td>
+      <td>31.000000</td>
+      <td>128.245895</td>
+      <td>113.409836</td>
+      <td>0.0</td>
+      <td>148.836060</td>
+      <td>135.672134</td>
+      <td>0.0</td>
+      <td>21.590164</td>
+      <td>23.262295</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>3504.359375</td>
+      <td>7.510857</td>
+      <td>3505.712891</td>
+      <td>7.514835</td>
+      <td>38.998928</td>
+      <td>13.153982</td>
+      <td>13.143246</td>
+      <td>1.757816</td>
+      <td>1.754179</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>17.752934</td>
+      <td>17.752934</td>
+      <td>77.687981</td>
+      <td>74.343658</td>
+      <td>0.0</td>
+      <td>76.843819</td>
+      <td>73.211273</td>
+      <td>0.0</td>
+      <td>6.502248</td>
+      <td>8.152508</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>2726.386963</td>
+      <td>2.190415</td>
+      <td>2726.795654</td>
+      <td>2.189549</td>
+      <td>6.226861</td>
+      <td>4.019384</td>
+      <td>4.042030</td>
+      <td>0.184103</td>
+      <td>0.177547</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>13.000000</td>
+      <td>23.000000</td>
+      <td>0.0</td>
+      <td>6.000000</td>
+      <td>5.000000</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>53.630829</td>
+      <td>1.986327</td>
+      <td>53.704212</td>
+      <td>1.989045</td>
+      <td>18.981472</td>
+      <td>3.287124</td>
+      <td>3.216963</td>
+      <td>1.556777</td>
+      <td>1.558537</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>16.000000</td>
+      <td>16.000000</td>
+      <td>58.000000</td>
+      <td>58.000000</td>
+      <td>0.0</td>
+      <td>75.000000</td>
+      <td>75.000000</td>
+      <td>0.0</td>
+      <td>17.000000</td>
+      <td>20.000000</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>1617.387451</td>
+      <td>6.126468</td>
+      <td>1617.882080</td>
+      <td>6.128341</td>
+      <td>36.568157</td>
+      <td>10.284315</td>
+      <td>10.368382</td>
+      <td>1.635635</td>
+      <td>1.617460</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>31.000000</td>
+      <td>31.000000</td>
+      <td>129.000000</td>
+      <td>113.000000</td>
+      <td>0.0</td>
+      <td>148.000000</td>
+      <td>136.000000</td>
+      <td>0.0</td>
+      <td>21.000000</td>
+      <td>23.000000</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>3057.676758</td>
+      <td>7.606161</td>
+      <td>3057.704346</td>
+      <td>7.606230</td>
+      <td>39.194824</td>
+      <td>12.852437</td>
+      <td>12.946156</td>
+      <td>1.700105</td>
+      <td>1.697701</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>46.000000</td>
+      <td>46.000000</td>
+      <td>199.000000</td>
+      <td>166.000000</td>
+      <td>0.0</td>
+      <td>212.000000</td>
+      <td>196.000000</td>
+      <td>0.0</td>
+      <td>25.000000</td>
+      <td>28.000000</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>4890.122070</td>
+      <td>9.136268</td>
+      <td>4891.035156</td>
+      <td>9.135794</td>
+      <td>43.016975</td>
+      <td>15.419342</td>
+      <td>15.526697</td>
+      <td>1.791790</td>
+      <td>1.802883</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>61.000000</td>
+      <td>61.000000</td>
+      <td>250.000000</td>
+      <td>249.000000</td>
+      <td>0.0</td>
+      <td>255.000000</td>
+      <td>253.000000</td>
+      <td>0.0</td>
+      <td>42.000000</td>
+      <td>52.000000</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>13825.639648</td>
+      <td>13.825640</td>
+      <td>13824.682617</td>
+      <td>13.824682</td>
+      <td>51.311035</td>
+      <td>26.949856</td>
+      <td>27.543896</td>
+      <td>2.234677</td>
+      <td>2.248647</td>
+    </tr>
+  </tbody>
+</table>
+<p>8 rows × 37 columns</p>
+</div></div></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -757,7 +1416,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./day2a_Working_with_Images"
+            path: "./day2f_feature_extraction"
         },
         predefinedOutput: true
     }
@@ -771,17 +1430,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="napari-assistant.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="statistics_with_simpleitk.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">The Napari Assistant</p>
+            <p class="prev-next-title">Statistics using SimpleITK</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="01_Working_with_images.html" title="next page">
+    <a class='right-next' id="next-link" href="../day3/Readme.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Working with images</p>
+        <p class="prev-next-title">Day 3: Machine learning and introduction to deep learning</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

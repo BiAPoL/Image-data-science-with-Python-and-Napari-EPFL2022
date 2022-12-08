@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Feature extraction &#8212; Image data science with Python and Napari @EPFL</title>
+    <title>Quantitative image analysis &#8212; Image data science with Python and Napari @EPFL</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Day 3: Machine learning and introduction to deep learning" href="../day3/Readme.html" />
+    <link rel="next" title="Statistics using SimpleITK" href="statistics_with_simpleitk.html" />
     <link rel="prev" title="Feature extraction" href="readme.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -345,7 +345,17 @@ const thebe_selector_output = ".output, .cell_output"
     <ul class="current">
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
-       Feature extraction
+       Quantitative image analysis
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="statistics_with_simpleitk.html">
+       Statistics using SimpleITK
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="statistics_with_pyclesperanto.html">
+       Basic statistics with pyclesperanto
       </a>
      </li>
     </ul>
@@ -585,7 +595,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/main?urlpath=tree/day2f_feature_extraction/01_Feature_extraction.ipynb"
+        <a href="https://mybinder.org/v2/gh/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/main?urlpath=tree/day2f_feature_extraction/quantitative_measurements.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -645,7 +655,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/issues/new?title=Issue%20on%20page%20%2Fday2f_feature_extraction/01_Feature_extraction.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/issues/new?title=Issue%20on%20page%20%2Fday2f_feature_extraction/quantitative_measurements.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -673,7 +683,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/day2f_feature_extraction/01_Feature_extraction.ipynb"
+        <a href="../_sources/day2f_feature_extraction/quantitative_measurements.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -732,49 +742,19 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#different-types-of-features">
-   Different types of features
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Quantitative image analysis
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#working-with-dictionaries">
-   Working with dictionaries
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#measurements-region-properties">
+   Measurements / region properties
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#recap-dictionaries">
-   Recap: Dictionaries
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercises">
    Exercises
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-1">
-   Exercise 1
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-2">
-   Exercise 2
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-3">
-   Exercise 3
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-4">
-   Exercise 4
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-5">
-   Exercise 5
   </a>
  </li>
 </ul>
@@ -786,7 +766,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Feature extraction</h1>
+                <h1>Quantitative image analysis</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -796,49 +776,19 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#different-types-of-features">
-   Different types of features
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Quantitative image analysis
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#working-with-dictionaries">
-   Working with dictionaries
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#measurements-region-properties">
+   Measurements / region properties
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#recap-dictionaries">
-   Recap: Dictionaries
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercises">
    Exercises
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-1">
-   Exercise 1
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-2">
-   Exercise 2
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-3">
-   Exercise 3
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-4">
-   Exercise 4
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-5">
-   Exercise 5
   </a>
  </li>
 </ul>
@@ -851,106 +801,298 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="feature-extraction">
-<h1>Feature extraction<a class="headerlink" href="#feature-extraction" title="Permalink to this headline">#</a></h1>
-<p>In this notebook, you will create an instance segmentation of biological data and extract quantitiative features from this data with the <a class="reference external" href="https://scikit-image.org/docs/dev/api/skimage.measure#skimage.measure.regionprops_table"><code class="docutils literal notranslate"><span class="pre">regionprops_table()</span></code> function</a> from scikit-image.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">data</span><span class="p">,</span> <span class="n">filters</span><span class="p">,</span> <span class="n">measure</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="different-types-of-features">
-<h2>Different types of features<a class="headerlink" href="#different-types-of-features" title="Permalink to this headline">#</a></h2>
-<p>As shown in the lecture, features can be grouped in a few general types. Many features tyically belong to one of the following:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="quantitative-image-analysis">
+<h1>Quantitative image analysis<a class="headerlink" href="#quantitative-image-analysis" title="Permalink to this headline">#</a></h1>
+<p>After segmenting and labeling objects in an image, we can measure properties of these objects.</p>
+<p>See also</p>
 <ul class="simple">
-<li><p>Intensity-based features: These are based on the image intensity values in selected areas of interest</p></li>
-<li><p>Shape-based features: These describe the general shape of an object and can be measured independ of the original intensity values</p></li>
-<li><p>Spatial features: These features typically take into account not only the object itself but also its location in the image or with reference to other objects.</p></li>
+<li><p><a class="reference external" href="https://scipy-lectures.org/packages/scikit-image/index.html#measuring-regions-properties">SciPy lecture notes: Measuring region properties</a></p></li>
+<li><p><a class="reference external" href="https://scikit-image.org/docs/stable/auto_examples/segmentation/plot_regionprops.html">Plot regionprops</a></p></li>
 </ul>
+<p>Before we can do measurements, we need an <code class="docutils literal notranslate"><span class="pre">image</span></code> and a corresponding <code class="docutils literal notranslate"><span class="pre">label_image</span></code>. Therefore, we recapitulate filtering, thresholding and labeling:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">skimage.io</span> <span class="kn">import</span> <span class="n">imread</span>
+<span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">filters</span>
+
+<span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">measure</span>
+<span class="kn">from</span> <span class="nn">pyclesperanto_prototype</span> <span class="kn">import</span> <span class="n">imshow</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load image</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">imread</span><span class="p">(</span><span class="s2">&quot;../../data/blobs.tif&quot;</span><span class="p">)</span>
+
+<span class="c1"># denoising</span>
+<span class="n">blurred_image</span> <span class="o">=</span> <span class="n">filters</span><span class="o">.</span><span class="n">gaussian</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># binarization</span>
+<span class="n">threshold</span> <span class="o">=</span> <span class="n">filters</span><span class="o">.</span><span class="n">threshold_otsu</span><span class="p">(</span><span class="n">blurred_image</span><span class="p">)</span>
+<span class="n">thresholded_image</span> <span class="o">=</span> <span class="n">blurred_image</span> <span class="o">&gt;=</span> <span class="n">threshold</span>
+
+<span class="c1"># labeling</span>
+<span class="n">label_image</span> <span class="o">=</span> <span class="n">measure</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="n">thresholded_image</span><span class="p">)</span>
+
+<span class="c1"># visualization</span>
+<span class="n">imshow</span><span class="p">(</span><span class="n">label_image</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/quantitative_measurements_2_0.png" src="../_images/quantitative_measurements_2_0.png" />
+</div>
+</div>
 </section>
-<section id="working-with-dictionaries">
-<h2>Working with dictionaries<a class="headerlink" href="#working-with-dictionaries" title="Permalink to this headline">#</a></h2>
-<p>Measured features of an image are essentially tabular data, which can be handled very efficiently in Python. Tabular data for typical labelled image data looks like this:</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Label</p></th>
-<th class="head"><p>feature 1</p></th>
-<th class="head"><p>feature 2</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>some value</p></td>
-<td><p>some value</p></td>
-</tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td><p>some value</p></td>
-<td><p>some value</p></td>
-</tr>
-<tr class="row-even"><td><p>3</p></td>
-<td><p>some value</p></td>
-<td><p>some value</p></td>
-</tr>
-<tr class="row-odd"><td><p>…</p></td>
-<td><p></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-<p><em>Remember</em>: Labelled images with multiple occurrences of the same type of objects (e.g., cells or nuclei) are the result of an <em>instance segmentation</em> task, whereas a unique label is assigned to every object.</p>
-</section>
-<section id="recap-dictionaries">
-<h2>Recap: Dictionaries<a class="headerlink" href="#recap-dictionaries" title="Permalink to this headline">#</a></h2>
-<p><a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries">Dictionaries in Python</a> are a handy datatype to keep track of mixed data (strings, numbers, etc). They have a <code class="docutils literal notranslate"><span class="pre">key</span></code>-<code class="docutils literal notranslate"><span class="pre">value</span></code> structure and can be created and accessed like this:</p>
+<section class="tex2jax_ignore mathjax_ignore" id="measurements-region-properties">
+<h1>Measurements / region properties<a class="headerlink" href="#measurements-region-properties" title="Permalink to this headline">#</a></h1>
+<p>To read out properties from regions, we use the <a class="reference external" href="https://scikit-image.org/docs/dev/api/skimage.measure.html#skimage.measure.regionprops">regionprops</a> function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="n">data2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Monday&#39;</span><span class="p">,</span> <span class="s1">&#39;Tuesday&#39;</span><span class="p">,</span> <span class="s1">&#39;Wednesday&#39;</span><span class="p">]</span>
-<span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;numbers&#39;</span><span class="p">:</span> <span class="n">data1</span><span class="p">,</span>
-          <span class="s1">&#39;days&#39;</span><span class="p">:</span> <span class="n">data2</span><span class="p">}</span>
-<span class="n">my_dict</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># analyse objects</span>
+<span class="n">properties</span> <span class="o">=</span> <span class="n">measure</span><span class="o">.</span><span class="n">regionprops</span><span class="p">(</span><span class="n">label_image</span><span class="p">,</span> <span class="n">intensity_image</span><span class="o">=</span><span class="n">image</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The results are stored as <code class="docutils literal notranslate"><span class="pre">RegionProps</span></code> objects, which are not very informative:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">properties</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;numbers&#39;: [1, 2, 3], &#39;days&#39;: [&#39;Monday&#39;, &#39;Tuesday&#39;, &#39;Wednesday&#39;]}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;skimage.measure._regionprops.RegionProperties at 0x195f1e6a0&gt;,
+ &lt;skimage.measure._regionprops.RegionProperties at 0x1961f61c0&gt;,
+ &lt;skimage.measure._regionprops.RegionProperties at 0x1961f6040&gt;,
+ &lt;skimage.measure._regionprops.RegionProperties at 0x1961f60a0&gt;,
+ &lt;skimage.measure._regionprops.RegionProperties at 0x110c69310&gt;]
 </pre></div>
 </div>
 </div>
 </div>
+<p>We can reorganize the measurements into a dictionary containing arrays. We introduced them earlier as <a class="reference external" href="https://nbviewer.jupyter.org/github/BiAPoL/Bio-image_Analysis_with_Python/blob/main/python_basics/06_Dictionaries_and_tables.ipynb">tables</a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span><span class="p">[</span><span class="s1">&#39;days&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">statistics</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;area&#39;</span><span class="p">:</span>       <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">area</span>               <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">properties</span><span class="p">],</span>
+    <span class="s1">&#39;mean&#39;</span><span class="p">:</span>       <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">mean_intensity</span>     <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">properties</span><span class="p">],</span>
+    <span class="s1">&#39;major_axis&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">major_axis_length</span>  <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">properties</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">statistics</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Monday&#39;, &#39;Tuesday&#39;, &#39;Wednesday&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;area&#39;: [429,
+  183,
+  658,
+  433,
+  472,
+  280,
+  75,
+  271,
+  227,
+  27,
+  494,
+  649,
+  96,
+  225,
+  448,
+  397,
+  513,
+  423,
+  268,
+  349,
+  158,
+  406,
+  422,
+  254,
+  503,
+  282,
+  675,
+  176,
+  358,
+  542,
+  599,
+  7,
+  635,
+  192,
+  594,
+  19,
+  264,
+  896,
+  473,
+  239,
+  166,
+  408,
+  413,
+  239,
+  374,
+  647,
+  378,
+  577,
+  66,
+  169,
+  467,
+  612,
+  539,
+  203,
+  556,
+  850,
+  278,
+  213,
+  79,
+  88,
+  52,
+  48],
+ &#39;mean&#39;: [191.44055944055944,
+  179.84699453551912,
+  205.6048632218845,
+  217.5150115473441,
+  213.03389830508473,
+  205.65714285714284,
+  164.16,
+  176.0590405904059,
+  189.53303964757708,
+  149.33333333333334,
+  190.0080971659919,
+  172.42526964560864,
+  166.41666666666666,
+  196.8,
+  209.03571428571428,
+  180.0705289672544,
+  194.86939571150097,
+  196.27423167848698,
+  200.77611940298507,
+  190.64756446991404,
+  183.69620253164558,
+  187.21182266009853,
+  202.54028436018956,
+  180.5984251968504,
+  198.6958250497018,
+  189.33333333333334,
+  199.07555555555555,
+  195.3181818181818,
+  197.7877094972067,
+  198.760147601476,
+  190.85141903171953,
+  146.28571428571428,
+  193.22204724409448,
+  181.83333333333334,
+  210.45117845117846,
+  150.31578947368422,
+  189.93939393939394,
+  198.59821428571428,
+  205.5137420718816,
+  191.59832635983264,
+  184.09638554216866,
+  179.80392156862746,
+  199.94188861985472,
+  188.21757322175733,
+  195.76470588235293,
+  200.70479134466768,
+  208.23280423280423,
+  201.01213171577123,
+  188.36363636363637,
+  181.53846153846155,
+  167.58886509635974,
+  220.0261437908497,
+  189.5213358070501,
+  199.96059113300493,
+  216.93525179856115,
+  197.9294117647059,
+  190.44604316546761,
+  184.52582159624413,
+  184.81012658227849,
+  182.72727272727272,
+  189.53846153846155,
+  173.83333333333334],
+ &#39;major_axis&#39;: [34.77923003414236,
+  20.950530036869296,
+  30.19848422590625,
+  24.508790749585156,
+  31.08476574192099,
+  20.456703267018653,
+  10.455950805204104,
+  22.270013595805494,
+  18.204772873013326,
+  12.678548278670085,
+  26.121885258285065,
+  33.385906778814366,
+  12.546653692400314,
+  18.35737770149141,
+  26.27274937409412,
+  35.8698551687111,
+  27.860019629951697,
+  28.010713581438814,
+  21.468307192278967,
+  22.917689441728474,
+  15.666167580602863,
+  23.865287484124742,
+  32.6668803721007,
+  19.57228408508096,
+  33.24776088170501,
+  20.24089328396192,
+  36.442424525819675,
+  20.498286890054775,
+  23.711197998545444,
+  29.20849759104235,
+  47.75343594118352,
+  3.0237157840738176,
+  40.67149576429511,
+  16.77158509151243,
+  28.811758210746788,
+  6.09093638927516,
+  20.588317981737514,
+  54.585718360111564,
+  32.95587965343868,
+  19.25126182233261,
+  16.687880082810175,
+  26.756617235381256,
+  25.62619404615955,
+  18.831258251302966,
+  24.783530938010692,
+  30.43602504101513,
+  23.49797787654461,
+  27.804675105924606,
+  16.651155953717765,
+  17.042194757272345,
+  35.316994908476254,
+  32.401948630679065,
+  30.13681620111402,
+  24.67233590691917,
+  27.47945909705002,
+  41.32954022794983,
+  21.637743417307323,
+  18.753879494637765,
+  18.287488895428375,
+  21.673692014391232,
+  14.33510391276191,
+  16.925659950161798]}
 </pre></div>
 </div>
 </div>
 </div>
+<p>You can also add custom columns by computing your own metric, for example the <code class="docutils literal notranslate"><span class="pre">aspect_ratio</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;numbers&#39;, &#39;days&#39;])
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">statistics</span><span class="p">[</span><span class="s1">&#39;aspect_ratio&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">major_axis_length</span> <span class="o">/</span> <span class="n">p</span><span class="o">.</span><span class="n">minor_axis_length</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">properties</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>The <a class="reference external" href="https://pandas.pydata.org/">Pandas</a> library provides a great amount of useful functions to work with tabular data. The pandas-equivalent of a dictionary is called a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> and can be created from a dictionary by simple means:</p>
+<p>Reading those dictionaries of arrays is not very convenient. Thus, we use the <span class="xref myst">pandas library</span> which is a common asset for data scientists.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">my_dict</span><span class="p">)</span>
-<span class="n">df</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">statistics</span><span class="p">)</span>
+<span class="n">dataframe</span>
 </pre></div>
 </div>
 </div>
@@ -973,104 +1115,135 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>numbers</th>
-      <th>days</th>
+      <th>area</th>
+      <th>mean</th>
+      <th>major_axis</th>
+      <th>aspect_ratio</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>1</td>
-      <td>Monday</td>
+      <td>429</td>
+      <td>191.440559</td>
+      <td>34.779230</td>
+      <td>2.088249</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2</td>
-      <td>Tuesday</td>
+      <td>183</td>
+      <td>179.846995</td>
+      <td>20.950530</td>
+      <td>1.782168</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>3</td>
-      <td>Wednesday</td>
+      <td>658</td>
+      <td>205.604863</td>
+      <td>30.198484</td>
+      <td>1.067734</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>433</td>
+      <td>217.515012</td>
+      <td>24.508791</td>
+      <td>1.061942</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>472</td>
+      <td>213.033898</td>
+      <td>31.084766</td>
+      <td>1.579415</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>213</td>
+      <td>184.525822</td>
+      <td>18.753879</td>
+      <td>1.296143</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>79</td>
+      <td>184.810127</td>
+      <td>18.287489</td>
+      <td>3.173540</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>88</td>
+      <td>182.727273</td>
+      <td>21.673692</td>
+      <td>4.021193</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>52</td>
+      <td>189.538462</td>
+      <td>14.335104</td>
+      <td>2.839825</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>48</td>
+      <td>173.833333</td>
+      <td>16.925660</td>
+      <td>4.417297</td>
     </tr>
   </tbody>
 </table>
+<p>62 rows × 4 columns</p>
 </div></div></div>
 </div>
-<p>Accessing the data works just like with dictionaries:</p>
+<p>Those dataframes can be saved to disk conveniently:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;days&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataframe</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;blobs_analysis.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Furthermore, one can measure properties from our <code class="docutils literal notranslate"><span class="pre">statistics</span></code> table using <a class="reference external" href="https://numpy.org/doc/stable/">numpy</a>. For example the mean area:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># measure mean area</span>
+<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">statistics</span><span class="p">[</span><span class="s1">&#39;area&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0       Monday
-1      Tuesday
-2    Wednesday
-Name: days, dtype: object
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>355.3709677419355
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
-<p>First, let’s get some sample data from scikit-image:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">human_mitosis</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x202d039f640&gt;
-</pre></div>
-</div>
-<img alt="../_images/01_Feature_extraction_11_1.png" src="../_images/01_Feature_extraction_11_1.png" />
-</div>
-</div>
-</section>
-<section id="exercise-1">
-<h2>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h2>
-<p>Apply Otsu-thresholding to the image to create a binary image and then create a label image from the binary image:</p>
-</section>
-<section id="exercise-2">
-<h2>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h2>
-<p>Use the <code class="docutils literal notranslate"><span class="pre">measure.regionprops_table</span></code> function to measure the area and the mean intensity for every object.</p>
-<p><em>Hint</em>: You can create a list of measurements to be passed to <code class="docutils literal notranslate"><span class="pre">regionprops_table</span></code> like this: <code class="docutils literal notranslate"><span class="pre">properties</span> <span class="pre">=</span> <span class="pre">['property1',</span> <span class="pre">'property2',</span> <span class="pre">...]</span></code>. You find a list of all possible properties <a class="reference external" href="https://scikit-image.org/docs/dev/api/skimage.measure#skimage.measure.regionprops">here</a>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> 
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="exercise-3">
-<h2>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">results</span></code> variable now contains the derived measurements from the input data and is of type <code class="docutils literal notranslate"><span class="pre">dict</span></code>.</p>
+<section class="tex2jax_ignore mathjax_ignore" id="exercises">
+<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h1>
+<p>Analyse the loaded blobs <code class="docutils literal notranslate"><span class="pre">image</span></code>.</p>
 <ul class="simple">
-<li><p>Use the <code class="docutils literal notranslate"><span class="pre">dictionary.keys()</span></code> command to print all columns in the results variable to the notebook.</p></li>
-<li><p>Remember, Python dictionaries can be accessed like this: <code class="docutils literal notranslate"><span class="pre">value</span> <span class="pre">=</span> <span class="pre">dictionary[key]</span></code>. Use this this to print all area measurements from <code class="docutils literal notranslate"><span class="pre">results</span></code> to this notebook!</p></li>
+<li><p>How many objects are in it?</p></li>
 </ul>
-</section>
-<section id="exercise-4">
-<h2>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h2>
-<p>When we obtain measurements from image data, we usually want to visualize them and do some statistical evaluation. You have already learned to plot histograms with matplotlib - use this to visualize the distribution of areas in the image data as a histogram!</p>
-<p><em>Hint:</em> You can retrieve the <code class="docutils literal notranslate"><span class="pre">area</span></code> measurements from the results as described above.</p>
-</section>
-<section id="exercise-5">
-<h2>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">#</a></h2>
-<p>Lastly, calculate a mean and standard deviation of the areas of all objects in the image. In order to do so, you need to</p>
 <ul class="simple">
-<li><p>retrieve the measurements from the <code class="docutils literal notranslate"><span class="pre">results</span></code> dataframe as described above</p></li>
-<li><p>Convert it to a numpy array with np.asarray()</p></li>
-<li><p>Calculate and print the mean and the standard deviation from the results</p></li>
+<li><p>How large is the largest object?</p></li>
 </ul>
-<p><em>Hint</em>: Numpy arrays have some convenience functions attached to them (e.g., <code class="docutils literal notranslate"><span class="pre">some_array.function()</span></code>) attached to them - see if you can find out the functions for the mean and standard deviation!</p>
-</section>
+<ul class="simple">
+<li><p>What are mean and standard deviation of the image?</p></li>
+</ul>
+<ul class="simple">
+<li><p>What are mean and standard deviation of the area of the segmented objects?</p></li>
+</ul>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1107,10 +1280,10 @@ Name: days, dtype: object
             <p class="prev-next-title">Feature extraction</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../day3/Readme.html" title="next page">
+    <a class='right-next' id="next-link" href="statistics_with_simpleitk.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Day 3: Machine learning and introduction to deep learning</p>
+        <p class="prev-next-title">Statistics using SimpleITK</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
