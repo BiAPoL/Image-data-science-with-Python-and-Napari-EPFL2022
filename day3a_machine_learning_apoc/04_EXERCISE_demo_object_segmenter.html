@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Training classifiers from folders of images" href="05_train_on_folders.html" />
-    <link rel="prev" title="Exercise: Interactive pixel and object classification" href="02_exercise_apoc.html" />
+    <link rel="prev" title="Pixel classification using Scikit-learn" href="02_scikit_learn_random_forest_pixel_classifier.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -378,8 +378,13 @@ const thebe_selector_output = ".output, .cell_output"
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="02_exercise_apoc.html">
+      <a class="reference internal" href="02_EXERCISE_apoc_feature_importance.html">
        Exercise: Interactive pixel and object classification
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="02_scikit_learn_random_forest_pixel_classifier.html">
+       Pixel classification using Scikit-learn
       </a>
      </li>
      <li class="toctree-l3 current active">
@@ -580,7 +585,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/main?urlpath=tree/day3a_machine_learning_apoc/04_demo_object_segmenter.ipynb"
+        <a href="https://mybinder.org/v2/gh/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/main?urlpath=tree/day3a_machine_learning_apoc/04_EXERCISE_demo_object_segmenter.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -640,7 +645,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/issues/new?title=Issue%20on%20page%20%2Fday3a_machine_learning_apoc/04_demo_object_segmenter.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/issues/new?title=Issue%20on%20page%20%2Fday3a_machine_learning_apoc/04_EXERCISE_demo_object_segmenter.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -668,7 +673,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/day3a_machine_learning_apoc/04_demo_object_segmenter.ipynb"
+        <a href="../_sources/day3a_machine_learning_apoc/04_EXERCISE_demo_object_segmenter.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -816,7 +821,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="object-segmentation-on-opencl-compatible-gpus">
 <h1>Object segmentation on OpenCL-compatible GPUs<a class="headerlink" href="#object-segmentation-on-opencl-compatible-gpus" title="Permalink to this headline">#</a></h1>
-<p>APOC is based on <a class="reference external" href="https://github.com/clEsperanto/pyclesperanto_prototype">pyclesperanto</a> and <a class="reference external" href="https://scikit-learn.org/stable/">sklearn</a>. For object segmentation, it uses a pixel classifier and connected components labeling.</p>
+<p>APOC is based on <a class="reference external" href="https://github.com/clEsperanto/pyclesperanto_prototype">pyclesperanto</a> and <a class="reference external" href="https://scikit-learn.org/stable/">scikit-learn</a>. For object segmentation, it uses a pixel classifier and connected components labeling.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">skimage.io</span> <span class="kn">import</span> <span class="n">imread</span><span class="p">,</span> <span class="n">imshow</span><span class="p">,</span> <span class="n">imsave</span>
@@ -837,10 +842,10 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x191d80de0d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x1b3235a9820&gt;
 </pre></div>
 </div>
-<img alt="../_images/04_demo_object_segmenter_3_1.png" src="../_images/04_demo_object_segmenter_3_1.png" />
+<img alt="../_images/04_EXERCISE_demo_object_segmenter_3_1.png" src="../_images/04_EXERCISE_demo_object_segmenter_3_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -871,14 +876,14 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\rober\miniconda3\envs\bio_39\lib\site-packages\skimage\io\_plugins\matplotlib_plugin.py:150: UserWarning: Low image data range; displaying image with stretched contrast.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\haase\mambaforge\envs\devbio-napari-env\lib\site-packages\skimage\io\_plugins\matplotlib_plugin.py:150: UserWarning: Low image data range; displaying image with stretched contrast.
   lo, hi, cmap = _get_display_range(image)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x191d91b05e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x1b3247cf580&gt;
 </pre></div>
 </div>
-<img alt="../_images/04_demo_object_segmenter_5_2.png" src="../_images/04_demo_object_segmenter_5_2.png" />
+<img alt="../_images/04_EXERCISE_demo_object_segmenter_5_2.png" src="../_images/04_EXERCISE_demo_object_segmenter_5_2.png" />
 </div>
 </div>
 <section id="training">
@@ -887,7 +892,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define features</span>
-<span class="n">features</span> <span class="o">=</span> <span class="s1">&#39;gaussian_blur=5 sobel_of_gaussian_blur=5&#39;</span>
+<span class="n">features</span> <span class="o">=</span> <span class="s1">&#39;gaussian_blur=1 sobel_of_gaussian_blur=1&#39;</span>
 
 <span class="c1"># this is where the model will be saved</span>
 <span class="n">cl_filename</span> <span class="o">=</span> <span class="s1">&#39;my_model.cl&#39;</span>
@@ -911,7 +916,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/04_demo_object_segmenter_9_0.png" src="../_images/04_demo_object_segmenter_9_0.png" />
+<img alt="../_images/04_EXERCISE_demo_object_segmenter_9_0.png" src="../_images/04_EXERCISE_demo_object_segmenter_9_0.png" />
 </div>
 </div>
 </section>
@@ -928,7 +933,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/04_demo_object_segmenter_11_0.png" src="../_images/04_demo_object_segmenter_11_0.png" />
+<img alt="../_images/04_EXERCISE_demo_object_segmenter_11_0.png" src="../_images/04_EXERCISE_demo_object_segmenter_11_0.png" />
 </div>
 </div>
 <p>After training, we can also explore a bit how important the specified features were when making the pixel classification.</p>
@@ -939,8 +944,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;gaussian_blur=5&#39;: 0.7543628505155221,
- &#39;sobel_of_gaussian_blur=5&#39;: 0.245637149484478}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;gaussian_blur=1&#39;: 0.7699547389372277,
+ &#39;sobel_of_gaussian_blur=1&#39;: 0.23004526106277245}
 </pre></div>
 </div>
 </div>
@@ -978,11 +983,11 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="02_exercise_apoc.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="02_scikit_learn_random_forest_pixel_classifier.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Exercise: Interactive pixel and object classification</p>
+            <p class="prev-next-title">Pixel classification using Scikit-learn</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="05_train_on_folders.html" title="next page">
