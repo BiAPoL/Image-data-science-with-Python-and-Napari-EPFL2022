@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Sorting lists &#8212; Image data science with Python and Napari @EPFL</title>
+    <title>Statistics &#8212; Image data science with Python and Napari @EPFL</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Masking numpy arrays" href="05d_masking.html" />
-    <link rel="prev" title="Cropping images" href="05b_cropping_images.html" />
+    <link rel="next" title="Basic descriptive statistics" href="Statistics.html" />
+    <link rel="prev" title="Plotting Data with Python" href="../day4b_Plotting/Plotting.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -119,78 +119,78 @@ const thebe_selector_output = ".output, .cell_output"
    Course preparation
   </a>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../day1/readme.html">
    Day 1: Introduction to Python and Bio-image Analysis
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../day1a_Introduction_Bio-image_Analysis/readme.html">
      Introduction to Bio-image Analysis
     </a>
    </li>
-   <li class="toctree-l2 current active has-children">
-    <a class="reference internal" href="readme.html">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day1b_Python_Introduction/readme.html">
      Introduction to Python part I
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
     <label for="toctree-checkbox-2">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul class="current">
+    <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="01_our_first_juptyer_notebook.html">
+      <a class="reference internal" href="../day1b_Python_Introduction/01_our_first_juptyer_notebook.html">
        Python code in Jupyter notebooks
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="02_Math_in_python.html">
+      <a class="reference internal" href="../day1b_Python_Introduction/02_Math_in_python.html">
        Basic math in python
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="03_Dont_try_this_at_home.html">
+      <a class="reference internal" href="../day1b_Python_Introduction/03_Dont_try_this_at_home.html">
        Pitfalls when working with Jupyter notebooks
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="04_Basic_types.html">
+      <a class="reference internal" href="../day1b_Python_Introduction/04_Basic_types.html">
        Basic types in python
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="05_lists_tuples.html">
+      <a class="reference internal" href="../day1b_Python_Introduction/05_lists_tuples.html">
        Lists and tuples
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="05a_cropping_lists.html">
+      <a class="reference internal" href="../day1b_Python_Introduction/05a_cropping_lists.html">
        Cropping lists
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="05b_cropping_images.html">
+      <a class="reference internal" href="../day1b_Python_Introduction/05b_cropping_images.html">
        Cropping images
       </a>
      </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day1b_Python_Introduction/05c_sorting_lists.html">
        Sorting lists
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="05d_masking.html">
+      <a class="reference internal" href="../day1b_Python_Introduction/05d_masking.html">
        Masking numpy arrays
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="06_Dictionaries_and_tables.html">
+      <a class="reference internal" href="../day1b_Python_Introduction/06_Dictionaries_and_tables.html">
        Dictionaries
       </a>
      </li>
@@ -423,16 +423,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../day4/Readme.html">
    Day 4: Biostatistics and data science
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
   <label for="toctree-checkbox-13">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2 has-children">
     <a class="reference internal" href="../day4a_Tabular_Data/readme.html">
      Working with tabular data
@@ -462,18 +462,18 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
     </ul>
    </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../day4c_Statistics/readme.html">
+   <li class="toctree-l2 current active has-children">
+    <a class="current reference internal" href="#">
      Statistics
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
     <label for="toctree-checkbox-16">
      <i class="fas fa-chevron-down">
      </i>
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../day4c_Statistics/Statistics.html">
+      <a class="reference internal" href="Statistics.html">
        Basic descriptive statistics
       </a>
      </li>
@@ -606,35 +606,6 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/main?urlpath=tree/day1b_Python_Introduction/05c_sorting_lists.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -674,7 +645,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/issues/new?title=Issue%20on%20page%20%2Fday1b_Python_Introduction/05c_sorting_lists.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/issues/new?title=Issue%20on%20page%20%2Fday4c_Statistics/readme.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -702,7 +673,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/day1b_Python_Introduction/05c_sorting_lists.ipynb"
+        <a href="../_sources/day4c_Statistics/readme.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -713,7 +684,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.ipynb</span>
+<span class="headerbtn__text-container">.md</span>
 </a>
 
       </li>
@@ -739,60 +710,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise">
-   Exercise
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Sorting lists</h1>
+                <h1>Statistics</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise">
-   Exercise
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -800,82 +734,12 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="sorting-lists">
-<h1>Sorting lists<a class="headerlink" href="#sorting-lists" title="Permalink to this headline">#</a></h1>
-<p>When working with simple forms of data, e.g. a list of measurements, it might be useful to sort them. With this, we could for example quickly access the smallest numbers in a list.</p>
-<p>Let’s start again with a list of numbers</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">34</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
-<span class="n">data</span>
-</pre></div>
+  <section class="tex2jax_ignore mathjax_ignore" id="statistics">
+<h1>Statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">#</a></h1>
+<p>This part will teach you how to apply statistical methods to your data. We will start with simple descriptive statistics, establish how to calculate confidence intervals by bootstrapping and finish with an overview of statistical methods for hypothesis testing.</p>
+<p>The slides for this section can be found <a class="reference external" href="https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/raw/main/docs/day4c_Statistics/Statistics.pdf">here</a>.</p>
+<div class="toctree-wrapper compound">
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[34, 0, 65, 23, 51, 9, 50, 78, 34, 100]
-</pre></div>
-</div>
-</div>
-</div>
-<p>There is the <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html?highlight=sort#list.sort">sort</a> operation, which actually modifies a list:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-<span class="n">data</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 9, 23, 34, 34, 50, 51, 65, 78, 100]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Hence, we should execute Jupyter notebook cells in order because the <code class="docutils literal notranslate"><span class="pre">data</span></code> variable is afterwards modified (we should do this anyway).</p>
-<p>After sorting, this will give us the three smallest entries in the list:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 9, 23]
-</pre></div>
-</div>
-</div>
-</div>
-<p>And this will give us the three largest numbers:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[65, 78, 100]
-</pre></div>
-</div>
-</div>
-</div>
-<section id="exercise">
-<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h2>
-<p>Find out the <a class="reference external" href="https://en.wikipedia.org/wiki/Median">median</a> of these two lists of numbers:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -891,7 +755,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./day1b_Python_Introduction"
+            path: "./day4c_Statistics"
         },
         predefinedOutput: true
     }
@@ -905,17 +769,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="05b_cropping_images.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../day4b_Plotting/Plotting.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Cropping images</p>
+            <p class="prev-next-title">Plotting Data with Python</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="05d_masking.html" title="next page">
+    <a class='right-next' id="next-link" href="Statistics.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Masking numpy arrays</p>
+        <p class="prev-next-title">Basic descriptive statistics</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
