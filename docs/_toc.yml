@@ -35,7 +35,7 @@ chapters:
       - file: day1x_Folder_Structures/readme
         sections:
           - file: day1x_Folder_Structures/05_Folder_structures
-          - file: day1x_Folder_Structures/06_Folder_structures_2_EXERCISE
+          - file: day1x_Folder_Structures/06_EXERCISE_Folder_structures_2
 
   - file: day2/Readme
     sections:
@@ -58,7 +58,7 @@ chapters:
 
       - file: day2c_image_segmentation/readme
         sections:
-          - file: day2c_image_segmentation/01_Thresholding
+          - file: day2c_image_segmentation/01_EXERCISE_Thresholding
           - file: day2c_image_segmentation/03_Morphological_operations
           - file: day2c_image_segmentation/04_Otsu_threshold
 
