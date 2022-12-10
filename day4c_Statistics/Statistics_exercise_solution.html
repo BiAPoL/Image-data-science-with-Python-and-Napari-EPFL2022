@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Loops &#8212; Image data science with Python and Napari @EPFL</title>
+    <title>Solutions for exercises - Improving performance &#8212; Image data science with Python and Napari @EPFL</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,10 +50,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Functions" href="09_custom_functions.html" />
-    <link rel="prev" title="Conditions" href="07_Conditions.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -113,22 +113,22 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../day0/Readme.html">
    Course preparation
   </a>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../day1/readme.html">
    Day 1: Introduction to Python and Bio-image Analysis
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../day1a_Introduction_Bio-image_Analysis/readme.html">
      Introduction to Bio-image Analysis
@@ -196,28 +196,28 @@ const thebe_selector_output = ".output, .cell_output"
      </li>
     </ul>
    </li>
-   <li class="toctree-l2 current active has-children">
-    <a class="reference internal" href="readme.html">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day1c_Python_loops_conditions_functions/readme.html">
      Introduction to Python part II
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
     <label for="toctree-checkbox-3">
      <i class="fas fa-chevron-down">
      </i>
     </label>
-    <ul class="current">
+    <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="07_Conditions.html">
+      <a class="reference internal" href="../day1c_Python_loops_conditions_functions/07_Conditions.html">
        Conditions
       </a>
      </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day1c_Python_loops_conditions_functions/08_loops.html">
        Loops
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="09_custom_functions.html">
+      <a class="reference internal" href="../day1c_Python_loops_conditions_functions/09_custom_functions.html">
        Functions
       </a>
      </li>
@@ -473,7 +473,7 @@ const thebe_selector_output = ".output, .cell_output"
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../day4c_Statistics/readme.html">
+    <a class="reference internal" href="readme.html">
      Statistics
     </a>
     <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
@@ -483,7 +483,7 @@ const thebe_selector_output = ".output, .cell_output"
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="../day4c_Statistics/Statistics.html">
+      <a class="reference internal" href="Statistics.html">
        Basic descriptive statistics
       </a>
      </li>
@@ -629,7 +629,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/main?urlpath=tree/day1c_Python_loops_conditions_functions/08_loops.ipynb"
+        <a href="https://mybinder.org/v2/gh/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/main?urlpath=tree/day4c_Statistics/Statistics_exercise_solution.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -689,7 +689,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/issues/new?title=Issue%20on%20page%20%2Fday1c_Python_loops_conditions_functions/08_loops.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/issues/new?title=Issue%20on%20page%20%2Fday4c_Statistics/Statistics_exercise_solution.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -717,7 +717,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/day1c_Python_loops_conditions_functions/08_loops.ipynb"
+        <a href="../_sources/day4c_Statistics/Statistics_exercise_solution.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -778,39 +778,12 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Loops
+   Solutions for exercises - Improving performance
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#for-loops">
-     For loops
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#generating-lists-in-loops">
-     Generating lists in loops
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#while-loops">
-     While loops
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#interrupting-loops">
-     Interrupting loops
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#skipping-iterations-in-loops">
-     Skipping iterations in loops
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   Exercises
+  <a class="reference internal nav-link" href="#id1">
+   Solutions for exercises - Improving performance
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -821,6 +794,16 @@ title="Print to PDF"
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-2">
      Exercise 2
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3">
+     Exercise 3:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-4">
+     Exercise 4:
     </a>
    </li>
   </ul>
@@ -834,7 +817,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Loops</h1>
+                <h1>Solutions for exercises - Improving performance</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -846,39 +829,12 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Loops
+   Solutions for exercises - Improving performance
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#for-loops">
-     For loops
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#generating-lists-in-loops">
-     Generating lists in loops
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#while-loops">
-     While loops
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#interrupting-loops">
-     Interrupting loops
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#skipping-iterations-in-loops">
-     Skipping iterations in loops
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   Exercises
+  <a class="reference internal nav-link" href="#id1">
+   Solutions for exercises - Improving performance
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -889,6 +845,16 @@ title="Print to PDF"
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-2">
      Exercise 2
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3">
+     Exercise 3:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-4">
+     Exercise 4:
     </a>
    </li>
   </ul>
@@ -903,321 +869,184 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="loops">
-<h1>Loops<a class="headerlink" href="#loops" title="Permalink to this headline">#</a></h1>
-<p>If you want code to be executed repeatedly, you can make use of loops.</p>
-<p>See also</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=4dN4Cn4u2M0">Python loops Tutorial</a></p></li>
-<li><p><a class="reference external" href="https://www.w3schools.com/python/python_for_loops.asp">Python for loops</a></p></li>
-</ul>
-<section id="for-loops">
-<h2>For loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">#</a></h2>
-<p>For looping over a range of numbers, we can use a simple <code class="docutils literal notranslate"><span class="pre">for</span></code> loop and the <a class="reference external" href="https://www.w3schools.com/python/ref_func_range.asp">range</a> function.</p>
-<p>In the following cell, the <code class="docutils literal notranslate"><span class="pre">print(i)</span></code> command will be executed a couple of times for different values of <code class="docutils literal notranslate"><span class="pre">i</span></code>. We <strong>i</strong>terate over a range of values:</p>
+  <section id="solutions-for-exercises-improving-performance">
+<h1>Solutions for exercises - Improving performance<a class="headerlink" href="#solutions-for-exercises-improving-performance" title="Permalink to this headline">#</a></h1>
+<p>first we load the data and define functions so that we are at the same state as in the exercise notebook</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-1
-2
-3
-4
-</pre></div>
-</div>
-</div>
-</div>
-<p>Note that the above code that is indented will only be excuted for the first given number (0) and continue until the last number (5) but not including it.</p>
-<p>You can also loop over a range of numbers with a defined step, for example step 3:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-3
-6
-9
-</pre></div>
-</div>
-</div>
-</div>
-<p>Iterating over arrays allows you to do something with all array elements:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">animal</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Dog&quot;</span><span class="p">,</span> <span class="s2">&quot;Cat&quot;</span><span class="p">,</span> <span class="s2">&quot;Mouse&quot;</span><span class="p">]:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">animal</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dog
-Cat
-Mouse
-</pre></div>
-</div>
-</div>
-</div>
-<p>You can iterate over two arrays in parallel, pair-wise like this:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># going through arrays pair-wise</span>
-<span class="n">measurement_1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
-<span class="n">measurement_2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-
-<span class="k">for</span> <span class="n">m_1</span><span class="p">,</span> <span class="n">m_2</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">measurement_1</span><span class="p">,</span> <span class="n">measurement_2</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Paired measurements: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">m_1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; and &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">m_2</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Paired measurements: 1 and 4
-Paired measurements: 9 and 5
-Paired measurements: 7 and 5
-Paired measurements: 1 and 7
-Paired measurements: 2 and 4
-Paired measurements: 8 and 5
-Paired measurements: 9 and 4
-Paired measurements: 2 and 6
-Paired measurements: 1 and 6
-Paired measurements: 7 and 5
-Paired measurements: 8 and 4
-</pre></div>
-</div>
-</div>
-</div>
-<p>If you want to know the index of the element in the list as well, use the <a class="reference external" href="https://realpython.com/python-enumerate/">enumerate</a> function:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># numbering and iterating through collections</span>
-<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">animal</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s2">&quot;Dog&quot;</span><span class="p">,</span> <span class="s2">&quot;Cat&quot;</span><span class="p">,</span> <span class="s2">&quot;Mouse&quot;</span><span class="p">]):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The animal number &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">index</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; in the list is &quot;</span> <span class="o">+</span> <span class="n">animal</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The animal number 0 in the list is Dog
-The animal number 1 in the list is Cat
-The animal number 2 in the list is Mouse
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="generating-lists-in-loops">
-<h2>Generating lists in loops<a class="headerlink" href="#generating-lists-in-loops" title="Permalink to this headline">#</a></h2>
-<p>One can generate lists using for loops. The conventional way of doing this involves multiple lines of code:</p>
+<section id="id1">
+<h1>Solutions for exercises - Improving performance<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<p>first we load the data and define functions so that we are at the same state as in the exercise notebook</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we start with an empty list</span>
-<span class="n">numbers</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">scipy.io</span> <span class="kn">import</span> <span class="n">loadmat</span>
 
-<span class="c1"># and add elements</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
-    <span class="n">numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
-    
-<span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 2, 4, 6, 8]
-</pre></div>
-</div>
-</div>
-</div>
-<p>One can also write that shorter. The underlying concept is called <a class="reference external" href="https://wiki.python.org/moin/Generators">generators</a>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">loadmat</span><span class="p">(</span><span class="s1">&#39;../../data/microtubule_tracking/summary.mat&#39;</span><span class="p">)</span>
+<span class="n">data</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">microtubule_id</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">amppnp_concentration</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;concentrations&#39;</span><span class="p">]):</span>
+    <span class="n">all_frame_to_frame_velocities</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;allSpeeds&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">all_frame_to_frame_velocities</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;AMPPNP concentration&#39;</span><span class="p">:</span> <span class="n">amppnp_concentration</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;file name&#39;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;fileNames&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;microtubule ID&#39;</span><span class="p">:</span> <span class="n">microtubule_id</span><span class="p">,</span> <span class="s1">&#39;frame-to-frame microtubule tip velocity&#39;</span><span class="p">:</span> <span class="n">all_frame_to_frame_velocities</span><span class="p">[:,</span> <span class="n">j</span><span class="p">]})],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">microtubule_id</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">controls</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;AMPPNP concentration&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1"># extract data for the individual controls</span>
+<span class="n">control1</span> <span class="o">=</span> <span class="n">controls</span><span class="p">[</span><span class="n">controls</span><span class="p">[</span><span class="s1">&#39;file name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;2015-12-12_Run_1_AMPPNP_row_1_ATP_1_107.nd2&#39;</span><span class="p">]</span>
+<span class="n">control2</span> <span class="o">=</span> <span class="n">controls</span><span class="p">[</span><span class="n">controls</span><span class="p">[</span><span class="s1">&#39;file name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;2015-12-12_Run_1_AMPPNP_row_1_ATP_2_108.nd2&#39;</span><span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 2, 4, 6, 8]
-</pre></div>
-</div>
-</div>
-</div>
-<p>The conventional combination involving an if-statements looks like this:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we start with an empty list</span>
-<span class="n">numbers</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="c1"># and add elements</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
-    <span class="c1"># check if the number is odd</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="n">numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
-    
-<span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 6]
+<span class="k">def</span> <span class="nf">get_confidence_interval_by_bootstrapping</span><span class="p">(</span><span class="n">measurements</span><span class="p">:</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">bootstrap_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">alpha</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Estimate confidence intervals for data in a pandas dataframe by bootstrapping&#39;&#39;&#39;</span>
+    <span class="n">bootstrap_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">bootstrap_size</span><span class="p">,))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">bootstrap_size</span><span class="p">):</span>
+        <span class="n">resample_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">measurements</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="n">measurements</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">bootstrap_samples</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">measurements</span><span class="p">[</span><span class="s1">&#39;frame-to-frame microtubule tip velocity&#39;</span><span class="p">][</span><span class="n">resample_index</span><span class="p">])</span>
+    <span class="n">lower_bound</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="n">upper_bound</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">-</span> <span class="n">lower_bound</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">bootstrap_samples</span><span class="p">,[</span><span class="n">lower_bound</span><span class="p">,</span> <span class="n">upper_bound</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>And the short version like this:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span><span class="p">]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 6]
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="while-loops">
-<h2>While loops<a class="headerlink" href="#while-loops" title="Permalink to this headline">#</a></h2>
-<p>Another way of looping is using the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop. It works by checking a condition, similar to the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. It will interrupt execution as soon as the condition is no longer true:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">1024</span>
-
-<span class="k">while</span> <span class="p">(</span><span class="n">number</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">):</span>
-    <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">/</span> <span class="mi">2</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>512.0
-256.0
-128.0
-64.0
-32.0
-16.0
-8.0
-4.0
-2.0
-1.0
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="interrupting-loops">
-<h2>Interrupting loops<a class="headerlink" href="#interrupting-loops" title="Permalink to this headline">#</a></h2>
-<p>You can interrupt loops at specific points in your code using the <code class="docutils literal notranslate"><span class="pre">break</span></code> command:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">1024</span>
-
-<span class="k">while</span> <span class="p">(</span><span class="kc">True</span><span class="p">):</span>
-    <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">/</span> <span class="mi">2</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
-    
-    <span class="k">if</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="k">break</span><span class="p">;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>512.0
-256.0
-128.0
-64.0
-32.0
-16.0
-8.0
-4.0
-2.0
-1.0
-0.5
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
-        <span class="k">break</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-1
-2
-3
-4
-5
-6
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="skipping-iterations-in-loops">
-<h2>Skipping iterations in loops<a class="headerlink" href="#skipping-iterations-in-loops" title="Permalink to this headline">#</a></h2>
-<p>If you want to skip iterations, you can use the <code class="docutils literal notranslate"><span class="pre">continue</span></code> statement. That often makes sense in combination with an <code class="docutils literal notranslate"><span class="pre">if</span></code>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">6</span><span class="p">:</span>
-        <span class="k">continue</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-1
-2
-7
-8
-9
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="exercises">
-<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h1>
+<p>Depending on the size of your data and the complexity of the function you use to calculate <span class="math notranslate nohighlight">\(\hat\theta\)</span>, bootstrapping can take quite some time. The computational effort required for bootsrapping was the reason, why bootstrapping was not immediately adopted by the scientific community at the time it was invented by Bradley Efron in 1979. But nowadays, with powerful computers widely available, that is not a problem any more. Considering that your experiment probably took days or even weeks, it is o.k. if the data analysis takes a few minutes or even hours. Consider it a matter of respect for your data to analyze it properly.</p>
+<p>However, in our case, there is actually something we can do about the time the calculations are taking. Pandas is nice and all, but performance is not its strong suit. Numpy is much faster - particularly in combination with just-in-time compilation facilitated by numba.</p>
 <section id="exercise-1">
 <h2>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h2>
-<p>Assume you have a list of filenames and you want to do something with them, for example print them out. Program a for loop which prints out all file names which end with “tif”.</p>
+<p>Let’s convert our data to numpy arrays and try  <code class="docutils literal notranslate"><span class="pre">get_confidence_interval_by_bootstrapping</span></code> again.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dataset1.tif&#39;</span><span class="p">,</span> <span class="s1">&#39;dataset2.tif&#39;</span><span class="p">,</span> <span class="s1">&#39;summary.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;readme.md&#39;</span><span class="p">,</span> <span class="s1">&#39;blobs.tif&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numpy_control1</span> <span class="o">=</span> <span class="n">control1</span><span class="p">[</span><span class="s1">&#39;frame-to-frame microtubule tip velocity&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">numpy_control2</span> <span class="o">=</span> <span class="n">control2</span><span class="p">[</span><span class="s1">&#39;frame-to-frame microtubule tip velocity&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="n">get_confidence_interval_by_bootstrapping</span><span class="p">(</span><span class="n">numpy_control1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">numpy_control1</span> <span class="o">=</span> <span class="n">control1</span><span class="p">[</span><span class="s1">&#39;frame-to-frame microtubule tip velocity&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">numpy_control2</span> <span class="o">=</span> <span class="n">control2</span><span class="p">[</span><span class="s1">&#39;frame-to-frame microtubule tip velocity&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">get_confidence_interval_by_bootstrapping</span><span class="p">(</span><span class="n">numpy_control1</span><span class="p">)</span>
+
+<span class="nn">Cell In [2], line 24,</span> in <span class="ni">get_confidence_interval_by_bootstrapping</span><span class="nt">(measurements, bootstrap_size, alpha)</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="n">bootstrap_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">bootstrap_size</span><span class="p">,))</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">bootstrap_size</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">24</span>     <span class="n">resample_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">measurements</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="n">measurements</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span>     <span class="n">bootstrap_samples</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">measurements</span><span class="p">[</span><span class="s1">&#39;frame-to-frame microtubule tip velocity&#39;</span><span class="p">][</span><span class="n">resample_index</span><span class="p">])</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span> <span class="n">lower_bound</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">/</span> <span class="mi">2</span>
+
+<span class="ne">AttributeError</span>: &#39;numpy.ndarray&#39; object has no attribute &#39;index&#39;
 </pre></div>
 </div>
 </div>
 </div>
+<p>So our function expects pandas tables. In order for it to work with numpy arrays, we need to rewrite it.</p>
+<p>While we are at it, let’s also make our function more modular, so we don’t need to rewrite the whole thing every time we change the data type.</p>
 </section>
 <section id="exercise-2">
 <h2>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h2>
-<p>Assume you have a list of circle radii. Make a table (dictionary) with two columns: radius and area.</p>
+<p>Let’s so make our function more modular, so we don’t need to rewrite the whole thing every time we change the data type.
+Split the function into three parts:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radii</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">22</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Turn this:</span>
+<span class="k">def</span> <span class="nf">get_confidence_interval_by_bootstrapping</span><span class="p">(</span><span class="n">measurements</span><span class="p">:</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">bootstrap_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">alpha</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Estimate confidence intervals for data in a pandas dataframe by bootstrapping&#39;&#39;&#39;</span>
+    <span class="n">bootstrap_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">bootstrap_size</span><span class="p">,))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">bootstrap_size</span><span class="p">):</span>
+        <span class="n">resample_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">measurements</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="n">measurements</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">bootstrap_samples</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">measurements</span><span class="p">[</span><span class="s1">&#39;frame-to-frame microtubule tip velocity&#39;</span><span class="p">][</span><span class="n">resample_index</span><span class="p">])</span>
+    <span class="n">lower_bound</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="n">upper_bound</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">-</span> <span class="n">lower_bound</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">bootstrap_samples</span><span class="p">,[</span><span class="n">lower_bound</span><span class="p">,</span> <span class="n">upper_bound</span><span class="p">])</span>
+
+<span class="c1">#into three functions:</span>
+<span class="kn">import</span> <span class="nn">numba</span>
+<span class="nd">@numba</span><span class="o">.</span><span class="n">njit</span> <span class="c1">#this decorator enables the numba just in time compiler for the function defined in the next line</span>
+<span class="k">def</span> <span class="nf">draw_bootstrap_sample</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Draw a bootstrap sample from a 1D data set.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="nd">@numba</span><span class="o">.</span><span class="n">njit</span>
+<span class="k">def</span> <span class="nf">bootstrap_median</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">bootstrap_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Aply a function to many boostrap samples.&quot;&quot;&quot;</span>
+    <span class="n">bootstrap_replicates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">bootstrap_size</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">bootstrap_size</span><span class="p">):</span>
+        <span class="n">bootstrap_replicates</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">draw_bootstrap_sample</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">bootstrap_replicates</span>
+
+<span class="nd">@numba</span><span class="o">.</span><span class="n">njit</span>
+<span class="k">def</span> <span class="nf">get_confidence_interval</span><span class="p">(</span><span class="n">boostrap_replicates</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">alpha</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Calculate the confidence interval with conficence level alpha from bootstrap replicates&quot;&quot;&quot;</span>
+    <span class="n">lower_bound</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="n">upper_bound</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">-</span> <span class="n">lower_bound</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">boostrap_replicates</span><span class="p">,[</span><span class="n">lower_bound</span><span class="p">,</span> <span class="n">upper_bound</span><span class="p">])</span>   
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="exercise-3">
+<h2>Exercise 3:<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h2>
+<p>apply your new functions to the data to calculate confidence intervals. Make sure that the results are the same as before</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fixed seed for reproducibility</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># convert pandas tables to numpy arrays</span>
+<span class="n">numpy_control1</span> <span class="o">=</span> <span class="n">control1</span><span class="p">[</span><span class="s1">&#39;frame-to-frame microtubule tip velocity&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">numpy_control2</span> <span class="o">=</span> <span class="n">control2</span><span class="p">[</span><span class="s1">&#39;frame-to-frame microtubule tip velocity&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="n">confidence_interval1</span> <span class="o">=</span> <span class="n">get_confidence_interval</span><span class="p">(</span><span class="n">bootstrap_median</span><span class="p">(</span><span class="n">numpy_control1</span><span class="p">))</span>
+<span class="n">confidence_interval2</span> <span class="o">=</span> <span class="n">get_confidence_interval</span><span class="p">(</span><span class="n">bootstrap_median</span><span class="p">(</span><span class="n">numpy_control2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Confidence interval 1: </span><span class="si">{}</span><span class="se">\n</span><span class="s1">Confidence interval 2: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">confidence_interval1</span><span class="p">,</span> <span class="n">confidence_interval2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Confidence interval 1: [774.37708725 784.96674312]
+Confidence interval 2: [778.7187312  792.65464497]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-4">
+<h2>Exercise 4:<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h2>
+<p>Let’s benchmark our two functions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pandas:&#39;</span><span class="p">)</span>
+<span class="o">%</span><span class="k">timeit</span> get_confidence_interval_by_bootstrapping(control1)
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;numpy/numba:&#39;</span><span class="p">)</span>
+<span class="o">%</span><span class="k">timeit</span> get_confidence_interval(bootstrap_median(numpy_control1))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas:
+212 ms ± 1.34 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+numpy/numba:
+47 ms ± 198 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<p>A factor of four - this could actually save us quite a bit of time for larger datasets or more complicated target functions.</p>
 </section>
 </section>
 
@@ -1234,7 +1063,7 @@ The animal number 2 in the list is Mouse
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./day1c_Python_loops_conditions_functions"
+            path: "./day4c_Statistics"
         },
         predefinedOutput: true
     }
@@ -1248,20 +1077,6 @@ The animal number 2 in the list is Mouse
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="07_Conditions.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Conditions</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="09_custom_functions.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Functions</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>
