@@ -49,7 +49,7 @@ chapters:
           - file: day2a_Working_with_Images/04_Image_file_formats
       - file: day2b_Image_Filters/readme
         sections:
-          - file: day2b_Image_Filters/09_Image_Filters
+          - file: day2b_Image_Filters/09_Filters
           - file: day2b_Image_Filters/10_Optional_Filters_in_3D_Isotropic_Data
       - file: day2a_background_subtraction/readme
         sections:
