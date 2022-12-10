@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Plotting Data with Python &#8212; Image data science with Python and Napari @EPFL</title>
+    <title>Plotting Data with Matplotlib &#8212; Image data science with Python and Napari @EPFL</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Statistics" href="../day4c_Statistics/readme.html" />
-    <link rel="prev" title="Plotting Data with Seaborn" href="readme.html" />
+    <link rel="prev" title="Plotting Data with Python" href="readme.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -452,7 +452,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active has-children">
     <a class="reference internal" href="readme.html">
-     Plotting Data with Seaborn
+     Plotting Data with Python
     </a>
     <input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
     <label for="toctree-checkbox-15">
@@ -462,7 +462,7 @@ const thebe_selector_output = ".output, .cell_output"
     <ul class="current">
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
-       Plotting Data with Python
+       Plotting Data with Matplotlib
       </a>
      </li>
     </ul>
@@ -768,7 +768,7 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Plotting Data with Python
+   Plotting Data with Matplotlib
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -859,6 +859,13 @@ title="Print to PDF"
      Plotting many distributions at once
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+  <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-1">
      Exercise 1
@@ -890,7 +897,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Plotting Data with Python</h1>
+                <h1>Plotting Data with Matplotlib</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -902,7 +909,7 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Plotting Data with Python
+   Plotting Data with Matplotlib
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -993,6 +1000,13 @@ title="Print to PDF"
      Plotting many distributions at once
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+  <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-1">
      Exercise 1
@@ -1025,8 +1039,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="plotting-data-with-python">
-<h1>Plotting Data with Python<a class="headerlink" href="#plotting-data-with-python" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="plotting-data-with-matplotlib">
+<h1>Plotting Data with Matplotlib<a class="headerlink" href="#plotting-data-with-matplotlib" title="Permalink to this headline">#</a></h1>
 <p>Data, be it images or object features, can and must be plotted for a better understanding of their properties or relationships. We already saw that we can use <span class="xref myst">napari</span> to interactively visualize images. Sometimes, we may want to have a static view inside a notebook to consistently share with collaborators or as material in a publication.</p>
 <p>Python has many libraries for plotting data, like <a class="reference external" href="https://matplotlib.org/stable/gallery/index.html">matplotlib</a>, <a class="reference external" href="https://seaborn.pydata.org/">seaborn</a>, <a class="reference external" href="https://plotly.com/python/">plotly</a> and <a class="reference external" href="https://docs.bokeh.org/en/latest/docs/gallery.html#standalone-examples">bokeh</a>, to name a few. Some libraries ship plotting function inside them as a convenience. For example, the pandas method <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/10min.html#plotting"><code class="docutils literal notranslate"><span class="pre">.plot</span></code></a> can plot graphs directly from dataframes.</p>
 <p>In this notebook, we will explain the basics of <a class="reference external" href="https://matplotlib.org/stable/gallery/index.html">Matplotlib</a>, probably the most flexible and traditional library to display images and data in Python.</p>
@@ -1060,6 +1074,82 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>area</th>
+      <th>intensity_mean</th>
+      <th>major_axis_length</th>
+      <th>minor_axis_length</th>
+      <th>aspect_ratio</th>
+      <th>file_name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>139</td>
+      <td>96.546763</td>
+      <td>17.504104</td>
+      <td>10.292770</td>
+      <td>1.700621</td>
+      <td>20P1_POS0010_D_1UL</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>360</td>
+      <td>86.613889</td>
+      <td>35.746808</td>
+      <td>14.983124</td>
+      <td>2.385805</td>
+      <td>20P1_POS0010_D_1UL</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>43</td>
+      <td>91.488372</td>
+      <td>12.967884</td>
+      <td>4.351573</td>
+      <td>2.980045</td>
+      <td>20P1_POS0010_D_1UL</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>140</td>
+      <td>73.742857</td>
+      <td>18.940508</td>
+      <td>10.314404</td>
+      <td>1.836316</td>
+      <td>20P1_POS0010_D_1UL</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>144</td>
+      <td>89.375000</td>
+      <td>13.639308</td>
+      <td>13.458532</td>
+      <td>1.013432</td>
+      <td>20P1_POS0010_D_1UL</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="plotting-an-image-with-matplotlib">
@@ -1070,6 +1160,12 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image1</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x146054f40&gt;
+</pre></div>
+</div>
+<img alt="../_images/Plotting_9_1.png" src="../_images/Plotting_9_1.png" />
 </div>
 </div>
 </section>
@@ -1086,6 +1182,12 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x146167cd0&gt;
+</pre></div>
+</div>
+<img alt="../_images/Plotting_12_1.png" src="../_images/Plotting_12_1.png" />
+</div>
 </div>
 <p>In a similar fashion, it is possible to provide extra arguments to customize plots like this. Below, we change the marker <a class="reference external" href="https://matplotlib.org/stable/api/markers_api.html#module-matplotlib.markers">symbol</a>, marker size (<code class="docutils literal notranslate"><span class="pre">s</span></code>), color and make marker half transparent (<code class="docutils literal notranslate"><span class="pre">alpha</span></code>).</p>
 <div class="cell docutils container">
@@ -1097,6 +1199,12 @@ title="Print to PDF"
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Aspect Ratio vs. Intensity&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Aspect Ratio vs. Intensity&#39;)
+</pre></div>
+</div>
+<img alt="../_images/Plotting_14_1.png" src="../_images/Plotting_14_1.png" />
 </div>
 </div>
 </section>
@@ -1110,6 +1218,9 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/Plotting_17_0.png" src="../_images/Plotting_17_0.png" />
+</div>
 </div>
 <p>Let’s add our plot to this new figure. We now do that by passing the <code class="docutils literal notranslate"><span class="pre">scatter</span></code> function as an axes method.</p>
 <div class="cell docutils container">
@@ -1118,6 +1229,12 @@ title="Print to PDF"
 <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;magenta&#39;</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x14621dd60&gt;
+</pre></div>
+</div>
+<img alt="../_images/Plotting_19_1.png" src="../_images/Plotting_19_1.png" />
 </div>
 </div>
 <p>OK, we got the same figure back, so what?</p>
@@ -1134,6 +1251,12 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Aspect Ratio vs Intensity&#39;)
+</pre></div>
+</div>
+<img alt="../_images/Plotting_21_1.png" src="../_images/Plotting_21_1.png" />
+</div>
 </div>
 </section>
 <section id="subplots">
@@ -1146,10 +1269,18 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/Plotting_24_0.png" src="../_images/Plotting_24_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&lt;AxesSubplot: &gt;, &lt;AxesSubplot: &gt;], dtype=object)
 </pre></div>
 </div>
 </div>
@@ -1194,6 +1325,9 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/Plotting_30_0.png" src="../_images/Plotting_30_0.png" />
+</div>
 </div>
 </section>
 </section>
@@ -1227,6 +1361,82 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>area</th>
+      <th>intensity_mean</th>
+      <th>major_axis_length</th>
+      <th>minor_axis_length</th>
+      <th>aspect_ratio</th>
+      <th>file_name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>139</td>
+      <td>96.546763</td>
+      <td>17.504104</td>
+      <td>10.292770</td>
+      <td>1.700621</td>
+      <td>20P1_POS0010_D_1UL</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>360</td>
+      <td>86.613889</td>
+      <td>35.746808</td>
+      <td>14.983124</td>
+      <td>2.385805</td>
+      <td>20P1_POS0010_D_1UL</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>43</td>
+      <td>91.488372</td>
+      <td>12.967884</td>
+      <td>4.351573</td>
+      <td>2.980045</td>
+      <td>20P1_POS0010_D_1UL</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>140</td>
+      <td>73.742857</td>
+      <td>18.940508</td>
+      <td>10.314404</td>
+      <td>1.836316</td>
+      <td>20P1_POS0010_D_1UL</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>144</td>
+      <td>89.375000</td>
+      <td>13.639308</td>
+      <td>13.458532</td>
+      <td>1.013432</td>
+      <td>20P1_POS0010_D_1UL</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>And make a scatter plot of aspect_ratio vs intensity mean.</p>
 <div class="cell docutils container">
@@ -1235,6 +1445,12 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: xlabel=&#39;aspect_ratio&#39;, ylabel=&#39;intensity_mean&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/Plotting_40_1.png" src="../_images/Plotting_40_1.png" />
+</div>
 </div>
 <p>We can already embbed and visualize other features by providing a few extra arguments.</p>
 <div class="cell docutils container">
@@ -1242,6 +1458,12 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;aspect_ratio&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;intensity_mean&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;area&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;major_axis_length&quot;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;magma&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: xlabel=&#39;aspect_ratio&#39;, ylabel=&#39;intensity_mean&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/Plotting_42_1.png" src="../_images/Plotting_42_1.png" />
 </div>
 </div>
 </section>
@@ -1256,6 +1478,12 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x15d7d7550&gt;
+</pre></div>
+</div>
+<img alt="../_images/Plotting_45_1.png" src="../_images/Plotting_45_1.png" />
+</div>
 </div>
 </section>
 <section id="adding-a-line-regression-model">
@@ -1268,6 +1496,12 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: xlabel=&#39;aspect_ratio&#39;, ylabel=&#39;intensity_mean&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/Plotting_48_1.png" src="../_images/Plotting_48_1.png" />
+</div>
 </div>
 <section id="line-regression-with-subplots">
 <h3>Line Regression with subplots<a class="headerlink" href="#line-regression-with-subplots" title="Permalink to this headline">#</a></h3>
@@ -1276,6 +1510,12 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;aspect_ratio&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;intensity_mean&quot;</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;file_name&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">3.5</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x15d7dd5e0&gt;
+</pre></div>
+</div>
+<img alt="../_images/Plotting_50_1.png" src="../_images/Plotting_50_1.png" />
 </div>
 </div>
 </section>
@@ -1293,6 +1533,9 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../_images/Plotting_54_0.png" src="../_images/Plotting_54_0.png" />
+</div>
 </div>
 <p>The figure-level, and more general, version of this kind of plot is <code class="docutils literal notranslate"><span class="pre">catplot</span></code>. We just have to provide <code class="docutils literal notranslate"><span class="pre">kind</span></code> as <code class="docutils literal notranslate"><span class="pre">box</span></code>.</p>
 <div class="cell docutils container">
@@ -1306,6 +1549,12 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x15dc3e400&gt;
+</pre></div>
+</div>
+<img alt="../_images/Plotting_56_1.png" src="../_images/Plotting_56_1.png" />
+</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">catplot</span></code> is for many kinds of categorical plots, for example a <code class="docutils literal notranslate"><span class="pre">strip</span></code> plot.</p>
 <div class="cell docutils container">
@@ -1313,6 +1562,12 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;file_name&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;intensity_mean&quot;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;strip&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">3.5</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x15dcd46d0&gt;
+</pre></div>
+</div>
+<img alt="../_images/Plotting_58_1.png" src="../_images/Plotting_58_1.png" />
 </div>
 </div>
 </section>
@@ -1325,6 +1580,12 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: xlabel=&#39;intensity_mean&#39;, ylabel=&#39;Count&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/Plotting_61_1.png" src="../_images/Plotting_61_1.png" />
+</div>
 </div>
 <p>We can instead plot the kernel density estimation (kde) with <code class="docutils literal notranslate"><span class="pre">kdeplot</span></code> function. Just be careful while interpreting these plots (check some pitfalls <a class="reference external" href="https://seaborn.pydata.org/tutorial/distributions.html#kernel-density-estimation-pitfalls">here</a>)</p>
 <div class="cell docutils container">
@@ -1332,6 +1593,12 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;intensity_mean&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;file_name&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: xlabel=&#39;intensity_mean&#39;, ylabel=&#39;Density&#39;&gt;
+</pre></div>
+</div>
+<img alt="../_images/Plotting_63_1.png" src="../_images/Plotting_63_1.png" />
 </div>
 </div>
 <p>The figure-level function for distributions is <code class="docutils literal notranslate"><span class="pre">distplot</span></code>. With it, you can have histograms and kde in the same plot, or other kinds of plots, like the empirical cumulative distribution function (ecdf).</p>
@@ -1341,6 +1608,9 @@ title="Print to PDF"
 <span class="n">sns</span><span class="o">.</span><span class="n">move_legend</span><span class="p">(</span><span class="n">plot</span><span class="p">,</span> <span class="s1">&#39;upper left&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Plotting_65_0.png" src="../_images/Plotting_65_0.png" />
 </div>
 </div>
 </section>
@@ -1358,6 +1628,12 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.JointGrid at 0x15ddd45b0&gt;
+</pre></div>
+</div>
+<img alt="../_images/Plotting_70_1.png" src="../_images/Plotting_70_1.png" />
+</div>
 </div>
 <p>As expected, it is possible to separate groups by passing a categorical property to the <code class="docutils literal notranslate"><span class="pre">hue</span></code> argument. This has an effect on the marginal distribution, turning them from histogram to kde plots.</p>
 <div class="cell docutils container">
@@ -1365,6 +1641,12 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;aspect_ratio&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;area&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;file_name&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.JointGrid at 0x15e8f5b80&gt;
+</pre></div>
+</div>
+<img alt="../_images/Plotting_72_1.png" src="../_images/Plotting_72_1.png" />
 </div>
 </div>
 </section>
@@ -1377,6 +1659,12 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x15eb44af0&gt;
+</pre></div>
+</div>
+<img alt="../_images/Plotting_75_1.png" src="../_images/Plotting_75_1.png" />
+</div>
 </div>
 <p>If you have too many points, displaying every single point may yield graphs too poluted. An alternative visualization in this case could be a 2D histogram plot. We can do that by changing the <code class="docutils literal notranslate"><span class="pre">kind</span></code> argument to “hist”.</p>
 <div class="cell docutils container">
@@ -1385,8 +1673,17 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x15f5f9d60&gt;
+</pre></div>
+</div>
+<img alt="../_images/Plotting_77_1.png" src="../_images/Plotting_77_1.png" />
+</div>
 </div>
 </section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exercises">
+<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h1>
 <section id="exercise-1">
 <h2>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h2>
 <p>Plot a line regression model on a single plot, with points and lines having different colors according to ‘file_name’.</p>
@@ -1416,6 +1713,137 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>area</th>
+      <th>intensity_mean</th>
+      <th>major_axis_length</th>
+      <th>minor_axis_length</th>
+      <th>aspect_ratio</th>
+      <th>file_name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>139</td>
+      <td>96.546763</td>
+      <td>17.504104</td>
+      <td>10.292770</td>
+      <td>1.700621</td>
+      <td>20P1_POS0010_D_1UL</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>360</td>
+      <td>86.613889</td>
+      <td>35.746808</td>
+      <td>14.983124</td>
+      <td>2.385805</td>
+      <td>20P1_POS0010_D_1UL</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>43</td>
+      <td>91.488372</td>
+      <td>12.967884</td>
+      <td>4.351573</td>
+      <td>2.980045</td>
+      <td>20P1_POS0010_D_1UL</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>140</td>
+      <td>73.742857</td>
+      <td>18.940508</td>
+      <td>10.314404</td>
+      <td>1.836316</td>
+      <td>20P1_POS0010_D_1UL</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>144</td>
+      <td>89.375000</td>
+      <td>13.639308</td>
+      <td>13.458532</td>
+      <td>1.013432</td>
+      <td>20P1_POS0010_D_1UL</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>106</th>
+      <td>305</td>
+      <td>88.252459</td>
+      <td>20.226532</td>
+      <td>19.244210</td>
+      <td>1.051045</td>
+      <td>20P1_POS0007_D_1UL</td>
+    </tr>
+    <tr>
+      <th>107</th>
+      <td>593</td>
+      <td>89.905565</td>
+      <td>36.508370</td>
+      <td>21.365394</td>
+      <td>1.708762</td>
+      <td>20P1_POS0007_D_1UL</td>
+    </tr>
+    <tr>
+      <th>108</th>
+      <td>289</td>
+      <td>106.851211</td>
+      <td>20.427809</td>
+      <td>18.221452</td>
+      <td>1.121086</td>
+      <td>20P1_POS0007_D_1UL</td>
+    </tr>
+    <tr>
+      <th>109</th>
+      <td>277</td>
+      <td>100.664260</td>
+      <td>20.307965</td>
+      <td>17.432920</td>
+      <td>1.164920</td>
+      <td>20P1_POS0007_D_1UL</td>
+    </tr>
+    <tr>
+      <th>110</th>
+      <td>46</td>
+      <td>70.869565</td>
+      <td>11.648895</td>
+      <td>5.298003</td>
+      <td>2.198733</td>
+      <td>20P1_POS0007_D_1UL</td>
+    </tr>
+  </tbody>
+</table>
+<p>111 rows × 6 columns</p>
+</div></div></div>
 </div>
 <ol class="simple">
 <li><p>Create figure with two rows and two columns of subplots.</p></li>
@@ -1456,7 +1884,7 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Plotting Data with Seaborn</p>
+            <p class="prev-next-title">Plotting Data with Python</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../day4c_Statistics/readme.html" title="next page">
