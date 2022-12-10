@@ -103,7 +103,7 @@ chapters:
     sections:
       - file: day4a_Tabular_Data/readme
         sections:
-          - file: day1b_Pday4a_Tabular_Data/TabularData
+          - file: day4a_Tabular_Data/TabularData
       - file: day4b_Plotting/readme
         sections:
           - file: day4b_Plotting/Plotting
