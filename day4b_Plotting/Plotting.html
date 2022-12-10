@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Introduction to Seaborn" href="02_Introduction_to_Seaborn.html" />
+    <link rel="next" title="Clustering" href="../day4f_clustering/readme.html" />
     <link rel="prev" title="Plotting Data with Seaborn" href="readme.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -433,12 +433,24 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day4a_Tabular_Data/readme.html">
+     Working with tabular data
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+    <label for="toctree-checkbox-14">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="simple">
+    </ul>
+   </li>
    <li class="toctree-l2 current active has-children">
     <a class="reference internal" href="readme.html">
      Plotting Data with Seaborn
     </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-    <label for="toctree-checkbox-14">
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+    <label for="toctree-checkbox-15">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -448,22 +460,12 @@ const thebe_selector_output = ".output, .cell_output"
        Plotting Data with Python
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="02_Introduction_to_Seaborn.html">
-       Introduction to Seaborn
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="03_Plotting_distributions.html">
-       Plotting Distributions with Seaborn
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="04_Multivariate_views.html">
-       Multivariate views
-      </a>
-     </li>
     </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../day4f_clustering/readme.html">
+     Clustering
+    </a>
    </li>
   </ul>
  </li>
@@ -471,8 +473,8 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal" href="../day5/Readme.html">
    Day 5: Best practices in scientific programming and licensing/sharing of code
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -486,8 +488,8 @@ const thebe_selector_output = ".output, .cell_output"
     <a class="reference internal" href="../day5b_writing_readable_code/readme.html">
      Writing readable code
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-    <label for="toctree-checkbox-16">
+    <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+    <label for="toctree-checkbox-17">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -595,7 +597,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/main?urlpath=tree/day4b_Plotting/01_Plotting_Data_with_Python.ipynb"
+        <a href="https://mybinder.org/v2/gh/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/main?urlpath=tree/day4b_Plotting/Plotting.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -655,7 +657,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/issues/new?title=Issue%20on%20page%20%2Fday4b_Plotting/01_Plotting_Data_with_Python.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/issues/new?title=Issue%20on%20page%20%2Fday4b_Plotting/Plotting.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -683,7 +685,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/day4b_Plotting/01_Plotting_Data_with_Python.ipynb"
+        <a href="../_sources/day4b_Plotting/Plotting.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -742,40 +744,120 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reading-data">
-   Reading data
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Plotting Data with Python
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reading-data">
+     Reading data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotting-an-image-with-matplotlib">
+     Plotting an image with matplotlib
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotting-a-graph-with-matplotlib">
+     Plotting a graph with matplotlib
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#configuring-figure-and-axes">
+     Configuring figure and axes
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#subplots">
+     Subplots
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plotting-an-image-with-matplotlib">
-   Plotting an image with matplotlib
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-seaborn">
+   Introduction to Seaborn
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scatter-plots-with-seaborn">
+     Scatter plots with seaborn
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scatter-plots-with-subplots">
+     Scatter plots with subplots
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-a-line-regression-model">
+     Adding a line regression model
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#line-regression-with-subplots">
+       Line Regression with subplots
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plotting-a-graph-with-matplotlib">
-   Plotting a graph with matplotlib
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting-distributions-with-seaborn">
+   Plotting Distributions with Seaborn
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boxplots">
+     Boxplots
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#histograms-and-distribution-plots">
+     Histograms and Distribution Plots
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#configuring-figure-and-axes">
-   Configuring figure and axes
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multivariate-views">
+   Multivariate views
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#subplots">
-   Subplots
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-1">
-   Exercise 1
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-2">
-   Exercise 2
-  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotting-joint-and-marginal-distributions">
+     Plotting joint and marginal distributions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotting-many-distributions-at-once">
+     Plotting many distributions at once
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-1">
+     Exercise 1
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2">
+     Exercise 2
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3">
+     Exercise 3
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-4">
+     Exercise 4
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -796,40 +878,120 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reading-data">
-   Reading data
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Plotting Data with Python
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reading-data">
+     Reading data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotting-an-image-with-matplotlib">
+     Plotting an image with matplotlib
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotting-a-graph-with-matplotlib">
+     Plotting a graph with matplotlib
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#configuring-figure-and-axes">
+     Configuring figure and axes
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#subplots">
+     Subplots
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plotting-an-image-with-matplotlib">
-   Plotting an image with matplotlib
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-to-seaborn">
+   Introduction to Seaborn
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scatter-plots-with-seaborn">
+     Scatter plots with seaborn
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scatter-plots-with-subplots">
+     Scatter plots with subplots
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-a-line-regression-model">
+     Adding a line regression model
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#line-regression-with-subplots">
+       Line Regression with subplots
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plotting-a-graph-with-matplotlib">
-   Plotting a graph with matplotlib
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting-distributions-with-seaborn">
+   Plotting Distributions with Seaborn
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boxplots">
+     Boxplots
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#histograms-and-distribution-plots">
+     Histograms and Distribution Plots
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#configuring-figure-and-axes">
-   Configuring figure and axes
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multivariate-views">
+   Multivariate views
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#subplots">
-   Subplots
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-1">
-   Exercise 1
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise-2">
-   Exercise 2
-  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotting-joint-and-marginal-distributions">
+     Plotting joint and marginal distributions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotting-many-distributions-at-once">
+     Plotting many distributions at once
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-1">
+     Exercise 1
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2">
+     Exercise 2
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3">
+     Exercise 3
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-4">
+     Exercise 4
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -876,82 +1038,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>area</th>
-      <th>intensity_mean</th>
-      <th>major_axis_length</th>
-      <th>minor_axis_length</th>
-      <th>aspect_ratio</th>
-      <th>file_name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>139</td>
-      <td>96.546763</td>
-      <td>17.504104</td>
-      <td>10.292770</td>
-      <td>1.700621</td>
-      <td>20P1_POS0010_D_1UL</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>360</td>
-      <td>86.613889</td>
-      <td>35.746808</td>
-      <td>14.983124</td>
-      <td>2.385805</td>
-      <td>20P1_POS0010_D_1UL</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>43</td>
-      <td>91.488372</td>
-      <td>12.967884</td>
-      <td>4.351573</td>
-      <td>2.980045</td>
-      <td>20P1_POS0010_D_1UL</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>140</td>
-      <td>73.742857</td>
-      <td>18.940508</td>
-      <td>10.314404</td>
-      <td>1.836316</td>
-      <td>20P1_POS0010_D_1UL</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>144</td>
-      <td>89.375000</td>
-      <td>13.639308</td>
-      <td>13.458532</td>
-      <td>1.013432</td>
-      <td>20P1_POS0010_D_1UL</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </section>
 <section id="plotting-an-image-with-matplotlib">
@@ -962,12 +1048,6 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image1</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x13f147dc0&gt;
-</pre></div>
-</div>
-<img alt="../_images/01_Plotting_Data_with_Python_9_1.png" src="../_images/01_Plotting_Data_with_Python_9_1.png" />
 </div>
 </div>
 </section>
@@ -984,12 +1064,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x13f2030d0&gt;
-</pre></div>
-</div>
-<img alt="../_images/01_Plotting_Data_with_Python_12_1.png" src="../_images/01_Plotting_Data_with_Python_12_1.png" />
-</div>
 </div>
 <p>In a similar fashion, it is possible to provide extra arguments to customize plots like this. Below, we change the marker <a class="reference external" href="https://matplotlib.org/stable/api/markers_api.html#module-matplotlib.markers">symbol</a>, marker size (<code class="docutils literal notranslate"><span class="pre">s</span></code>), color and make marker half transparent (<code class="docutils literal notranslate"><span class="pre">alpha</span></code>).</p>
 <div class="cell docutils container">
@@ -1001,12 +1075,6 @@ title="Print to PDF"
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Aspect Ratio vs. Intensity&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Aspect Ratio vs. Intensity&#39;)
-</pre></div>
-</div>
-<img alt="../_images/01_Plotting_Data_with_Python_14_1.png" src="../_images/01_Plotting_Data_with_Python_14_1.png" />
 </div>
 </div>
 </section>
@@ -1020,31 +1088,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/01_Plotting_Data_with_Python_17_0.png" src="../_images/01_Plotting_Data_with_Python_17_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/01_Plotting_Data_with_Python_18_0.png" src="../_images/01_Plotting_Data_with_Python_18_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot: &gt;
-</pre></div>
-</div>
-</div>
 </div>
 <p>Let’s add our plot to this new figure. We now do that by passing the <code class="docutils literal notranslate"><span class="pre">scatter</span></code> function as an axes method.</p>
 <div class="cell docutils container">
@@ -1053,12 +1096,6 @@ title="Print to PDF"
 <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;magenta&#39;</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x13f46e1f0&gt;
-</pre></div>
-</div>
-<img alt="../_images/01_Plotting_Data_with_Python_21_1.png" src="../_images/01_Plotting_Data_with_Python_21_1.png" />
 </div>
 </div>
 <p>OK, we got the same figure back, so what?</p>
@@ -1075,12 +1112,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Aspect Ratio vs Intensity&#39;)
-</pre></div>
-</div>
-<img alt="../_images/01_Plotting_Data_with_Python_23_1.png" src="../_images/01_Plotting_Data_with_Python_23_1.png" />
-</div>
 </div>
 </section>
 <section id="subplots">
@@ -1093,18 +1124,10 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/01_Plotting_Data_with_Python_26_0.png" src="../_images/01_Plotting_Data_with_Python_26_0.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&lt;AxesSubplot: &gt;, &lt;AxesSubplot: &gt;], dtype=object)
 </pre></div>
 </div>
 </div>
@@ -1149,35 +1172,234 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../_images/01_Plotting_Data_with_Python_31_0.png" src="../_images/01_Plotting_Data_with_Python_31_0.png" />
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="introduction-to-seaborn">
+<h1>Introduction to Seaborn<a class="headerlink" href="#introduction-to-seaborn" title="Permalink to this headline">#</a></h1>
+<p>The definition of seaborn’s website is so concise that we replicate it here:</p>
+<p>“Seaborn is a library for making statistical graphics in Python. It builds on top of matplotlib and integrates closely with pandas data structures.”</p>
+<p>That’s it! The main benefit of using it is that it is a more high-level library, which means we can achieve sophisticated plots with much less lines of code. Most axes style customization are done automatically. It can automatically provide plots with summary statistics.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will apply the seaborn default theme, but you can choose others <a class="reference external" href="https://seaborn.pydata.org/tutorial/aesthetics.html#seaborn-figure-styles">here</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;ticks&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="scatter-plots-with-seaborn">
+<h2>Scatter plots with seaborn<a class="headerlink" href="#scatter-plots-with-seaborn" title="Permalink to this headline">#</a></h2>
+<p>Let’s load the same dataframe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../../data/BBBC007_analysis.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And make a scatter plot of aspect_ratio vs intensity mean.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;aspect_ratio&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;intensity_mean&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can already embbed and visualize other features by providing a few extra arguments.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;aspect_ratio&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;intensity_mean&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;area&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;major_axis_length&quot;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;magma&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="scatter-plots-with-subplots">
+<h2>Scatter plots with subplots<a class="headerlink" href="#scatter-plots-with-subplots" title="Permalink to this headline">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">scatterplot</span></code> function is an axes-level function. This means, if we want to add subplots, we also need to create figure and axes from matplotlib first and pass the axes handles. That’s when knowing some matplotlib syntax may be handy!</p>
+<p>However, seaborn also has figure-level functions, where the subplots are also just an argument.</p>
+<p>In the example below, we use the <code class="docutils literal notranslate"><span class="pre">relplot</span></code> function (from <em>relationship</em>) and separate the files by providing ‘file_name’ to the argument <code class="docutils literal notranslate"><span class="pre">col</span></code>,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">relplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;aspect_ratio&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;intensity_mean&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;area&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;major_axis_length&quot;</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;file_name&quot;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;magma&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">3.5</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="adding-a-line-regression-model">
+<h2>Adding a line regression model<a class="headerlink" href="#adding-a-line-regression-model" title="Permalink to this headline">#</a></h2>
+<p>There are two functions to make a scatter plot with a line regression model: <code class="docutils literal notranslate"><span class="pre">regplot</span></code> and <code class="docutils literal notranslate"><span class="pre">lmplot</span></code>. As before, <code class="docutils literal notranslate"><span class="pre">regplot</span></code> is an axes-level funtion while <code class="docutils literal notranslate"><span class="pre">lmplot</span></code> is a figure-level function.</p>
+<p>Let’s plot an example of each of them</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;aspect_ratio&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;intensity_mean&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="line-regression-with-subplots">
+<h3>Line Regression with subplots<a class="headerlink" href="#line-regression-with-subplots" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;aspect_ratio&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;intensity_mean&quot;</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;file_name&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">3.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="plotting-distributions-with-seaborn">
+<h1>Plotting Distributions with Seaborn<a class="headerlink" href="#plotting-distributions-with-seaborn" title="Permalink to this headline">#</a></h1>
+<section id="boxplots">
+<h2>Boxplots<a class="headerlink" href="#boxplots" title="Permalink to this headline">#</a></h2>
+<p>The axes function for plotting boxplots is <code class="docutils literal notranslate"><span class="pre">boxplot</span></code>.</p>
+<p>Seaborn already identified <code class="docutils literal notranslate"><span class="pre">file_name</span></code> as a categorical value and <code class="docutils literal notranslate"><span class="pre">ìntensity_mean</span></code> as a numerical value. Thus, it plots boxplots for the intensity variable. If we invert x and y, we still get the same graph, but as vertical bosplots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">boxplot</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;intensity_mean&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;file_name&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The figure-level, and more general, version of this kind of plot is <code class="docutils literal notranslate"><span class="pre">catplot</span></code>. We just have to provide <code class="docutils literal notranslate"><span class="pre">kind</span></code> as <code class="docutils literal notranslate"><span class="pre">box</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> 
+            <span class="n">x</span><span class="o">=</span><span class="s2">&quot;intensity_mean&quot;</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=</span><span class="s2">&quot;file_name&quot;</span><span class="p">,</span> 
+            <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;box&quot;</span><span class="p">,</span>
+            <span class="n">height</span><span class="o">=</span><span class="mf">3.5</span><span class="p">,</span>
+            <span class="n">aspect</span><span class="o">=</span><span class="mi">2</span><span class="o">/</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">catplot</span></code> is for many kinds of categorical plots, for example a <code class="docutils literal notranslate"><span class="pre">strip</span></code> plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;file_name&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;intensity_mean&quot;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;strip&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">3.5</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="histograms-and-distribution-plots">
+<h2>Histograms and Distribution Plots<a class="headerlink" href="#histograms-and-distribution-plots" title="Permalink to this headline">#</a></h2>
+<p>The axes-level function for plotting histograms is <code class="docutils literal notranslate"><span class="pre">histplot</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;intensity_mean&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;file_name&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can instead plot the kernel density estimation (kde) with <code class="docutils literal notranslate"><span class="pre">kdeplot</span></code> function. Just be careful while interpreting these plots (check some pitfalls <a class="reference external" href="https://seaborn.pydata.org/tutorial/distributions.html#kernel-density-estimation-pitfalls">here</a>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;intensity_mean&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;file_name&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The figure-level function for distributions is <code class="docutils literal notranslate"><span class="pre">distplot</span></code>. With it, you can have histograms and kde in the same plot, or other kinds of plots, like the empirical cumulative distribution function (ecdf).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;intensity_mean&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;file_name&quot;</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">3.5</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">move_legend</span><span class="p">(</span><span class="n">plot</span><span class="p">,</span> <span class="s1">&#39;upper left&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="multivariate-views">
+<h1>Multivariate views<a class="headerlink" href="#multivariate-views" title="Permalink to this headline">#</a></h1>
+<p>In this notebook, we show a few examples of how to have plots with graphs of different types in a figure, like having a scatter plot with marginal distributions or even a multivariate plot with pair relationships of all properties in a table.</p>
+<p>Because these plots involve managing subplots, they are all figure-level functions.</p>
+<section id="plotting-joint-and-marginal-distributions">
+<h2>Plotting joint and marginal distributions<a class="headerlink" href="#plotting-joint-and-marginal-distributions" title="Permalink to this headline">#</a></h2>
+<p>To have a joint distribution of two variableswith the marginal distributions on the sides, we can use <code class="docutils literal notranslate"><span class="pre">jointplot</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;aspect_ratio&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;area&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As expected, it is possible to separate groups by passing a categorical property to the <code class="docutils literal notranslate"><span class="pre">hue</span></code> argument. This has an effect on the marginal distribution, turning them from histogram to kde plots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;aspect_ratio&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;area&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;file_name&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plotting-many-distributions-at-once">
+<h2>Plotting many distributions at once<a class="headerlink" href="#plotting-many-distributions-at-once" title="Permalink to this headline">#</a></h2>
+<p>The above examples displayed a plot with relationship between two properties. This can be further expanded with the <code class="docutils literal notranslate"><span class="pre">pairplot</span></code> function</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;file_name&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you have too many points, displaying every single point may yield graphs too poluted. An alternative visualization in this case could be a 2D histogram plot. We can do that by changing the <code class="docutils literal notranslate"><span class="pre">kind</span></code> argument to “hist”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;file_name&quot;</span><span class="p">,</span> <span class="n">kind</span> <span class="o">=</span> <span class="s2">&quot;hist&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </div>
 </section>
 <section id="exercise-1">
 <h2>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h2>
-<p>The marker size can also be an array representing another property, like <code class="docutils literal notranslate"><span class="pre">area</span></code>. Plot the graphs above again by providing the area to the <code class="docutils literal notranslate"><span class="pre">s</span></code> parameter and check the results.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">area1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;file_name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;20P1_POS0010_D_1UL&#39;</span><span class="p">][</span><span class="s1">&#39;area&#39;</span><span class="p">]</span>
-
-<span class="n">area2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;file_name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;20P1_POS0007_D_1UL&#39;</span><span class="p">][</span><span class="s1">&#39;area&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>Plot a line regression model on a single plot, with points and lines having different colors according to ‘file_name’.</p>
+<p><em>Hint: use a function that accepts a <code class="docutils literal notranslate"><span class="pre">hue</span></code> argument</em></p>
 </section>
 <section id="exercise-2">
 <h2>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h2>
-<p>Here is the second image:</p>
+<p>Plot two empirical cumulative distribution functions for ‘area’ from different files on a same graph with different colors.</p>
+<p>Repeat this for the property ‘intensity_mean’ on a second figure. Infer whether you would expect these properties to be different or not.</p>
+<p>*Hint: look for the <code class="docutils literal notranslate"><span class="pre">kind</span></code> parameter of <code class="docutils literal notranslate"><span class="pre">displot</span></code></p>
+</section>
+<section id="exercise-3">
+<h2>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h2>
+<p>You may have noticed that the <code class="docutils literal notranslate"><span class="pre">pairplot</span></code> is redundant in some plots because the upper diagonal displays the same relationships rotated.</p>
+<p>Redraw the <code class="docutils literal notranslate"><span class="pre">pairplot</span></code> to display only the lower diagonal of the plots.</p>
+<p><em>Hint: explore the properties of the <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.pairplot.html#seaborn.pairplot">pairplot</a></em></p>
+</section>
+<section id="exercise-4">
+<h2>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h2>
+<p>Use the following images and the corresponding data:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image2</span> <span class="o">=</span> <span class="n">imread</span><span class="p">(</span><span class="s2">&quot;../../data/BBBC007_batch/20P1_POS0007_D_1UL.tif&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image1</span> <span class="o">=</span> <span class="n">imread</span><span class="p">(</span><span class="s2">&quot;../../data/BBBC007_batch/20P1_POS0010_D_1UL.tif&quot;</span><span class="p">)</span>
+<span class="n">image2</span> <span class="o">=</span> <span class="n">imread</span><span class="p">(</span><span class="s2">&quot;../../data/BBBC007_batch/20P1_POS0007_D_1UL.tif&quot;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;file_name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;20P1_POS0010_D_1UL&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;file_name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;20P1_POS0007_D_1UL&#39;</span><span class="p">)]</span>
+<span class="n">data</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Display each image and each graph in a single figure, with images on the first row, and graphs on the second row.</p>
+<ol class="simple">
+<li><p>Create figure with two rows and two columns of subplots.</p></li>
+<li><p>Display the two images below in the first row of subplots</p></li>
+<li><p>Display graphs for the corresponding figures on the second row.</p></li>
+</ol>
 </section>
 </section>
 
@@ -1215,10 +1437,10 @@ title="Print to PDF"
             <p class="prev-next-title">Plotting Data with Seaborn</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="02_Introduction_to_Seaborn.html" title="next page">
+    <a class='right-next' id="next-link" href="../day4f_clustering/readme.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Introduction to Seaborn</p>
+        <p class="prev-next-title">Clustering</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
