@@ -35,7 +35,7 @@ chapters:
       - file: day1x_Folder_Structures/readme
         sections:
           - file: day1x_Folder_Structures/05_Folder_structures
-          - file: day1x_Folder_Structures/06_Folder_structures2
+          - file: day1x_Folder_Structures/06_Folder_structures_2_EXERCISE
 
   - file: day2/Readme
     sections:
