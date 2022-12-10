@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Statistics using SimpleITK" href="statistics_with_simpleitk.html" />
+    <link rel="next" title="Statistics using SimpleITK" href="02_statistics_with_simpleitk.html" />
     <link rel="prev" title="Feature extraction" href="readme.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -349,12 +349,12 @@ const thebe_selector_output = ".output, .cell_output"
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="statistics_with_simpleitk.html">
+      <a class="reference internal" href="02_statistics_with_simpleitk.html">
        Statistics using SimpleITK
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="statistics_with_pyclesperanto.html">
+      <a class="reference internal" href="03_statistics_with_pyclesperanto.html">
        Basic statistics with pyclesperanto
       </a>
      </li>
@@ -614,7 +614,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/main?urlpath=tree/day2f_feature_extraction/quantitative_measurements.ipynb"
+        <a href="https://mybinder.org/v2/gh/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/main?urlpath=tree/day2f_feature_extraction/01_EXERCISE_quantiative_measurements.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -674,7 +674,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/issues/new?title=Issue%20on%20page%20%2Fday2f_feature_extraction/quantitative_measurements.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/issues/new?title=Issue%20on%20page%20%2Fday2f_feature_extraction/01_EXERCISE_quantiative_measurements.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -702,7 +702,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/day2f_feature_extraction/quantitative_measurements.ipynb"
+        <a href="../_sources/day2f_feature_extraction/01_EXERCISE_quantiative_measurements.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -831,7 +831,8 @@ title="Print to PDF"
 <p>Before we can do measurements, we need an <code class="docutils literal notranslate"><span class="pre">image</span></code> and a corresponding <code class="docutils literal notranslate"><span class="pre">label_image</span></code>. Therefore, we recapitulate filtering, thresholding and labeling:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">skimage.io</span> <span class="kn">import</span> <span class="n">imread</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">skimage.io</span> <span class="kn">import</span> <span class="n">imread</span>
 <span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">filters</span>
 
 <span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">measure</span>
@@ -861,7 +862,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/quantitative_measurements_2_0.png" src="../_images/quantitative_measurements_2_0.png" />
+<img alt="../_images/01_EXERCISE_quantiative_measurements_2_0.png" src="../_images/01_EXERCISE_quantiative_measurements_2_0.png" />
 </div>
 </div>
 </section>
@@ -884,11 +885,11 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;skimage.measure._regionprops.RegionProperties at 0x195f1e6a0&gt;,
- &lt;skimage.measure._regionprops.RegionProperties at 0x1961f61c0&gt;,
- &lt;skimage.measure._regionprops.RegionProperties at 0x1961f6040&gt;,
- &lt;skimage.measure._regionprops.RegionProperties at 0x1961f60a0&gt;,
- &lt;skimage.measure._regionprops.RegionProperties at 0x110c69310&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;skimage.measure._regionprops.RegionProperties at 0x1ecd7842df0&gt;,
+ &lt;skimage.measure._regionprops.RegionProperties at 0x1ecd78420a0&gt;,
+ &lt;skimage.measure._regionprops.RegionProperties at 0x1ecd7842a90&gt;,
+ &lt;skimage.measure._regionprops.RegionProperties at 0x1ecd7842550&gt;,
+ &lt;skimage.measure._regionprops.RegionProperties at 0x1ecd78428e0&gt;]
 </pre></div>
 </div>
 </div>
@@ -1079,11 +1080,11 @@ title="Print to PDF"
   30.43602504101513,
   23.49797787654461,
   27.804675105924606,
-  16.651155953717765,
+  16.651155953717762,
   17.042194757272345,
   35.316994908476254,
   32.401948630679065,
-  30.13681620111402,
+  30.136816201114012,
   24.67233590691917,
   27.47945909705002,
   41.32954022794983,
@@ -1108,9 +1109,7 @@ title="Print to PDF"
 <p>Reading those dictionaries of arrays is not very convenient. Thus, we use the <span class="xref myst">pandas library</span> which is a common asset for data scientists.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="n">dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">statistics</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">statistics</span><span class="p">)</span>
 <span class="n">dataframe</span>
 </pre></div>
 </div>
@@ -1258,7 +1257,7 @@ title="Print to PDF"
 <li><p>How large is the largest object?</p></li>
 </ul>
 <ul class="simple">
-<li><p>What are mean and standard deviation of the image?</p></li>
+<li><p>What are mean and standard deviation of the intensity in the image?</p></li>
 </ul>
 <ul class="simple">
 <li><p>What are mean and standard deviation of the area of the segmented objects?</p></li>
@@ -1299,7 +1298,7 @@ title="Print to PDF"
             <p class="prev-next-title">Feature extraction</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="statistics_with_simpleitk.html" title="next page">
+    <a class='right-next' id="next-link" href="02_statistics_with_simpleitk.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Statistics using SimpleITK</p>
