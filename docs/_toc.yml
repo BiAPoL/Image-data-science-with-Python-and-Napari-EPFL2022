@@ -70,10 +70,11 @@ chapters:
           - file: day2e_instance_segmentation/11_voronoi_otsu_labeling
           - file: day2e_instance_segmentation/12_Segmentation_3D
           - file: day2e_instance_segmentation/14_segmentation_2d_membranes
+          - file: day2e_instance_segmentation/15_EXERCISE_Seeded_watershed
           - file: day2e_instance_segmentation/15_remove_labels_on_image_edges
           - file: day2e_instance_segmentation/16_open_close_labels
           - file: day2e_instance_segmentation/19_the_segmentation_game.md
-          - file: day2e_instance_segmentation/20_Segmentation_quality_estimation
+          - file: day2e_instance_segmentation/20_EXERCISE_Segmentation_quality_estimation
 
       - file: day2f_feature_extraction/readme
         sections:
