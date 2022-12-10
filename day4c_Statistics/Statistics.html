@@ -822,32 +822,32 @@ title="Print to PDF"
      Apply bootstrapping to the data
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises-improving-performance">
+   Exercises - Improving performance
+  </a>
+  <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercises-improving-performance">
-     Exercises - Improving performance
+    <a class="reference internal nav-link" href="#exercise-1">
+     Exercise 1
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise-1">
-       Exercise 1
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise-2">
-       Exercise 2
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise-3">
-       Exercise 3:
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise-4">
-       Exercise 4:
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2">
+     Exercise 2
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3">
+     Exercise 3:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-4">
+     Exercise 4:
+    </a>
    </li>
   </ul>
  </li>
@@ -924,32 +924,32 @@ title="Print to PDF"
      Apply bootstrapping to the data
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises-improving-performance">
+   Exercises - Improving performance
+  </a>
+  <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercises-improving-performance">
-     Exercises - Improving performance
+    <a class="reference internal nav-link" href="#exercise-1">
+     Exercise 1
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise-1">
-       Exercise 1
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise-2">
-       Exercise 2
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise-3">
-       Exercise 3:
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise-4">
-       Exercise 4:
-      </a>
-     </li>
-    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2">
+     Exercise 2
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3">
+     Exercise 3:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-4">
+     Exercise 4:
+    </a>
    </li>
   </ul>
  </li>
@@ -1845,17 +1845,18 @@ Confidence interval 2: [778.20041853 793.3309894 ]
 </div></div></div>
 </div>
 </section>
-<section id="exercises-improving-performance">
-<h2>Exercises - Improving performance<a class="headerlink" href="#exercises-improving-performance" title="Permalink to this headline">#</a></h2>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exercises-improving-performance">
+<h1>Exercises - Improving performance<a class="headerlink" href="#exercises-improving-performance" title="Permalink to this headline">#</a></h1>
 <p>Depending on the size of your data and the complexity of the function you use to calculate <span class="math notranslate nohighlight">\(\hat\theta\)</span>, bootstrapping can take quite some time. The computational effort required for bootsrapping was the reason, why bootstrapping was not immediately adopted by the scientific community at the time it was invented by Bradley Efron in 1979. But nowadays, with powerful computers widely available, that is not a problem any more. Considering that your experiment probably took days or even weeks, it is o.k. if the data analysis takes a few minutes or even hours. Consider it a matter of respect for your data to analyze it properly.</p>
 <p>However, in our case, there is actually something we can do about the time the calculations are taking. Pandas is nice and all, but performance is not its strong suit. Numpy is much faster - particularly in combination with just-in-time compilation facilitated by numba.</p>
 <section id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
+<h2>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h2>
 <p>Let’s convert our data to numpy arrays and try <code class="docutils literal notranslate"><span class="pre">get_confidence_interval_by_bootstrapping</span></code> again.</p>
 <p>Tip: the numpy data can be retrieved from the <code class="docutils literal notranslate"><span class="pre">values</span></code> property of the pandas dataframe</p>
 </section>
 <section id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
+<h2>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h2>
 <p>Let’s make our function more modular, so we don’t need to rewrite the whole thing every time we change the data type.
 Split the function into three parts:</p>
 <div class="cell docutils container">
@@ -1876,11 +1877,11 @@ Split the function into three parts:</p>
 </div>
 </section>
 <section id="exercise-3">
-<h3>Exercise 3:<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
+<h2>Exercise 3:<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h2>
 <p>Apply your new functions to the data to calculate confidence intervals. Make sure that the results are the same as before</p>
 </section>
 <section id="exercise-4">
-<h3>Exercise 4:<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h3>
+<h2>Exercise 4:<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h2>
 <p>Let’s benchmark our two functions using the <code class="docutils literal notranslate"><span class="pre">%timeit</span></code> jupyter magic:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1899,7 +1900,6 @@ numpy/numba:
 </div>
 </div>
 </div>
-</section>
 </section>
 </section>
 
