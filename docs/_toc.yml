@@ -125,3 +125,6 @@ chapters:
           - file: day5b_writing_readable_code/12_keep_it_short_and_simple
           - file: day5b_writing_readable_code/14_EXERCISE_modular_programming
           - file: day5b_writing_readable_code/16_EXERCISE_stackview
+
+  - file: day0/group_projects
+    
