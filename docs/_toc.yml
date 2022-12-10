@@ -103,7 +103,7 @@ chapters:
     sections:
       - file: day4a_Tabular_Data/readme
         sections:
-          - file: day4a_Tabular_Data/TabularData
+          - file: day4a_Tabular_Data/Tabular_Data
       - file: day4b_Plotting/readme
         sections:
           - file: day4b_Plotting/Plotting
@@ -127,4 +127,3 @@ chapters:
           - file: day5b_writing_readable_code/16_EXERCISE_stackview
 
   - file: day0/group_projects
-    
