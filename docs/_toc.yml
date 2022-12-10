@@ -120,8 +120,6 @@ chapters:
   - file: day5/Readme
     sections:
       - file: day5a_Best_practices_scientific_programming/readme
-        sections:
-        - file: day5a_Best_practices_scientific_programming/readme
       - file: day5b_writing_readable_code/readme
         sections:
           - file: day5b_writing_readable_code/05_readable_code
