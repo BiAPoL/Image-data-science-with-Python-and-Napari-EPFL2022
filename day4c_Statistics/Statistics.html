@@ -1,0 +1,1932 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Basic descriptive statistics &#8212; Image data science with Python and Napari @EPFL</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/biapol_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Image data science with Python and Napari @EPFL</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Image data science with Python and Napari @EPFL
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../day0/Readme.html">
+   Course preparation
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../day1/readme.html">
+   Day 1: Introduction to Python and Bio-image Analysis
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../day1a_Introduction_Bio-image_Analysis/readme.html">
+     Introduction to Bio-image Analysis
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day1b_Python_Introduction/readme.html">
+     Introduction to Python part I
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day1b_Python_Introduction/01_our_first_juptyer_notebook.html">
+       Python code in Jupyter notebooks
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day1b_Python_Introduction/02_Math_in_python.html">
+       Basic math in python
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day1b_Python_Introduction/03_Dont_try_this_at_home.html">
+       Pitfalls when working with Jupyter notebooks
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day1b_Python_Introduction/04_Basic_types.html">
+       Basic types in python
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day1b_Python_Introduction/05_lists_tuples.html">
+       Lists and tuples
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day1b_Python_Introduction/05a_cropping_lists.html">
+       Cropping lists
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day1b_Python_Introduction/05b_cropping_images.html">
+       Cropping images
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day1b_Python_Introduction/05c_sorting_lists.html">
+       Sorting lists
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day1b_Python_Introduction/05d_masking.html">
+       Masking numpy arrays
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day1b_Python_Introduction/06_Dictionaries_and_tables.html">
+       Dictionaries
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day1c_Python_loops_conditions_functions/readme.html">
+     Introduction to Python part II
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day1c_Python_loops_conditions_functions/07_Conditions.html">
+       Conditions
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day1c_Python_loops_conditions_functions/08_loops.html">
+       Loops
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day1c_Python_loops_conditions_functions/09_custom_functions.html">
+       Functions
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day1x_Folder_Structures/readme.html">
+     Folder Structures
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day1x_Folder_Structures/05_Folder_structures.html">
+       Simple Folder Structures
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day1x_Folder_Structures/06_Folder_structures2.html">
+       Advanced Folder Structures
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../day2/Readme.html">
+   Day 2: Image Filtering, Segmentation and Feature Extraction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day2a_Working_with_Images/readme.html">
+     Opening and Displaying with Images in Python
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day2a_Working_with_Images/napari-assistant.html">
+       The Napari Assistant
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day2a_Working_with_Images/export_notebooks.html">
+       Generating Jupyter Notebooks from the Napari Assistant
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day2a_Working_with_Images/01_Working_with_images.html">
+       Working with images
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day2a_Working_with_Images/04_Image_file_formats.html">
+       Image file formats
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day2b_Image_Filters/readme.html">
+     Image Filters
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day2b_Image_Filters/10_Filters_in_3D_Isotropic_Data.html">
+       3D Image Filters
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day2c_image_segmentation/readme.html">
+     Image segmentation
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day2c_image_segmentation/01_Thresholding.html">
+       Thresholding
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day2c_image_segmentation/03_Morphological_operations.html">
+       Morphological Image Processing
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day2c_image_segmentation/04_Otsu_threshold.html">
+       Otsu’s threshold method (optional)
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day2f_feature_extraction/readme.html">
+     Feature extraction
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day2f_feature_extraction/quantitative_measurements.html">
+       Quantitative image analysis
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day2f_feature_extraction/statistics_with_simpleitk.html">
+       Statistics using SimpleITK
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day2f_feature_extraction/statistics_with_pyclesperanto.html">
+       Basic statistics with pyclesperanto
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../day3/Readme.html">
+   Day 3: Machine learning and introduction to deep learning
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day3a_machine_learning_apoc/readme.html">
+     Machine learning for object segmentation
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day3a_machine_learning_apoc/01_supervised_machine_learning.html">
+       Supervised machine learning
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day3a_machine_learning_apoc/02_EXERCISE_apoc_feature_importance.html">
+       Exercise: Interactive pixel and object classification
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day3a_machine_learning_apoc/02_scikit_learn_random_forest_pixel_classifier.html">
+       Pixel classification using Scikit-learn
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day3a_machine_learning_apoc/04_EXERCISE_demo_object_segmenter.html">
+       Object segmentation on OpenCL-compatible GPUs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day3a_machine_learning_apoc/05_train_on_folders.html">
+       Training classifiers from folders of images
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day3b_deep_learning_segmentation/readme.html">
+     Deep Learning for image segmentation
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="simple">
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../day4/Readme.html">
+   Day 4: Biostatistics and data science
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day4b_Plotting/readme.html">
+     Plotting Data with Seaborn
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+    <label for="toctree-checkbox-14">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day4b_Plotting/01_Plotting_Data_with_Python.html">
+       Plotting Data with Python
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day4b_Plotting/02_Introduction_to_Seaborn.html">
+       Introduction to Seaborn
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day4b_Plotting/03_Plotting_distributions.html">
+       Plotting Distributions with Seaborn
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day4b_Plotting/04_Multivariate_views.html">
+       Multivariate views
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../day5/Readme.html">
+   Day 5: Best practices in scientific programming and licensing/sharing of code
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../day5a_Best_practices_scientific_programming/readme.html">
+     Best practices in scientific programming
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../day5b_writing_readable_code/readme.html">
+     Writing readable code
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+    <label for="toctree-checkbox-16">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day5b_writing_readable_code/05_readable_code.html">
+       Writing good code
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day5b_writing_readable_code/07_magic_numbers.html">
+       Prevent magic numbers
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day5b_writing_readable_code/08_divide_and_rule.html">
+       Divide and rule
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day5b_writing_readable_code/09_custom_modules.html">
+       Custom modules
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day5b_writing_readable_code/10_reading_exercise.html">
+       Reading exercise
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day5b_writing_readable_code/12_keep_it_short_and_simple.html">
+       Keep it short and simple
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day5b_writing_readable_code/14_EXERCISE_modular_programming.html">
+       Exercise modularization
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../day5b_writing_readable_code/16_EXERCISE_stackview.html">
+       Interactive functions in Jupyter Lab
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/main?urlpath=tree/day4c_Statistics/Statistics.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/issues/new?title=Issue%20on%20page%20%2Fday4c_Statistics/Statistics.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/day4c_Statistics/Statistics.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Basic descriptive statistics
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#measurements-of-central-tendency">
+     Measurements of central tendency
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#measurements-of-spread">
+     Measurements of spread
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#testing-whether-the-data-is-normal-gaussian-distributed">
+     Testing Whether the Data is Normal (Gaussian) Distributed
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#skewness">
+     Skewness
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bootstrapping">
+   Bootstrapping
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resampling-demo">
+     Resampling demo
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-real-data-microtubules-gliding-over-a-glass-surface-propelled-by-kinesin-1-motor-proteins">
+   Some real data: Microtubules gliding over a glass surface propelled by kinesin-1 motor proteins
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-wrangling">
+     Data wrangling
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#apply-bootstrapping-to-the-data">
+     Apply bootstrapping to the data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercises-improving-performance">
+     Exercises - Improving performance
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise-1">
+       Exercise 1
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise-2">
+       Exercise 2
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise-3">
+       Exercise 3:
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise-4">
+       Exercise 4:
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Basic descriptive statistics</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Basic descriptive statistics
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#measurements-of-central-tendency">
+     Measurements of central tendency
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#measurements-of-spread">
+     Measurements of spread
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#testing-whether-the-data-is-normal-gaussian-distributed">
+     Testing Whether the Data is Normal (Gaussian) Distributed
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#skewness">
+     Skewness
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bootstrapping">
+   Bootstrapping
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resampling-demo">
+     Resampling demo
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#some-real-data-microtubules-gliding-over-a-glass-surface-propelled-by-kinesin-1-motor-proteins">
+   Some real data: Microtubules gliding over a glass surface propelled by kinesin-1 motor proteins
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-wrangling">
+     Data wrangling
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#apply-bootstrapping-to-the-data">
+     Apply bootstrapping to the data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercises-improving-performance">
+     Exercises - Improving performance
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise-1">
+       Exercise 1
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise-2">
+       Exercise 2
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise-3">
+       Exercise 3:
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise-4">
+       Exercise 4:
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="basic-descriptive-statistics">
+<h1>Basic descriptive statistics<a class="headerlink" href="#basic-descriptive-statistics" title="Permalink to this headline">#</a></h1>
+<p>The term <a class="reference external" href="https://en.wikipedia.org/wiki/Descriptive_statistics">descriptive statistics</a> refers to methods that allow summarizing collections of data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">statistics</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To demonstrate the most important methods, we start by defining a dataset first.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">measurements</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">measurements</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[7, 5, 5, 6, 6, 7, 8, 7, 2, 4, 6, 4, 1, 6, 4, 5, 2, 7, 6, 5, 9, 5, 6, 3, 4, 8, 6, 2, 4, 6, 5, 4, 1, 5, 6, 7, 8, 3, 4, 5, 8, 6, 3, 7, 6, 9]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s plot a histogram of our data to get a feel for the distribution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">measurements</span><span class="p">,</span> 
+            <span class="n">bins</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> 
+            <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">height</span><span class="o">=</span><span class="mf">3.5</span><span class="p">,</span>
+            <span class="n">aspect</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x161836370&gt;
+</pre></div>
+</div>
+<img alt="../_images/Statistics_5_1.png" src="../_images/Statistics_5_1.png" />
+</div>
+</div>
+<section id="measurements-of-central-tendency">
+<h2>Measurements of central tendency<a class="headerlink" href="#measurements-of-central-tendency" title="Permalink to this headline">#</a></h2>
+<p>We can measure the <em>location</em> of our <code class="docutils literal notranslate"><span class="pre">measurement</span></code> in space using <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.statistics.html">numpy’s statistics functions</a> and Python’s <a class="reference external" href="https://docs.python.org/3/library/statistics.html">statistics module</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mode</span> <span class="o">=</span> <span class="n">statistics</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">measurements</span><span class="p">)</span>
+<span class="n">mode</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">median</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">measurements</span><span class="p">)</span>
+<span class="n">median</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">measurements</span><span class="p">)</span>
+<span class="n">mean</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.282608695652174
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="measurements-of-spread">
+<h2>Measurements of spread<a class="headerlink" href="#measurements-of-spread" title="Permalink to this headline">#</a></h2>
+<p>Numpy also allows measuring the spread of <code class="docutils literal notranslate"><span class="pre">measurements</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">standard_deviation</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">measurements</span><span class="p">)</span>
+<span class="n">standard_deviation</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.96339372868445
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">variance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">measurements</span><span class="p">)</span>
+<span class="n">variance</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.8549149338374282
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">measurements</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">measurements</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 9)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">measurements</span><span class="p">,</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">75</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([4.  , 5.5 , 6.75])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">measurements</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">.50</span><span class="p">,</span> <span class="mf">.75</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([4.  , 5.5 , 6.75])
+</pre></div>
+</div>
+</div>
+</div>
+<p>With the array sorted, it is easier to interpret some of these measurements. We can sort a list like this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">measurements</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="testing-whether-the-data-is-normal-gaussian-distributed">
+<h2>Testing Whether the Data is Normal (Gaussian) Distributed<a class="headerlink" href="#testing-whether-the-data-is-normal-gaussian-distributed" title="Permalink to this headline">#</a></h2>
+<p>Many parametric statistical tests assume that your data is normally distributed. Before you use such a test, it is wise to test your data for normality. Commonly, this is done by the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.normaltest.html">D’Agostino’s K-squared test</a> (<code class="docutils literal notranslate"><span class="pre">scipy.stats.normaltest</span></code>) other possibilities are the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.shapiro.html?highlight=shapiro">Shapiro-Wilk test</a> (<code class="docutils literal notranslate"><span class="pre">scipy.stats.shapiro</span></code>) or the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.anderson.html">Anderson-Darling test</a> (<code class="docutils literal notranslate"><span class="pre">scipy.stats.anderson</span></code>).</p>
+<p>Note that some sources also recommend the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.kstest.html">Kolmogorov-Smirnov Test</a> (<code class="docutils literal notranslate"><span class="pre">scipy.stats.kstest</span></code>), which is a general tests for goodness of fit. When testing against a standard normal distribution, the results are only valid, if the data was normalized before the test (i.e. has a mean of 0 and a standard deviation of 1).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">normaltest</span><span class="p">(</span><span class="n">measurements</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NormaltestResult(statistic=0.8221865757355512, pvalue=0.6629250858482892)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The pvalue is greater than 0.05, meaning that the null hypothesis, that the data was drawn from a normal distribution was not rejected. I.e. we can assume that the data is normal distributed and use parametric tests.</p>
+</section>
+<section id="skewness">
+<h2>Skewness<a class="headerlink" href="#skewness" title="Permalink to this headline">#</a></h2>
+<p>Skewness is a measure of the asymetry of a distribution. Typically, positive values indicate a tail to the right, as shown below, while negative indicate a tail to the left. Values close to zero mean a symetric distribution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fixed seed for reproducibility</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">poisson</span><span class="p">(</span><span class="n">lam</span> <span class="o">=</span> <span class="n">mean</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([12., 10., 16., 12., 19., 23.,  2.,  2.,  2.,  2.]),
+ array([ 1. ,  2.2,  3.4,  4.6,  5.8,  7. ,  8.2,  9.4, 10.6, 11.8, 13. ]),
+ &lt;BarContainer object of 10 artists&gt;)
+</pre></div>
+</div>
+<img alt="../_images/Statistics_24_1.png" src="../_images/Statistics_24_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">skew</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5144761536788754
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s check now the skewness of a normal distribution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="n">mean</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="n">standard_deviation</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 2.,  5., 11., 14., 16., 17., 12., 10.,  9.,  4.]),
+ array([0.95507676, 1.83302436, 2.71097195, 3.58891955, 4.46686714,
+        5.34481474, 6.22276233, 7.10070992, 7.97865752, 8.85660511,
+        9.73455271]),
+ &lt;BarContainer object of 10 artists&gt;)
+</pre></div>
+</div>
+<img alt="../_images/Statistics_27_1.png" src="../_images/Statistics_27_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stats</span><span class="o">.</span><span class="n">skew</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.023475210203459915
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="bootstrapping">
+<h1>Bootstrapping<a class="headerlink" href="#bootstrapping" title="Permalink to this headline">#</a></h1>
+<p>A big drawback of a statistical test that spits out a p-value is, that we need to understand how the statistical test works and which assumptions it makes in order to be sure that the result is reliable (and even then, the result may be not as reliable as the p-value suggests, cf <a class="reference external" href="https://www.americanscientist.org/article/the-statistical-crisis-in-science">The Statistical Crisis in Science</a>).</p>
+<p>A more transparent way to judge the significance of the differences is to calculate confidence intervals and check if they overlap. We highly recommend reading <a class="reference external" href="https://justinbois.github.io/dd-pol/2022/lessons/04/confidence_intervals.html">Justin Bois’ statistics lessons on confidence intervals</a>. Briefly, “If an experiment is repeated over and over again, the estimate I compute for a parameter, <span class="math notranslate nohighlight">\(\hat\theta\)</span>, will lie between the bounds of the 95% confidence interval for 95% of the experiments”. Or more loosely formulated, if I estimate that the true value lies within the 95% confidence interval, I am correct 95% of the time.</p>
+<p>We will use bootstrapping to estimate the 95% confidence intervals. Again, refer to <a class="reference external" href="https://justinbois.github.io/dd-pol/2022/lessons/04/confidence_intervals.html">Justin’s lessons</a> for an excellent explanation. Briefly, the recipe for generating a bootstrap [95%] confidence interval is as follows.</p>
+<ol class="simple">
+<li><p>Generate <span class="math notranslate nohighlight">\(B\)</span> independent bootstrap samples. Each one is generated by drawing <span class="math notranslate nohighlight">\(n\)</span> values out of the data array with replacement. Where <span class="math notranslate nohighlight">\(n\)</span> is the number of measurements in the original experiment.</p></li>
+<li><p>Compute <span class="math notranslate nohighlight">\(\hat\theta^∗\)</span> for each bootstrap sample to get the bootstrap replicates.</p></li>
+<li><p>The central 95% confidence interval consists of the percentiles 2.5 and 97.5 of the bootstrap replicates.”</p></li>
+</ol>
+<section id="resampling-demo">
+<h2>Resampling demo<a class="headerlink" href="#resampling-demo" title="Permalink to this headline">#</a></h2>
+<p>Here is an example to demonstrate the resampling. We will use mean as our <span class="math notranslate nohighlight">\(\hat\theta\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fixed seed for reproducibility</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># use np.random.normal to simulate 20 measurements (size=20) drawn from a normal distribution </span>
+<span class="c1"># with true mean 5 (loc=5) and standard deviation 10 (scale=10)</span>
+<span class="n">experiment</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># put the measurements into a pandas dataframe</span>
+<span class="n">measured</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;measured&#39;</span><span class="p">:</span> <span class="n">experiment</span><span class="p">})</span>
+
+<span class="c1"># calculate the mean</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">measured</span><span class="p">[</span><span class="s1">&#39;measured&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+
+<span class="c1"># show the pandas dataframe</span>
+<span class="n">measured</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.7863620427709455
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>measured</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.505617</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>9.999513</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-4.959089</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>11.935985</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.816985</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>-10.845772</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>-1.477068</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>10.985752</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>8.322500</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>-6.474766</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>11.186697</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>4.120131</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>9.250724</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>8.322531</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>-6.568163</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>8.509972</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>-1.068873</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>20.469793</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>12.233416</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>5.461356</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># resample the measurements (np.random.choice)</span>
+<span class="n">resampled_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">measured</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">measured</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># put the results into a pandas dataframe, calculate the mean and show the output as we did above</span>
+<span class="n">resampled</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;resampled&#39;</span><span class="p">:</span> <span class="n">measured</span><span class="p">[</span><span class="s1">&#39;measured&#39;</span><span class="p">][</span><span class="n">resampled_index</span><span class="p">]})</span>
+
+<span class="c1"># calculate the mean</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resampled</span><span class="p">[</span><span class="s1">&#39;resampled&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+
+<span class="c1"># show the pandas dataframe</span>
+<span class="n">resampled</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.038275740527368
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>resampled</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>17</th>
+      <td>20.469793</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>-1.068873</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>20.469793</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>-6.474766</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>-1.068873</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>9.250724</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>12.233416</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>11.935985</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>4.120131</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>12.233416</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>-1.477068</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>10.985752</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>8.322531</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>11.186697</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>10.985752</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>-6.474766</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>12.233416</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>5.461356</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>-1.068873</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>8.509972</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Run the previous cell multiple times to see how the output changes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># let&#39;s create 1000 bootstrap samples for the mean and calculate the 95% confidence interval</span>
+<span class="n">bootstrap_size</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">bootstrap_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">bootstrap_size</span><span class="p">,))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">bootstrap_size</span><span class="p">):</span>
+    <span class="n">resampled_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">measured</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">measured</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">bootstrap_samples</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">measured</span><span class="p">[</span><span class="s1">&#39;measured&#39;</span><span class="p">][</span><span class="n">resampled_index</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="n">confidence_interval</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">bootstrap_samples</span><span class="p">,</span> <span class="p">[</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">97.5</span><span class="p">])</span>
+<span class="n">confidence_interval</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.40321507, 8.1937104 ])
+</pre></div>
+</div>
+</div>
+</div>
+<p>How does our true mean compare to the 95% confidence interval?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Try the same with `np.median`</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="some-real-data-microtubules-gliding-over-a-glass-surface-propelled-by-kinesin-1-motor-proteins">
+<h1>Some real data: Microtubules gliding over a glass surface propelled by kinesin-1 motor proteins<a class="headerlink" href="#some-real-data-microtubules-gliding-over-a-glass-surface-propelled-by-kinesin-1-motor-proteins" title="Permalink to this headline">#</a></h1>
+<p>The <a class="reference external" href="https://zenodo.org/record/7403517">dataset</a> consists of timelapse fluorescence micrographs. A tracking algorithm was applied to the micrographs and tracked the microtubule tips over time to measure their velocity as described in this figure from the <a class="reference external" href="https://pubs.rsc.org/en/content/articlehtml/2018/lc/c8lc00547h">original publication by Korten et al. 2018</a> (<a class="reference external" href="http://creativecommons.org/licenses/by-nc/3.0/">CC-BY-NC 3.0</a>:</p>
+<img src="microtubuledata.jpg" width=300> 
+<p>First, we load the data. Since the data is in a matlab file, we use <code class="docutils literal notranslate"><span class="pre">loadmat</span></code> from <code class="docutils literal notranslate"><span class="pre">scipy.io</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.io</span> <span class="kn">import</span> <span class="n">loadmat</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">loadmat</span><span class="p">(</span><span class="s1">&#39;../../data/microtubule_tracking/summary.mat&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="data-wrangling">
+<h2>Data wrangling<a class="headerlink" href="#data-wrangling" title="Permalink to this headline">#</a></h2>
+<p>The output of loadmat is quite a mess. Therefore, we need to do some data wrangling to get the data into a tidy pandas dataframe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">microtubule_id</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">amppnp_concentration</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;concentrations&#39;</span><span class="p">]):</span>
+    <span class="n">all_frame_to_frame_velocities</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;allSpeeds&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">all_frame_to_frame_velocities</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;AMPPNP concentration&#39;</span><span class="p">:</span> <span class="n">amppnp_concentration</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;file name&#39;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;fileNames&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;microtubule ID&#39;</span><span class="p">:</span> <span class="n">microtubule_id</span><span class="p">,</span> <span class="s1">&#39;frame-to-frame microtubule tip velocity&#39;</span><span class="p">:</span> <span class="n">all_frame_to_frame_velocities</span><span class="p">[:,</span> <span class="n">j</span><span class="p">]})],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">microtubule_id</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>AMPPNP concentration</th>
+      <th>file name</th>
+      <th>microtubule ID</th>
+      <th>frame-to-frame microtubule tip velocity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>100</td>
+      <td>2015-12-12_Run_1_AMPPNP_row_1_0100_1_119.nd2</td>
+      <td>0</td>
+      <td>889.268843</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>100</td>
+      <td>2015-12-12_Run_1_AMPPNP_row_1_0100_1_119.nd2</td>
+      <td>0</td>
+      <td>859.854055</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>100</td>
+      <td>2015-12-12_Run_1_AMPPNP_row_1_0100_1_119.nd2</td>
+      <td>0</td>
+      <td>493.120518</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>100</td>
+      <td>2015-12-12_Run_1_AMPPNP_row_1_0100_1_119.nd2</td>
+      <td>0</td>
+      <td>792.180836</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>100</td>
+      <td>2015-12-12_Run_1_AMPPNP_row_1_0100_1_119.nd2</td>
+      <td>0</td>
+      <td>963.193758</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>44828</th>
+      <td>0</td>
+      <td>2015-12-12_Run_1_AMPPNP_row_1_ATP_2_108.nd2</td>
+      <td>4482</td>
+      <td>701.328330</td>
+    </tr>
+    <tr>
+      <th>44829</th>
+      <td>0</td>
+      <td>2015-12-12_Run_1_AMPPNP_row_1_ATP_2_108.nd2</td>
+      <td>4482</td>
+      <td>807.595722</td>
+    </tr>
+    <tr>
+      <th>44837</th>
+      <td>0</td>
+      <td>2015-12-12_Run_1_AMPPNP_row_1_ATP_2_108.nd2</td>
+      <td>4483</td>
+      <td>691.523977</td>
+    </tr>
+    <tr>
+      <th>44838</th>
+      <td>0</td>
+      <td>2015-12-12_Run_1_AMPPNP_row_1_ATP_2_108.nd2</td>
+      <td>4483</td>
+      <td>868.650138</td>
+    </tr>
+    <tr>
+      <th>44839</th>
+      <td>0</td>
+      <td>2015-12-12_Run_1_AMPPNP_row_1_ATP_2_108.nd2</td>
+      <td>4483</td>
+      <td>784.216683</td>
+    </tr>
+  </tbody>
+</table>
+<p>33700 rows × 4 columns</p>
+</div></div></div>
+</div>
+<p>Let’s plot the median microtubule velocities for each AMPPNP concentration</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get the columns AMPPNP concentration and frame-to-frame microtubule tip velocity</span>
+<span class="n">concentration_velocity</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;AMPPNP concentration&#39;</span><span class="p">,</span><span class="s1">&#39;frame-to-frame microtubule tip velocity&#39;</span><span class="p">]]</span>
+
+<span class="c1"># use the `groupby` method of pandas to calculate the median velocity for each AMPPNP concentration</span>
+<span class="n">concentration_median_velocity</span> <span class="o">=</span> <span class="n">concentration_velocity</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;AMPPNP concentration&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+
+<span class="c1"># use seaborn for plotting</span>
+<span class="n">plot</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">concentration_median_velocity</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;AMPPNP concentration&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;frame-to-frame microtubule tip velocity&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Statistics_43_0.png" src="../_images/Statistics_43_0.png" />
+</div>
+</div>
+<p>Above, we assumed that both controls have the same median. Let’s check that assumption:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extract the controls from the dataframe</span>
+<span class="n">controls</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;AMPPNP concentration&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Calculate the median using pandas `groupby` method</span>
+<span class="n">controls</span><span class="p">[[</span><span class="s1">&#39;file name&#39;</span><span class="p">,</span> <span class="s1">&#39;frame-to-frame microtubule tip velocity&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;file name&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>frame-to-frame microtubule tip velocity</th>
+    </tr>
+    <tr>
+      <th>file name</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2015-12-12_Run_1_AMPPNP_row_1_ATP_1_107.nd2</th>
+      <td>779.605417</td>
+    </tr>
+    <tr>
+      <th>2015-12-12_Run_1_AMPPNP_row_1_ATP_2_108.nd2</th>
+      <td>786.234078</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The values are close, but maybe the difference is still significant?</p>
+<p>Let’s use bootstrapping to find out.</p>
+</section>
+<section id="apply-bootstrapping-to-the-data">
+<h2>Apply bootstrapping to the data<a class="headerlink" href="#apply-bootstrapping-to-the-data" title="Permalink to this headline">#</a></h2>
+<p>Remember how we only changed one line in the code above to calculate the confidence intervals for different parameters <span class="math notranslate nohighlight">\(\hat\theta\)</span>? That meant we were repeating ourselves. So let’s write a function to avoid having to repeat ourselves now when we calculate the bootstrap intevals for our different controls.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_confidence_interval_by_bootstrapping</span><span class="p">(</span><span class="n">measurements</span><span class="p">:</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">bootstrap_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">alpha</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Estimate confidence intervals for data in a pandas dataframe by bootstrapping&#39;&#39;&#39;</span>
+    <span class="n">bootstrap_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">bootstrap_size</span><span class="p">,))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">bootstrap_size</span><span class="p">):</span>
+        <span class="n">resample_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">measurements</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="n">measurements</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">bootstrap_samples</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">measurements</span><span class="p">[</span><span class="s1">&#39;frame-to-frame microtubule tip velocity&#39;</span><span class="p">][</span><span class="n">resample_index</span><span class="p">])</span>
+    <span class="n">lower_bound</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="n">upper_bound</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">-</span> <span class="n">lower_bound</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">bootstrap_samples</span><span class="p">,[</span><span class="n">lower_bound</span><span class="p">,</span> <span class="n">upper_bound</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fixed seed for reproducibility</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># extract data for the individual controls</span>
+<span class="n">control1</span> <span class="o">=</span> <span class="n">controls</span><span class="p">[</span><span class="n">controls</span><span class="p">[</span><span class="s1">&#39;file name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;2015-12-12_Run_1_AMPPNP_row_1_ATP_1_107.nd2&#39;</span><span class="p">]</span>
+<span class="n">control2</span> <span class="o">=</span> <span class="n">controls</span><span class="p">[</span><span class="n">controls</span><span class="p">[</span><span class="s1">&#39;file name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;2015-12-12_Run_1_AMPPNP_row_1_ATP_2_108.nd2&#39;</span><span class="p">]</span>
+
+<span class="n">confidence_interval1</span> <span class="o">=</span> <span class="n">get_confidence_interval_by_bootstrapping</span><span class="p">(</span><span class="n">control1</span><span class="p">)</span>
+<span class="n">confidence_interval2</span> <span class="o">=</span> <span class="n">get_confidence_interval_by_bootstrapping</span><span class="p">(</span><span class="n">control2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Confidence interval 1: </span><span class="si">{}</span><span class="se">\n</span><span class="s1">Confidence interval 2: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">confidence_interval1</span><span class="p">,</span> <span class="n">confidence_interval2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Confidence interval 1: [774.35920781 785.24821312]
+Confidence interval 2: [778.20041853 793.3309894 ]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Our confidence intervals are overlapping, so it was o.k. to combine them in our graph above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>AMPPNP concentration</th>
+      <th>file name</th>
+      <th>microtubule ID</th>
+      <th>frame-to-frame microtubule tip velocity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>100</td>
+      <td>2015-12-12_Run_1_AMPPNP_row_1_0100_1_119.nd2</td>
+      <td>0</td>
+      <td>889.268843</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>100</td>
+      <td>2015-12-12_Run_1_AMPPNP_row_1_0100_1_119.nd2</td>
+      <td>0</td>
+      <td>859.854055</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>100</td>
+      <td>2015-12-12_Run_1_AMPPNP_row_1_0100_1_119.nd2</td>
+      <td>0</td>
+      <td>493.120518</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>100</td>
+      <td>2015-12-12_Run_1_AMPPNP_row_1_0100_1_119.nd2</td>
+      <td>0</td>
+      <td>792.180836</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>100</td>
+      <td>2015-12-12_Run_1_AMPPNP_row_1_0100_1_119.nd2</td>
+      <td>0</td>
+      <td>963.193758</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="exercises-improving-performance">
+<h2>Exercises - Improving performance<a class="headerlink" href="#exercises-improving-performance" title="Permalink to this headline">#</a></h2>
+<p>Depending on the size of your data and the complexity of the function you use to calculate <span class="math notranslate nohighlight">\(\hat\theta\)</span>, bootstrapping can take quite some time. The computational effort required for bootsrapping was the reason, why bootstrapping was not immediately adopted by the scientific community at the time it was invented by Bradley Efron in 1979. But nowadays, with powerful computers widely available, that is not a problem any more. Considering that your experiment probably took days or even weeks, it is o.k. if the data analysis takes a few minutes or even hours. Consider it a matter of respect for your data to analyze it properly.</p>
+<p>However, in our case, there is actually something we can do about the time the calculations are taking. Pandas is nice and all, but performance is not its strong suit. Numpy is much faster - particularly in combination with just-in-time compilation facilitated by numba.</p>
+<section id="exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
+<p>Let’s convert our data to numpy arrays and try <code class="docutils literal notranslate"><span class="pre">get_confidence_interval_by_bootstrapping</span></code> again.</p>
+<p>Tip: the numpy data can be retrieved from the <code class="docutils literal notranslate"><span class="pre">values</span></code> property of the pandas dataframe</p>
+</section>
+<section id="exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
+<p>Let’s make our function more modular, so we don’t need to rewrite the whole thing every time we change the data type.
+Split the function into three parts:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Turn get_confidence_interval_by_bootstrapping</span>
+<span class="c1"># into three functions:</span>
+<span class="k">def</span> <span class="nf">draw_bootstrap_sample</span><span class="p">(</span><span class="n">measurements</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Draw a bootstrap sample from a 1D data set.&quot;&quot;&quot;</span>
+    
+<span class="k">def</span> <span class="nf">bootstrap_median</span><span class="p">(</span><span class="n">measurements</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">bootstrap_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Apply a function to many boostrap samples.&quot;&quot;&quot;</span>
+
+<span class="k">def</span> <span class="nf">get_confidence_interval</span><span class="p">(</span><span class="n">boostrap_replicates</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">alpha</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Calculate the confidence interval with conficence level alpha from bootstrap replicates&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-3">
+<h3>Exercise 3:<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
+<p>Apply your new functions to the data to calculate confidence intervals. Make sure that the results are the same as before</p>
+</section>
+<section id="exercise-4">
+<h3>Exercise 4:<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h3>
+<p>Let’s benchmark our two functions using the <code class="docutils literal notranslate"><span class="pre">%timeit</span></code> jupyter magic:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pandas:&#39;</span><span class="p">)</span>
+<span class="o">%</span><span class="k">timeit</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;numpy/numba:&#39;</span><span class="p">)</span>
+<span class="o">%</span><span class="k">timeit</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas:
+numpy/numba:
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./day4c_Statistics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Marcelo Zoccoler, Johannes Müller, Till Korten, Robert Haase, DFG Cluster of Excellence "Physics of Life", TU Dresden<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

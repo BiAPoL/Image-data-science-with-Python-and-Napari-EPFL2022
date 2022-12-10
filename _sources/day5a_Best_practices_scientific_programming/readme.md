@@ -21,7 +21,6 @@ This includes topics such as version control, licensing and copyright.
 
 Download [Slides](https://github.com/BiAPoL/Image-data-science-with-Python-and-Napari-EPFL2022/raw/main/docs/day5a_Best_practices_scientific_programming/Sharing_Licensing.pdf)
 
-## Exercise: Collaborative script editing
+## Further Reading
 
-For this session we do an excursion to a Focal Plane blog post about [Collaborative Script Editing with git](https://focalplane.biologists.com/2021/09/04/collaborative-bio-image-analysis-script-editing-with-git/). 
-We will go through the procedure demonstrated there and create a [github repository](https://github.com) and share it with our neighbors.
+If you're into collaboration and you want to share your code with others or discuss code online with experts, you can check this FocelPlane blog post about [Collaborative Script Editing with git](https://focalplane.biologists.com/2021/09/04/collaborative-bio-image-analysis-script-editing-with-git/)
