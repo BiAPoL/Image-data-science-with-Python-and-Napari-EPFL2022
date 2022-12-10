@@ -1,4 +1,4 @@
-# Plotting Data with Seaborn
+# Plotting Data with Python
 
 This part will teach you how to plot data with matplotlib and seaborn. We start with matplotlib, because seaborn is based upon it and some syntax may be useful with seaborn.
 
