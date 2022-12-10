@@ -7,7 +7,7 @@ Goal of playing this game is to give your some feeling for what it means if the 
 
 ![](jaccard_index.gif)
 
-## How to play
+## How to play with segmentation quality
 Start napari, add a new labels layer and draw a large circle. Rename the layer to "Reference". 
 This is your reference annotation.
 
