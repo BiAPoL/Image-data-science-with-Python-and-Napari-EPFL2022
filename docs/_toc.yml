@@ -78,9 +78,9 @@ chapters:
 
       - file: day2f_feature_extraction/readme
         sections:
-          - file: day2f_feature_extraction/quantitative_measurements
-          - file: day2f_feature_extraction/statistics_with_simpleitk
-          - file: day2f_feature_extraction/statistics_with_pyclesperanto
+          - file: day2f_feature_extraction/01_EXERCISE_quantiative_measurements
+          - file: day2f_feature_extraction/02_statistics_with_simpleitk
+          - file: day2f_feature_extraction/03_statistics_with_pyclesperanto
 
   - file: day3/Readme
     sections:
