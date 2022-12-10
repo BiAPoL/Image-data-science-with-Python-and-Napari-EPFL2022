@@ -77,9 +77,9 @@ All steps are possible using Python. However, the last step, parameter explorati
 
 ![img_6.png](img_6.png)
 
-## Work on your own data
+## Project 6 Work on your own data
 
-You can work on imaging data you brought with you. This is recommended in case you work with datasets similar to the use-cases shown above.
+You can also work on imaging data you brought with you. This is recommended in case you work with datasets and scientific questions similar to the use-cases shown above as our teaching materials are centered around those.
 
 ## Group presentations
 
