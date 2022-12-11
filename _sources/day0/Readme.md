@@ -12,6 +12,16 @@ After Napari opens, click the menu `File > Open Samples > clEsperanto > blobs (f
 
 ![img.png](img.png)
 
+## Troubleshooting: Errors in Jupyter lab
+
+In case you installed devbio-napari between approximately December 1st and December 11th, there are error messages appearing in Jupyter lab such as ``, ([potentially related to this](https://github.com/jupyter-server/jupyter_server/issues/1127)).
+
+This can be fixed by calling this from inside the `devbio-napari-env` environment:
+
+```
+mamba install jupyter_server=1.23.3 -c conda-forge
+```
+
 ## Troubleshooting: Graphics cards drivers
 
 In case error messages contains "ImportError: DLL load failed while importing cl: The specified procedure could not be found" [see also](https://github.com/clEsperanto/pyclesperanto_prototype/issues/55) or ""clGetPlatformIDs failed: PLATFORM_NOT_FOUND_KHR", please install recent drivers for your graphics card and/or OpenCL device. Select the right driver source depending on your hardware from this list:
