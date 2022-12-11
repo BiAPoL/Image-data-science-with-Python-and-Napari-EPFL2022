@@ -14,7 +14,7 @@ After Napari opens, click the menu `File > Open Samples > clEsperanto > blobs (f
 
 ## Troubleshooting: Errors in Jupyter lab
 
-In case you installed devbio-napari between approximately December 1st and December 11th, there are error messages appearing in Jupyter lab such as ``, ([potentially related to this](https://github.com/jupyter-server/jupyter_server/issues/1127)).
+In case you installed devbio-napari between approximately December 6st and December 11th, there are error messages appearing in Jupyter lab such as ``, ([potentially related to this](https://github.com/jupyter-server/jupyter_server/issues/1127)).
 
 This can be fixed by calling this from inside the `devbio-napari-env` environment:
 
