@@ -79,6 +79,7 @@ chapters:
           - file: day2f_feature_extraction/02_statistics_with_simpleitk
           - file: day2f_feature_extraction/03_statistics_with_pyclesperanto
           - file: day2f_feature_extraction/04_EXERCISE_parametric_images_in_napari
+          - file: day2f_feature_extraction/05_quantitative_neighbor_maps
 
   - file: day3/Readme
     sections:
