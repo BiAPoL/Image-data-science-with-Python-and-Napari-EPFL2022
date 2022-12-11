@@ -30,8 +30,9 @@ Hints:
 
 ## Project 3: 3D Nuclei classification
 
-Download the [Tribolium castaneum data set "Lund"](https://github.com/clEsperanto/clesperanto_example_data/blob/main/Lund-100MB.tif) and segment the nuclei. 
+Download the [Tribolium castaneum data set "Lund"](https://github.com/clEsperanto/clesperanto_example_data/blob/main/Lund-100MB.tif) and segment the nuclei.
 Classify the nuclei according to their properties so that embryo and serosa nuclei can be distinguished.
+Optional: There are more frames in original voxel size of this dataset [available online](https://zenodo.org/record/5837363#.Y5S8R3bMJaQ). When working with this dataset, it is recommended to resample the image data first to be isotropic.
 
 Hints:
 * The dataset has a voxel size of 1x1x1 micron (isotropic).
@@ -41,6 +42,7 @@ Hints:
 
 Note: For reproducible analysis, you may want to program that workflow. 
 However, processing a single time frame is also possible interactively in Napari.
+
 
 ![img_3.png](img_3.png)
 
