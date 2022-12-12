@@ -32,14 +32,14 @@ chapters:
           - file: day1c_Python_loops_conditions_functions/08_loops
           - file: day1c_Python_loops_conditions_functions/09_custom_functions
 
-      - file: day1x_Folder_Structures/readme
-        sections:
-          - file: day1x_Folder_Structures/05_Folder_structures
-          - file: day1x_Folder_Structures/06_EXERCISE_Folder_structures_2
-
   - file: day2/Readme
     sections:
       # Day2 Morning part
+      - file: day2aa_Folder_Structures/readme
+        sections:
+          - file: day2aa_Folder_Structures/05_Folder_structures
+          - file: day2aa_Folder_Structures/06_EXERCISE_Folder_structures_2
+
       - file: day2a_Working_with_Images/readme
         sections:
           - file: day2a_Working_with_Images/napari-assistant.md
@@ -47,10 +47,12 @@ chapters:
           - file: day2a_Working_with_Images/01_Working_with_images
           - file: day1c_Napari_Introduction/05_napari
           - file: day2a_Working_with_Images/04_Image_file_formats
+
       - file: day2b_Image_Filters/readme
         sections:
           - file: day2b_Image_Filters/09_Filters
           - file: day2b_Image_Filters/10_Optional_Filters_in_3D_Isotropic_Data
+
       - file: day2a_background_subtraction/readme
         sections:
           - file: day2a_background_subtraction/01_Background_subtraction
