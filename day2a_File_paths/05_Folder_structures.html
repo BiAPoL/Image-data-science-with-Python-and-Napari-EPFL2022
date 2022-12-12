@@ -976,13 +976,23 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># join paths together</span>
+<span class="n">text_file</span> <span class="o">=</span> <span class="n">data_path</span> <span class="o">/</span> <span class="s1">&#39;subdirectory/file.txt&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check if a file or folder exists</span>
-<span class="n">data_path</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Does the text file exist? </span><span class="si">{</span><span class="n">text_file</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Does the data path exist? </span><span class="si">{</span><span class="n">data_path</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Does the text file exist? False
+Does the data path exist? True
 </pre></div>
 </div>
 </div>
@@ -1054,7 +1064,7 @@ Readme.txt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/05_Folder_structures_20_0.png" src="../_images/05_Folder_structures_20_0.png" />
+<img alt="../_images/05_Folder_structures_21_0.png" src="../_images/05_Folder_structures_21_0.png" />
 </div>
 </div>
 </section>
