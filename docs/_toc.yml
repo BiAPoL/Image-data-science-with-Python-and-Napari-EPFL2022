@@ -112,6 +112,8 @@ chapters:
           - file: day4c_Statistics/Statistics
       - file: day4f_clustering/readme
         sections:
+          - file: day4f_clustering/01_kmeans
+          - file: day4f_clustering/02_hdbscan
           - file: day4f_clustering/03_EXERCISE_interactive_dim_reduction_and_clustering
 
   - file: day5/Readme
