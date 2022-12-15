@@ -32,6 +32,24 @@ When using some plugins, the Napari window increases and jumps out of the screen
 mamba install napari=0.4.15 -c conda-forge
 ```
 
+## Troubleshooting: DLL load failed
+
+In case of error messages such as this one:
+```
+[...] _get_win_folder_with_pywin32
+from win32com.shell import shellcon, shell
+ImportError: DLL load failed while importing shell: The specified procedure could not be found.
+```
+
+Try this command, within the base environment:
+
+```
+conda activate base
+
+pip install --upgrade pywin32==228
+```
+
+[Source](https://github.com/conda/conda/issues/11503)
 
 ## Troubleshooting: Graphics cards drivers
 
