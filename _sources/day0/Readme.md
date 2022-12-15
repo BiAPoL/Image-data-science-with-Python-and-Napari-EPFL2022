@@ -24,6 +24,15 @@ This can be fixed by calling this from inside the `devbio-napari-env` environmen
 mamba install jupyter_server=1.23.3 -c conda-forge
 ```
 
+## Troubleshooting: Napari jumping out of the screen
+
+When using some plugins, the Napari window increases and jumps out of the screen. In this case, downgrade Napari to version 0.4.15:
+
+```
+mamba install napari=0.4.15 -c conda-forge
+```
+
+
 ## Troubleshooting: Graphics cards drivers
 
 In case error messages contains "ImportError: DLL load failed while importing cl: The specified procedure could not be found" [see also](https://github.com/clEsperanto/pyclesperanto_prototype/issues/55) or ""clGetPlatformIDs failed: PLATFORM_NOT_FOUND_KHR", please install recent drivers for your graphics card and/or OpenCL device. Select the right driver source depending on your hardware from this list:

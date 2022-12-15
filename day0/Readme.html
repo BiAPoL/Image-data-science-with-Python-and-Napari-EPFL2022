@@ -840,6 +840,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#troubleshooting-napari-jumping-out-of-the-screen">
+   Troubleshooting: Napari jumping out of the screen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#troubleshooting-graphics-cards-drivers">
    Troubleshooting: Graphics cards drivers
   </a>
@@ -866,6 +871,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#troubleshooting-errors-in-jupyter-lab">
    Troubleshooting: Errors in Jupyter lab
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#troubleshooting-napari-jumping-out-of-the-screen">
+   Troubleshooting: Napari jumping out of the screen
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -900,6 +910,13 @@ title="Print to PDF"
 <p><img alt="" src="../_images/error_jupyter_server.png" /></p>
 <p>This can be fixed by calling this from inside the <code class="docutils literal notranslate"><span class="pre">devbio-napari-env</span></code> environment:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mamba</span> <span class="n">install</span> <span class="n">jupyter_server</span><span class="o">=</span><span class="mf">1.23.3</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+</pre></div>
+</div>
+</section>
+<section id="troubleshooting-napari-jumping-out-of-the-screen">
+<h2>Troubleshooting: Napari jumping out of the screen<a class="headerlink" href="#troubleshooting-napari-jumping-out-of-the-screen" title="Permalink to this headline">#</a></h2>
+<p>When using some plugins, the Napari window increases and jumps out of the screen. In this case, downgrade Napari to version 0.4.15:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mamba</span> <span class="n">install</span> <span class="n">napari</span><span class="o">=</span><span class="mf">0.4.15</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
 </pre></div>
 </div>
 </section>
