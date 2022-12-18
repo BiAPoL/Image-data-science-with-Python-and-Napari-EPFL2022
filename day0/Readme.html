@@ -952,9 +952,18 @@ title="Print to PDF"
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.amd.com/en/support">AMD drivers</a></p></li>
 <li><p><a class="reference external" href="https://www.nvidia.com/download/index.aspx">NVidia drivers</a></p></li>
+<li><p><span class="xref myst">Intel GPU drivers</span>(<a class="reference external" href="https://www.intel.com/content/www/us/en/download/726609/intel-arc-graphics-windows-dch-driver.html">https://www.intel.com/content/www/us/en/download/726609/intel-arc-graphics-windows-dch-driver.html</a>)</p></li>
 <li><p><a class="reference external" href="https://www.intel.com/content/www/us/en/developer/articles/tool/opencl-drivers.html#latest_CPU_runtime">Intel CPU OpenCL drivers</a></p></li>
 <li><p><a class="reference external" href="https://www.microsoft.com/en-us/p/opencl-and-opengl-compatibility-pack/9nqpsl29bfff">Microsoft Windows OpenCL support</a></p></li>
 </ul>
+<p>Sometimes, mac-users need to install this:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>mamba install -c conda-forge ocl_icd_wrapper_apple
+</pre></div>
+</div>
+<p>Sometimes, linux users need to install this:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>mamba install -c conda-forge ocl-icd-system
+</pre></div>
+</div>
 <p>In case installation didn’t work in the first attempt, you may have to call this command line to reset the napari configuration:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">napari</span> <span class="o">--</span><span class="n">reset</span>
 </pre></div>
