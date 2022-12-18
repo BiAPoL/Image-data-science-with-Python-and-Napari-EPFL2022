@@ -57,8 +57,17 @@ In case error messages contains "ImportError: DLL load failed while importing cl
 
 * [AMD drivers](https://www.amd.com/en/support)
 * [NVidia drivers](https://www.nvidia.com/download/index.aspx)
+* [Intel GPU drivers]()(https://www.intel.com/content/www/us/en/download/726609/intel-arc-graphics-windows-dch-driver.html)
 * [Intel CPU OpenCL drivers](https://www.intel.com/content/www/us/en/developer/articles/tool/opencl-drivers.html#latest_CPU_runtime)
 * [Microsoft Windows OpenCL support](https://www.microsoft.com/en-us/p/opencl-and-opengl-compatibility-pack/9nqpsl29bfff)
+
+Sometimes, mac-users need to install this:
+
+    mamba install -c conda-forge ocl_icd_wrapper_apple
+
+Sometimes, linux users need to install this:
+
+    mamba install -c conda-forge ocl-icd-system
 
 In case installation didn't work in the first attempt, you may have to call this command line to reset the napari configuration:
 
